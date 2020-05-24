@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+hello_text = "hello world"
+
 # <class 'str'>
-print(type('hello'))
+print(type(hello_text))
 
 # <class 'int'>
 print(type(12))
