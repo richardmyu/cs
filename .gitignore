@@ -6,3 +6,6 @@
 *.njsproj
 *.sln
 *.sw?
+
+# python 虚拟环境
+ll_env
