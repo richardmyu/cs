@@ -1,0 +1,9 @@
+I love programming.
+I love music.
+I love book.
+Just a joke.
+I don't love programming.
+I don't love music.
+I don't love book.
+Not a joke.
+money
