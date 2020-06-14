@@ -17,5 +17,17 @@ print(type(12.11))
 print(type(True))
 print(type(False))
 
+# print(true)
+
 # <class 'complex'>
 print(type(1 + 2j))
+
+# + 运算符
+print(1 + 1.2)
+
+print("hello" + " " + "world")
+
+# print("hi, " + 11)
+print("hi, " + str(11))
+
+
