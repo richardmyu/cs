@@ -53,4 +53,3 @@ Linux 内核 1.0 在 1994 年 3 月发布，内核的发布要经历许多开发
 1994 年，Torvalds 发布 Linux-v1.0；
 
 1996 年，Torvalds 发布 Linux-v2.0，确定了 Linux 的吉祥物：企鹅。
-
