@@ -17,8 +17,6 @@ ll_env
 #######################
 # https://github.com/github/gitignore/blob/master/Python.gitignore
 
-ll_env
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -151,6 +149,57 @@ cython_debug/
 #####       c      ####
 #######################
 
+# https://github.com/github/gitignore/blob/master/C.gitignore
+
 # Prerequisites
 *.d
 
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects(inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Excutables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.sSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Modules.symvers
+Mkfile.old
+dkms.conf
