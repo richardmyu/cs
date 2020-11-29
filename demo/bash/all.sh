@@ -1,9 +1,6 @@
 #!/bin/bash
 # learn bash
 
-# 清屏
-clear
-
 # echho 后面单引号和双引号的作用不一样的
 # 双引号可以进行运算、转换
 # 单引号则不会，默认全字符串输出
@@ -42,13 +39,7 @@ echo "Hello World!"
 # 显示用户
 # whoami
 
-# 变量
-# STR="string"
-# echo $STR
 
-# STR11=${STR}
-
-# echo ${STR11}
 
 # 运算
 # $(())

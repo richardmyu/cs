@@ -24,7 +24,4 @@ Linux 的 Shell 种类繁多：
 
 `#!` ·告诉系统其后路径所指定的程序即是解释此脚本文件的 Shell 程序。
 
-> 本笔记学习的是 Bash。（Bash 也是大多数 Linux 系统默认的 设立了）
-
-
-
+本笔记学习的是 Bash。（Bash 也是大多数 Linux 系统默认的 Shell）
