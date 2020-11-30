@@ -1,10 +1,4 @@
-#!/bin/bash
-# learn bash
-
-# echho 后面单引号和双引号的作用不一样的
-# 双引号可以进行运算、转换
-# 单引号则不会，默认全字符串输出
-echo "Hello World!"
+#!/usr/bin/env bash
 
 # 显示当前 shell
 # echo $SHELL
