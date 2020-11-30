@@ -32,15 +32,4 @@ echo '-------'
 echo "当前选项：$-"
 echo "最后命令的退出状态：$?"
 
-
-
-
-
-
-
-
-
-
-
-
 read -p "wait a minute" n
