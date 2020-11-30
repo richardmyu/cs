@@ -713,6 +713,91 @@ fi
 # 文件存在
 ```
 
+### 5.echo 命令
+
+Shell 的 `echo` 指令用于字符串的输出。命令格式：
+
+```shell
+echo string
+```
+
+**1.显示普通字符串**
+
+```shell
+echo "It is a test"
+# 或
+echo It is a test
+
+# It is a test
+```
+
+**2.显示转义字符**
+
+```shell
+echo "\"It is a test\""
+# 或
+echo \"It is a test\"
+
+# "It is a test"
+```
+
+**3.显示变量**
+
+```shell
+name=Jack
+echo "$name, it is a test."
+
+# jack, it is a test.
+```
+
+**4.显示换行**
+
+
+```shell
+echo -e "OK!\n" # -e 开启转义
+echo "It is a jock"
+
+# OK!
+#
+# It is a jock
+```
+
+**5.显示不换行**
+
+
+```shell
+echo -e "OK! \c" # \c 不换行
+echo "It is a jock"
+
+# OK! It is a jock
+```
+
+**6.显示结果定向至文件**
+
+```shell
+echo "It is a test" > test.log.md
+```
+
+> 若文件不存在，则会自动创建。
+
+**7.原样输出字符串，不进行转义或取变量(用单引号)**
+
+```shell
+echo -e '$name\"'
+
+# $name\"
+```
+
+**8.显示命令执行结果**
+
+```shell
+echo `date`
+
+# 2020年11月30日, 周一 22:31:26
+```
+
+> 注意： 这里使用的是反引号 `, 而不是单引号 '。
+
 参考：
 
 1.[Shell 教程](https://www.runoob.com/linux/linux-shell.html)
