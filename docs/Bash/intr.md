@@ -1001,6 +1001,265 @@ fi
 
 ### 8.流程控制
 
+##### 8.1.if 语句
+
+Shell 的流程控制不可为空。如果 `else` 分支没有语句执行，就不要写这个 `else`。
+
+```shell
+# if
+if condition
+then
+    command
+    ...
+fi
+# or (一行，适用于终端)
+if condition;then command; fi
+
+
+# if-else
+if condition
+then
+    command
+    ...
+else
+    command
+if
+
+# if-elsf-else(if-elif...-else)
+if condition
+then
+    command
+    ...
+elif condition
+then
+    command
+else
+    command
+fi
+```
+
+##### 8.2.for 循环
+
+or循环一般格式为：
+
+```shell
+for var in item1 item2 ... itemN
+do
+    command1
+    command2
+    ...
+    commandN
+done
+
+# 写成一行
+for i in item1 item2 ... itemN; do command ...; done;
+```
+
+当变量值在列表里，`for` 循环即执行一次所有命令，使用变量名获取列表中的当前取值。命令可为任何有效的 shell 命令和语句。`in` 列表可以包含替换、字符串和文件名。
+
+`in` 列表是可选的，如果不用它，`for` 循环使用命令行的位置参数。
+
+```shell
+for loop in 1 2 3 4 5
+do
+    echo "The value is: $loop"
+done
+
+# The value is: 1
+# The value is: 2
+# The value is: 3
+# The value is: 4
+# The value is: 5
+```
+
+##### 8.3.while 语句
+
+`while` 循环用于不断执行一系列命令，也用于从输入文件中读取数据；命令通常为测试条件。其格式为：
+
+```shell
+while condition
+do
+    command
+done
+```
+
+以下是一个基本的 `while` 循环：
+
+```shell
+int=1
+while(( $int<=5 ))
+do
+    echo $int
+    let "int++"
+done
+
+# 1
+# 2
+# 3
+# 4
+# 5
+```
+
+以上实例使用了 Bash `let` 命令，它用于执行一个或多个表达式，变量计算中不需要加上 `$` 来表示变量，具体可查阅：[Bash `let` 命令](https://www.runoob.com/linux/linux-comm-let.html)。
+
+**无限循环**
+
+```shell
+while :
+do
+    command
+done
+
+# or
+while true
+do
+    command
+done
+
+# or
+for (( ; ; ))
+```
+
+##### 8.4.until 循环
+
+`until` 循环执行一系列命令直至条件为 true 时停止。
+
+`until` 循环与 `while` 循环在处理方式上刚好相反。
+
+一般 `while` 循环优于 `until` 循环，但在某些时候—也只是极少数情况下，`until` 循环更加有用。
+
+```shell
+# until 语法格式
+until condition
+do
+    command
+done
+```
+
+`condition` 一般为条件表达式，如果返回值为 false，则继续执行循环体内的语句，否则跳出循环。
+
+```shell
+a=0
+
+until [ ! $a -lt 10 ]
+do
+   echo $a
+   a=`expr $a + 1`
+done
+
+# 0
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+```
+
+##### 8.5.case
+
+`case ... esac` 与其他语言中的 `switch ... case` 语句类似，是一种多分枝选择结构，每个 `case` 分支用右圆括号开始，用两个分号 `;;` 表示 `break`，即执行结束，跳出整个 `case ... esac` 语句，`esac`（就是 `case` 反过来）作为结束标记。
+
+```shell
+case 值 in
+模式1) # 右括号结束模式
+    command1
+    command2
+    ...
+    commandN
+    ;; # ;; 标记单个模式结束
+模式2）
+    command1
+    command2
+    ...
+    commandN
+    ;;
+esac
+```
+
+`case` 后为取值，取值可以为变量或常数。
+
+取值后面必须为单词 `in`，每一模式必须以右括号结束。
+
+取值将检测匹配的每一个模式。一旦模式匹配，其间所有命令开始执行直至 `;;`，并且执行完匹配模式相应命令后不再继续其他模式。
+
+如果无一匹配模式，使用星号 `*` 捕获该值，再执行后面的命令。
+
+```shell
+echo '输入 1 到 4 之间的数字:'
+echo '你输入的数字为:'
+read aNum
+case $aNum in
+1)
+    echo '你选择了 1'
+    ;;
+2)
+    echo '你选择了 2'
+    ;;
+3)
+    echo '你选择了 3'
+    ;;
+4)
+    echo '你选择了 4'
+    ;;
+*)
+    echo '你没有输入 1 到 4 之间的数字'
+    ;;
+esac
+```
+
+##### 8.6.跳出循环
+
+在循环过程中，有时候需要在未达到循环结束条件时强制跳出循环，Shell 使用两个命令来实现该功能：`break` 和 `continue`。
+
+**1.break**
+
+`break` 命令允许跳出所有循环（终止执行后面的所有循环）。
+
+```shell
+while :
+do
+    echo -n "输入 1 到 5 之间的数字:"
+    read aNum
+    case $aNum in
+    1|2|3|4|5)
+        echo "你输入的数字为 $aNum!"
+        ;;
+    *)
+        echo "你输入的数字不是 1 到 5 之间的! 游戏结束"
+            break
+            echo "游戏结束" # 会被执行
+        ;;
+    esac
+done
+```
+
+**2.continue**
+
+`continue` 命令与 `break` 命令类似，只有一点差别，它不会跳出所有循环，仅仅跳出当前循环。
+
+```shell
+while :
+do
+    echo -n "输入 1 到 5 之间的数字: "
+    read aNum
+    case $aNum in
+    1|2|3|4|5)
+        echo "你输入的数字为 $aNum!"
+        ;;
+    *)
+        echo "你输入的数字不是 1 到 5 之间的!"
+            continue
+            echo "游戏结束" # 不会被执行
+        ;;
+    esac
+done
+```
+
+
 ### 9.函数
 
 ### 10.输入/输出重定向
