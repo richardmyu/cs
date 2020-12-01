@@ -314,12 +314,12 @@ Shell 传递参数实例！
 ```shell
 echo "-- \$* 演示 ---"
 for i in "$*"; do
-    echo $i
+     echo $i
 done
 
 echo "-- \$@ 演示 ---"
 for i in "$@"; do
-    echo $i
+     echo $i
 done
 ```
 
@@ -397,12 +397,12 @@ echo "b % a : $val"
 
 if [ $a == $b ]
 then
-   echo "a 等于 b"
+    echo "a 等于 b"
 fi
 
 if [ $a != $b ]
 then
-   echo "a 不等于 b"
+    echo "a 不等于 b"
 fi
 ```
 
@@ -445,49 +445,49 @@ fi
 # 检测两个数是否相等，相等返回 true
 if [ $a -eq $b ]
 then
-   echo "$a -eq $b : a 等于 b"
+    echo "$a -eq $b : a 等于 b"
 else
-   echo "$a -eq $b: a 不等于 b"
+    echo "$a -eq $b: a 不等于 b"
 fi
 
 # 检测两个数是否不相等，不相等返回 true
 if [ $a -ne $b ]
 then
-   echo "$a -ne $b: a 不等于 b"
+    echo "$a -ne $b: a 不等于 b"
 else
-   echo "$a -ne $b : a 等于 b"
+    echo "$a -ne $b : a 等于 b"
 fi
 
 # 检测左边的数是否大于右边的，如果是，则返回 true
 if [ $a -gt $b ]
 then
-   echo "$a -gt $b: a 大于 b"
+    echo "$a -gt $b: a 大于 b"
 else
-   echo "$a -gt $b: a 不大于 b"
+    echo "$a -gt $b: a 不大于 b"
 fi
 
 # 检测左边的数是否小于右边的，如果是，则返回 true
 if [ $a -lt $b ]
 then
-   echo "$a -lt $b: a 小于 b"
+    echo "$a -lt $b: a 小于 b"
 else
-   echo "$a -lt $b: a 不小于 b"
+    echo "$a -lt $b: a 不小于 b"
 fi
 
 # 检测左边的数是否大于等于右边的，如果是，则返回 true
 if [ $a -ge $b ]
 then
-   echo "$a -ge $b: a 大于或等于 b"
+    echo "$a -ge $b: a 大于或等于 b"
 else
-   echo "$a -ge $b: a 小于 b"
+    echo "$a -ge $b: a 小于 b"
 fi
 
 # 检测左边的数是否小于等于右边的，如果是，则返回 true
 if [ $a -le $b ]
 then
-   echo "$a -le $b: a 小于或等于 b"
+    echo "$a -le $b: a 小于或等于 b"
 else
-   echo "$a -le $b: a 大于 b"
+    echo "$a -le $b: a 大于 b"
 fi
 ```
 
@@ -513,23 +513,23 @@ fi
 ```shell
 if [ $a != $b ]
 then
-   echo "$a != $b : a 不等于 b"
+    echo "$a != $b : a 不等于 b"
 else
-   echo "$a == $b: a 等于 b"
+    echo "$a == $b: a 等于 b"
 fi
 
 if [ $a -lt 100 -a $b -gt 15 ]
 then
-   echo "$a 小于 100 且 $b 大于 15 : 返回 true"
+    echo "$a 小于 100 且 $b 大于 15 : 返回 true"
 else
-   echo "$a 小于 100 且 $b 大于 15 : 返回 false"
+    echo "$a 小于 100 且 $b 大于 15 : 返回 false"
 fi
 
 if [ $a -lt 100 -o $b -gt 100 ]
 then
-   echo "$a 小于 100 或 $b 大于 100 : 返回 true"
+    echo "$a 小于 100 或 $b 大于 100 : 返回 true"
 else
-   echo "$a 小于 100 或 $b 大于 100 : 返回 false"
+    echo "$a 小于 100 或 $b 大于 100 : 返回 false"
 fi
 ```
 
@@ -551,16 +551,16 @@ fi
 ```shell
 if [[ $a -lt 100 && $b -gt 100 ]]
 then
-   echo "返回 true"
+    echo "返回 true"
 else
-   echo "返回 false"
+    echo "返回 false"
 fi
 
 if [[ $a -lt 100 || $b -gt 100 ]]
 then
-   echo "返回 true"
+    echo "返回 true"
 else
-   echo "返回 false"
+    echo "返回 false"
 fi
 ```
 
@@ -588,33 +588,33 @@ g="efg"
 
 if [ $c = $g ]
 then
-   echo "$c = $g : c 等于 g"
+    echo "$c = $g : c 等于 g"
 else
-   echo "$c = $g: c 不等于 g"
+    echo "$c = $g: c 不等于 g"
 fi
 if [ $c != $g ]
 then
-   echo "$c != $g : c 不等于 g"
+    echo "$c != $g : c 不等于 g"
 else
-   echo "$c != $g: c 等于 g"
+    echo "$c != $g: c 等于 g"
 fi
 if [ -z $c ]
 then
-   echo "-z $c : 字符串长度为 0"
+    echo "-z $c : 字符串长度为 0"
 else
-   echo "-z $c : 字符串长度不为 0"
+    echo "-z $c : 字符串长度不为 0"
 fi
 if [ -n "$c" ]
 then
-   echo "-n $c : 字符串长度不为 0"
+    echo "-n $c : 字符串长度不为 0"
 else
-   echo "-n $c : 字符串长度为 0"
+    echo "-n $c : 字符串长度为 0"
 fi
 if [ $c ]
 then
-   echo "$c : 字符串不为空"
+    echo "$c : 字符串不为空"
 else
-   echo "$c : 字符串为空"
+    echo "$c : 字符串为空"
 fi
 ````
 
@@ -653,51 +653,51 @@ file="./hello.sh"
 
 if [ -r $file ]
 then
-   echo "文件可读"
+    echo "文件可读"
 else
-   echo "文件不可读"
+    echo "文件不可读"
 fi
 
 if [ -w $file ]
 then
-   echo "文件可写"
+    echo "文件可写"
 else
-   echo "文件不可写"
+    echo "文件不可写"
 fi
 
 if [ -x $file ]
 then
-   echo "文件可执行"
+    echo "文件可执行"
 else
-   echo "文件不可执行"
+    echo "文件不可执行"
 fi
 
 if [ -f $file ]
 then
-   echo "文件为普通文件"
+    echo "文件为普通文件"
 else
-   echo "文件为特殊文件"
+    echo "文件为特殊文件"
 fi
 
 if [ -d $file ]
 then
-   echo "文件是个目录"
+    echo "文件是个目录"
 else
-   echo "文件不是个目录"
+    echo "文件不是个目录"
 fi
 
 if [ -s $file ]
 then
-   echo "文件不为空"
+    echo "文件不为空"
 else
-   echo "文件为空"
+    echo "文件为空"
 fi
 
 if [ -e $file ]
 then
-   echo "文件存在"
+    echo "文件存在"
 else
-   echo "文件不存在"
+    echo "文件不存在"
 fi
 ```
 
@@ -903,6 +903,101 @@ printf "%s and %d and %c and %f \n"
 | `\0ddd` | 表示1到3位的八进制值字符                                                                                                                                                     |
 
 ### 7.test 命令
+
+Shell 中的 `test` 命令用于检查某个条件是否成立，它可以进行数值、字符和文件三个方面的测试。
+
+**1.数值测试**
+
+| 参数  | 说明           |
+| ----- | -------------- |
+| `-eq` | 等于则为真     |
+| `-ne` | 不等于则为真   |
+| `-gt` | 大于则为真     |
+| `-ge` | 大于等于则为真 |
+| `lt`  | 小于则为真     |
+| `le`  | 小于等于则为真 |
+
+
+```shell
+num1=100
+num2=100
+if test $[num1] -eq $[num2]
+then
+    echo '两个数相等！'
+else
+    echo '两个数不相等！'
+fi
+
+result=$[num1+num2]
+echo "result 为：$result"
+
+# 两个数相等！
+# result 为： 200
+```
+
+> 代码中的 `[]` 执行基本的算数运算（不需要前后空格）
+
+**2.字符串测试**
+
+| 参数 | 说明                     |
+| ---- | ------------------------ |
+| `=`  | 等于则为真               |
+| `!=` | 不相等则为真             |
+| `-z` | 字符串的长度为零则为真   |
+| `-n` | 字符串的长度不为零则为真 |
+
+```shell
+str1="ru1noob"
+str2="runoob"
+if test $str1 = $str2
+then
+    echo '两个字符串相等!'
+else
+    echo '两个字符串不相等!'
+fi
+
+# 两个字符串不相等!
+```
+
+**3.文件测试**
+
+| 参数 | 说明                                 |
+| ---- | ------------------------------------ |
+| `-e` | 如果文件存在则为真                   |
+| `-r` | 如果文件存在且可读则为真             |
+| `-w` | 如果文件存在且可写则为真             |
+| `-x` | 如果文件存在且可执行则为真           |
+| `-s` | 如果文件存在且至少有一个字符则为真   |
+| `-d` | 如果文件存在且为目录则为真           |
+| `-f` | 如果文件存在且为普通文件则为真       |
+| `-c` | 如果文件存在且为字符型特殊文件则为真 |
+| `-b` | 如果文件存在且为块特殊文件则为真     |
+
+```shell
+cd /bin
+if test -e ./bash
+then
+    echo '文件已存在!'
+else
+    echo '文件不存在!'
+fi
+
+# 文件已存在!
+```
+
+另外，Shell 还提供了与(`-a`)、或(`-o`)、非(`!`)三个逻辑操作符用于将测试条件连接起来，其优先级为： `!` 最高， `-a` 次之， `-o` 最低。例如：
+
+```shell
+cd /bin
+if test -e ./notFile -o -e ./bash
+then
+    echo '至少有一个文件存在!'
+else
+    echo '两个文件都不存在'
+fi
+
+# 至少有一个文件存在!
+```
 
 ### 8.流程控制
 
