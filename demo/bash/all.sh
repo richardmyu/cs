@@ -189,5 +189,3 @@ echo "你输入的数num2的值是：$NUM2"
 
 # # 调用函数
 # getSum $n $m
-
-read -t 5 -p "请输入随机数s: " s

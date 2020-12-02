@@ -39,5 +39,3 @@ then
 else
     echo '两个文件都不存在'
 fi
-
-read -p "\n wait a minute" n

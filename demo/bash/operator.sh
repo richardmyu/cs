@@ -203,6 +203,3 @@ then
 else
    echo "文件不存在"
 fi
-
-
-read -p "wait a minute" n

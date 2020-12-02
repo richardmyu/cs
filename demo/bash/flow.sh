@@ -105,5 +105,3 @@ do
         ;;
     esac
 done
-
-read -p "\n wait a minute" n

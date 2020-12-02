@@ -21,6 +21,3 @@ cat << EOF
 瓜瓜
 略略略
 EOF
-
-read -p 'wait' t
-

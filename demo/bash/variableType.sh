@@ -66,6 +66,3 @@ EOF
 扩大解放和改革
 扩大解放和改革
 !
-
-
-read -p "wait a minute" n

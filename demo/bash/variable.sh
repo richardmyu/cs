@@ -43,5 +43,3 @@ NUM=100
 echo $NUM
 unset NUM
 echo $NUM
-
-read -p "wait a minute" n

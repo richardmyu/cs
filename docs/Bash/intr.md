@@ -7,8 +7,8 @@
 **1.作为可执行程序**
 
 ```shell
-chmod +x ./hello.sh #使脚本具有执行的权限
-./hello.sh #执行脚本
+chmod +x /path/hello.sh # 使脚本具有执行的权限
+/path/hello.sh # 执行脚本
 ```
 
 > 注意：是 `./hello.sh` 而不是 `hello.sh`。后者，Linux 系统会去 `PATH` 中寻找 `hello.sh`，而 `PATH` 中只有 `/bin`、`/sbin`、`/usr/bin` 等等，而当前目录通常不在 `PATH` 中，所以会找不到命令无法执行。`./hello.sh` 则是指明在当前目录查找。
@@ -18,20 +18,33 @@ chmod +x ./hello.sh #使脚本具有执行的权限
 直接运行解释器，其参数就是 Shell 脚本的文件名：
 
 ```shell
-/bin/bash hello.sh
-/bin/zsh hello.sh
+/bin/bash /path/hello.sh
+/bin/zsh /path/hello.sh
+bash /path/hello.sh
 
-# 更简洁
-sh hello.sh
+# or
+source /path/hello.sh
+
+# or
+. /path/hello.sh
+
+# 实际测试中，以下这种也可以
+/path/hello.sh
 ```
 
 > 这种方式运行脚本，不需要在第一行指定解释器（写了也没用）。
 
+
+
 脚本也可以在 windows 的 power shell 中运行，但是需要先安装 Git，本质是调用 Git 来执行脚本。当然执行完后会自动关闭 Git 。
 
 ```shell
-# windows powershell
+# 第一种：直接运行，需要调用 Git
 ./hello.sh
+
+# 第二种：输入 bash 命令进入 bash 模式
+> bash
+> sh hello.sh
 ```
 
 ### 2.变量
@@ -1579,3 +1592,5 @@ $ ./file2.sh
 1.[Shell 教程](https://www.runoob.com/linux/linux-shell.html)
 
 2.[掌握Shell编程，一篇就够了](https://zhuanlan.zhihu.com/p/102176365)
+
+3.[Shell 编程范例](https://tinylab.gitbooks.io/shellbook/content/)

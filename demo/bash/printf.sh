@@ -62,5 +62,3 @@ printf "a string, no processing:<%b>\n" "A\nB"
 
 printf "www.runoob.com \a"
 # www.runoob.com $                  #不换行
-
-read -p "\n wait a minute" n

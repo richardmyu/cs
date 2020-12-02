@@ -28,5 +28,3 @@ echo -e '$name\"'
 
 # 显示命令执行结果
 echo `date`
-
-read -p "wait a minute" n

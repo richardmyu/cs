@@ -22,6 +22,8 @@ Linux 的 Shell 种类繁多：
 
 一般情况下，并不区分 Bourne Shell 和 Bourne Again Shell，所以，像 `#!/bin/sh`，同样也可以改写为 `#!/bin/bash`。
 
+> 但为了兼容不同系统，一般会用 `#!/usr/bin/env bash`。
+
 `#!` ·告诉系统其后路径所指定的程序即是解释此脚本文件的 Shell 程序。
 
 本笔记学习的是 Bash。（Bash 也是大多数 Linux 系统默认的 Shell）
