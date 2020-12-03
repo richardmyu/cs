@@ -2,8 +2,6 @@
 
 import math
 
-# homework 1
-
 # 斐波那契数列
 
 
