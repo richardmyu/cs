@@ -43,23 +43,23 @@ for s in "hellow":
 # index
 indStr = "hello world"
 
-# print(indStr[0], indStr[0-len(indStr)])
-# print(indStr[1])
-# print(indStr[-1])
+print(indStr[0], indStr[0-len(indStr)])
+print(indStr[1])
+print(indStr[-1])
 
 # print(indStr[11])
 
 # slicing
 
-# print(indStr[0:])
-# print(indStr[:4])
-# print(indStr[2:4])
-# print(indStr[2:8])
-# print(indStr[2:8:2])
+print(indStr[0:])
+print(indStr[:4])
+print(indStr[2:4])
+print(indStr[2:8])
+print(indStr[2:8:2])
 
-# print(indStr[::1])
-# print(indStr[::-1])
-# print(indStr[::-2])
+print(indStr[::1])
+print(indStr[::-1])
+print(indStr[::-2])
 
 # indStr[2] = 'a'
 
@@ -71,15 +71,15 @@ indStr = "hello world"
 # print(indStr)
 
 # find
-# print(indStr.find("hello"))
-# print(indStr.find("hall"))
-# print(indStr.find(" "))
+print(indStr.find("hello"))
+print(indStr.find("hall"))
+print(indStr.find(" "))
 
 # split
 
 print(indStr.split())
-# print(indStr.split(" "))
-# print(indStr.split("o"))
+print(indStr.split(" "))
+print(indStr.split("o"))
 
 print('a' > 'b')
 print('abc' > 'a c')
