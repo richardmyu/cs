@@ -2,16 +2,10 @@
 
 学习笔记
 
-:tada:
+| A        | B   |
+| -------- | --- |
+| :smile:  |
+| :smiley: |
+| :wink:   |
 
-:fireworks:
-
-:100:
-
-:fox_face:
-
-:cow:
-
-:banana:
-
-:apple:
+[emoji-cheat-sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)
