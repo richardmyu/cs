@@ -3,60 +3,34 @@
 import math
 
 
-# num = int(input("Enter the number "))
-# num_temp = num
-# num_prime = 0
-# is_palin = False
-# is_Prime = False
-#
-# for i in range(2, int(math.sqrt(num)) + 1):
-#     if num % i == 0:
-#         break
-# else:
-#     is_palin = True
-#
-# while num_temp != 0:
-#     # print(num_prime, num_temp)
-#     num_prime = num_prime * 10 + num_temp % 10
-#     num_temp //= 10
-#
-# if num == num_prime:
-#     is_Prime = True
-#
-# if is_palin and is_Prime:
-#     print("ok")
-# else:
-#     print("no")
-
-
 # 函数
 # 回文数函数
-def is_palin(num):
-    for i in range(2, int(math.sqrt(num)) + 1):
-        if num % i == 0:
+def is_palindrome(a):
+    for i in range(2, int(math.sqrt(a)) + 1):
+        if a % i == 0:
             return False
         else:
             return True
 
 
 # 素数函数
-def is_prime(num):
-    num_temp = num
-    num_prime = 0
+def is_prime(b):
+    n_temp = b
+    n_prime = 0
 
-    while num_temp != 0:
-        num_prime = num_prime * 10 + num_temp % 10
-        num_temp //= 10
+    while n_temp != 0:
+        n_prime = n_prime * 10 + n_temp % 10
+        n_temp //= 10
 
-    if num == num_prime:
+    if b == n_prime:
         return True
     else:
         return False
 
 
-num = int(input("Enter the number "))
+num = int(input("Enter the Number "))
 
-if is_palin(num) and is_prime(num):
+if is_palindrome(num) and is_prime(num):
     print("ok")
 else:
     print("no")
