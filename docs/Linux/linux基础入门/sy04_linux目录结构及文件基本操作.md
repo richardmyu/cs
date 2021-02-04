@@ -308,11 +308,11 @@ $ mv file1 myfile
 # 使用通配符批量创建 5 个文件:
 $ touch file{1..5}.txt
 
-# 批量将这 5 个后缀为 .txt 的文本文件重命名为以 .c 为后缀的文件:
-$ rename 's/\.txt/\.c/' *.txt
+# 批量将这 5 个后缀为 .txt 的文本文件重命名为以 .c_class 为后缀的文件:
+$ rename 's/\.txt/\.c_class/' *.txt
 
 # 批量将这 5 个文件，文件名和后缀改为大写:
-$ rename 'y/a-z/A-Z/' *.c
+$ rename 'y/a-z/A-Z/' *.c_class
 ```
 
 `rename` 是先使用第二个参数的通配符匹配所有后缀为 `.txt` 的文件，然后使用第一个参数提供的正则表达式将匹配的这些文件的 `.txt` 后缀替换为 `.c`，这一点在学习了 `sed` 命令后，会更好地理解。

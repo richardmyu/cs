@@ -5,7 +5,7 @@ import math
 # 一元二次方程求解
 a = float(input("Enter a: "))
 b = float(input("Enter b: "))
-c = float(input("Enter c: "))
+c = float(input("Enter c_class: "))
 
 if a != 0:
     delta = b ** 2 - 4 * a * c

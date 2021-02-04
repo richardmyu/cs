@@ -3,7 +3,7 @@
 import math
 
 
-# 3.已知三角形三边边长分别为 a,b,c，求夹角 C
+# 3.已知三角形三边边长分别为 a,b,c_class，求夹角 C
 def calc_angle(a, b, c):
     if a <= 0 or b <= 0 or c <= 0:
         print("输入边长有误")

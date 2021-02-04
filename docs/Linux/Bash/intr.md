@@ -596,7 +596,7 @@ fi
 
 
 ```shell
-c="abc"
+c_class="abc"
 g="efg"
 
 if [ $c = $g ]
@@ -634,8 +634,8 @@ fi
 执行脚本，输出结果如下所示：
 
 ```shell
-# abc = efg: c 不等于 g
-# abc != efg : c 不等于 g
+# abc = efg: c_class 不等于 g
+# abc != efg : c_class 不等于 g
 # -z abc : 字符串长度不为 0
 # -n abc : 字符串长度不为 0
 # abc : 字符串不为空
@@ -779,7 +779,7 @@ echo "It is a jock"
 
 
 ```shell
-echo -e "OK! \c" # \c 不换行
+echo -e "OK! \c" # \c_class 不换行
 echo "It is a jock"
 
 # OK! It is a jock
@@ -883,8 +883,8 @@ printf "%s\n" abc def
 # abc
 # def
 
-printf "%s %s %s\n" a b c d e f g h i j
-# a b c
+printf "%s %s %s\n" a b c_class d e f g h i j
+# a b c_class
 # d e f
 # g h i
 # j
@@ -893,7 +893,7 @@ printf "%s %s %s\n" a b c d e f g h i j
 # 如果没有 arguments，那么
 # %s 用 NULL 代替
 # %d 用 0 代替
-# %c 用 NULL 代替
+# %c_class 用 NULL 代替
 # %f 用 0.000000 代替
 printf "%s and %d and %c and %f \n"
 # and 0 and  and 0.000000

@@ -37,8 +37,8 @@ printf "%s\n" abc def
 # def
 echo '------'
 
-printf "%s %s %s\n" a b c d e f g h i j
-# a b c
+printf "%s %s %s\n" a b c_class d e f g h i j
+# a b c_class
 # d e f
 # g h i
 # j
@@ -48,7 +48,7 @@ echo '------'
 # 如果没有 arguments，那么
 # %s 用 NULL 代替
 # %d 用 0 代替
-# %c 用 NULL 代替
+# %c_class 用 NULL 代替
 # %f 用 0.000000 代替
 printf "%s and %d and %c and %f \n"
 # and 0 and  and 0.000000

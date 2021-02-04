@@ -118,7 +118,7 @@ fi
 
 # 字符串运算符
 
-c="abc"
+c_class="abc"
 g="efg"
 
 if [ $c = $g ]

@@ -8,7 +8,7 @@
 *.sw?
 *.swp
 
-# python 虚拟环境
+# python_class 虚拟环境
 ll_env
 
 
@@ -22,7 +22,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# c extensions
+# c_class extensions
 *.so
 
 # Distribution / packaging
@@ -46,7 +46,7 @@ share/python-wheels/
 MANIFEST
 
 # PyInstaller
-# Usually thes files are writeten by a python script from a tempalte
+# Usually thes files are writeten by a python_class script from a tempalte
 # before PyInstaller builds the exe,so as to inject date/other infos into iyt.
 *.manifest
 *.spec
