@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import module_using
+
 # print 总是以一个不可见的 「新的一行」 字符（\n）作为结尾
 print("Hello ", end='')
 print("World!", end=' ')
@@ -188,3 +190,8 @@ def print_max(x, y):
 
 print_max(3, 5)
 print(print_max.__doc__)
+
+# module
+print('\n\n')
+module_using.say_hi()
+print('Version', module_using.__version__)
