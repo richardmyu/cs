@@ -1,21 +1,32 @@
 # -*- coding: utf-8 -*-
 
-my_tuple = (1, 'it', 'is')
+my_dict = {
+    'a': 'study',
+    'b': 'work',
+    'c': 'eat and drink'
+}
 
-print(my_tuple[0])
-# 1
+print(my_dict['a'])
 
-print(my_tuple[1:])
-# ['it', 'is']
+print(len(my_dict))
 
-new_my_tuple = 'yes', 'no', my_tuple
-print(new_my_tuple)
+print('b' in my_dict)  # True
+print('B' in my_dict)  # False
 
-print(new_my_tuple[2][2])
+for d in my_dict:
+    print(d, my_dict[d])
 
-my_empty = ()
-print(my_empty)
-my_single_tuple = (1,)
-print(my_single_tuple)
-my_single_tuple2 = (1)
-print(my_single_tuple2)
+print(my_dict.items())
+# dict_items([('a', 123), ('b', 456), ('c_class', 789)])
+
+print(my_dict.keys())
+# dict_keys(['a', 'b', 'c_class'])
+
+print(my_dict.values())
+# dict_values([123, 456, 789])
+
+# print(my_dict.clear())  # None
+# print(my_dict)  # {}
+
+del my_dict['c']
+print(my_dict)
