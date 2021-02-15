@@ -13,7 +13,7 @@ for i in sys.argv:
     print(i)
 
 # sys.path 是模块导入时要搜索的目录列表
-print("\n\nThe PYTHONPATH is ", sys.path, "\n")
+print("\n\nThe PYTHON path is ", sys.path, "\n")
 
 
 def say_hi():
