@@ -47,13 +47,22 @@ git add test
 # test
 # Use -f if you really want to add them.
 
-# `-f` 强制添加
+# `-f` 强制添加 (添加空目录/文件夹是无效的，且无意义的)
 git add -f test
 
 # 查看
 git check-ignore -v test
-# .gitignore:10:/test/      tt
+# .gitignore:10:/test/      test
 ```
+
+> [Git FAQ:Can I add empty directories?](https://git.wiki.kernel.org/index.php/GitFaq#Can_I_add_empty_directories.3F)
+> Currently the design of the Git index (staging area) only permits files to be listed, and nobody competent enough to make the change to allow empty directories has cared enough about this situation to remedy it.
+>
+> Directories are added automatically when adding files inside them. That is, directories never have to be added to the repository, and are not tracked on their own.
+>
+> You can say "`git add <dir>`" and it will add the files in there.
+>
+> If you really need a directory to exist in checkouts you should create a file in it. `.gitignore` works well for this purpose (there is also a tool MarkEmptyDirs using the .NET framework which allows you to automate this task); you can leave it empty or fill in the names of files you do not expect to show up in the directory.
 
 ---
 
@@ -63,6 +72,6 @@ git check-ignore -v test
 
 2.[github/gitignore](https://github.com/github/gitignore)
 
-4.[忽略特殊文件](https://www.liaoxuefeng.com/wiki/896043488029600/900004590234208)
+3.[忽略特殊文件](https://www.liaoxuefeng.com/wiki/896043488029600/900004590234208)
 
-1.[Git 忽略提交规则 - .gitignore 配置运维总结](https://www.cnblogs.com/kevingrace/p/5690241.html)
+4.[Git 忽略提交规则 - .gitignore 配置运维总结](https://www.cnblogs.com/kevingrace/p/5690241.html)
