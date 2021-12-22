@@ -44,21 +44,21 @@ indent_size = 2
 
 在通配符匹配的部分名称中识别的特殊字符：
 
-| characters     | descirbe                                                             |
-| -------------- | -------------------------------------------------------------------- |
-| `*`            | 匹配任何字符串，路径分隔符 (`/`) 除外                                |
-| `**`           | 匹配任何字符串(包括路径分隔符)                                       |
-| `?`            | 匹配任何单字符                                                       |
-| `[name]`       | 匹配 `name` 中的任何单个字符                                         |
-| `[!name]`      | 匹配非 `name` 中的任何单个字符                                       |
-| `{s1,s2,s3}`   | 匹配任何给定的字符串（以逗号分隔）                                   |
+| characters     | descirption                                                                  |
+| -------------- | ---------------------------------------------------------------------------- |
+| `*`            | 匹配任何字符串，路径分隔符 (`/`) 除外                                        |
+| `**`           | 匹配任何字符串（包括路径分隔符）                                               |
+| `?`            | 匹配任何单字符                                                               |
+| `[name]`       | 匹配 `name` 中的任何单个字符                                                 |
+| `[!name]`      | 匹配非 `name` 中的任何单个字符                                               |
+| `{s1,s2,s3}`   | 匹配任何给定的字符串（以逗号分隔）                                           |
 | `{num1..num2}` | 匹配 `num1` 和 `num2` 之间的任何整数，其中 `num1` 和 `num2` 可以是正数或负数 |
 
 > 特殊字符可以用反斜杠转义，这样它们就不会被解释为通配符模式。
 
 ## 可配置的属性
 
-> 并非每个插件都支持所有[属性](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties)。
+> 并非每个插件都支持所有 [属性](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties)。
 
 - `indent_style`:
   - `tab`
@@ -66,10 +66,10 @@ indent_size = 2
 
 - `indent_size`:
   - an integer
-  - `tab` (会使用 `tab_width` 的值)
+  - `tab` （会使用 `tab_width` 的值）
 
 - `tab_width`:
-  - an integer (默认是 `indent_size` 的值，通常不需要指定)
+  - an integer （默认是 `indent_size` 的值，通常不需要指定）
 
 - `end_of_line`:
   - `lf`
@@ -94,17 +94,12 @@ indent_size = 2
 - `root`: 应在任何部分之外的文件顶部指定的特殊属性
   - `true` 停止对当前文件的上层 `.editorconfig` 文件的搜索
 
+打开文件时，EditorConfig 插件会在打开的文件目录和每个父目录中查找名为 `.editorconfig` 的文件。如果到达根文件路径或找到具有 `root=true` 的 EditorConfig 文件，将停止对 `.editorconfig` 文件的搜索。
 
-
-
-
+EditorConfig 文件从上到下读取，最新发现的规则优先。匹配 EditorConfig 部分的属性按它们被读取的顺序应用，因此更接近的文件中的属性优先。
 
 ---
 
 参考：
 
 [^1]:[EditorConfig](https://editorconfig.org/)
-
-[^2]:[使用 EditorConfig 创建可移植的自定义编辑器设置](https://docs.microsoft.com/zh-cn/visualstudio/ide/create-portable-custom-editor-options?view=vs-2022)
-
-[^3]:[统一代码风格工具——editorConfig](https://www.cnblogs.com/xiaohuochai/p/7160067.html)
