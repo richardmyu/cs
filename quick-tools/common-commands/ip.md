@@ -1,6 +1,6 @@
 # ip 类
 
-> ubuntu (提前安装 net-tools)
+> ubuntu （提前安装 net-tools)
 
 ## 查看 ip 地址
 
@@ -26,7 +26,7 @@ hostname -I
 ipconfig/all
 # or ipconfig -all
 
-# 2: powershell (查看网卡与其对应的 mac 地址)
+# 2: powershell （查看网卡与其对应的 mac 地址）
 Get-NetAdapter
 
 # ubuntu
