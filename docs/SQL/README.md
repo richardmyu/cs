@@ -1,5 +1,7 @@
 # SQL
 
+> 基本以 PostgreSQL 为主，没有特别在意其他 RDBMS 的特意语法。
+
 参考：
 
 1.《SQL基础教程》(第二版) MICK
