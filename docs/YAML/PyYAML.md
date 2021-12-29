@@ -10,4 +10,3 @@
 ## About this website
 
 This website is hosted on Github: [<u>https://github.com/yaml/pyyaml.org</u>](https://github.com/yaml/pyyaml.org).
-
