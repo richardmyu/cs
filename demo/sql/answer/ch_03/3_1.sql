@@ -6,3 +6,4 @@ SELECT product_id, SUM(product_name)
 
 -- GROUP BY 应该在 WHERE 后面
 -- SUM 只能用于数字类型
+-- 存在 GROUP BY 子句中未指定的列（product_id）
