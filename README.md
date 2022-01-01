@@ -13,6 +13,6 @@
 - [ ] 程序设计入门-C语言
 - [x] 程序设计入门-python语言
 - [x] Linux
-- [ ] SQL
+- [x] SQL
 - [x] VIM
 - [ ] YAML
