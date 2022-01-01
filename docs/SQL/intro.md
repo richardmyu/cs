@@ -4,8 +4,8 @@
 
 必读
 
-- [x] 1.《SQL基础教程》(第二版) MICK
-- [ ] 2.[SQL 教程](https://www.runoob.com/sql/sql-tutorial.html)
+- [x] 1.《SQL基础教程》(第二版) MICK --（PostgreSQL向）
+- [ ] 2.[SQL 教程](https://www.runoob.com/sql/sql-tutorial.html) --（MySQL向）
 - [ ] 3.[sqlbolt](https://sqlbolt.com/)
 
 参考：
