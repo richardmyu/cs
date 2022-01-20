@@ -15,7 +15,6 @@ Restart-Computer
 Restart-Computer -Force
 ```
 
-
 ## 管理驱动器与文件
 
 > more [系统管理的示例脚本](https://docs.microsoft.com/zh-cn/powershell/scripting/samples/sample-scripts-for-administration?view=powershell-7.2)
