@@ -16,3 +16,4 @@
 - [x] SQL
 - [x] VIM
 - [ ] YAML
+- [ ] EJS
