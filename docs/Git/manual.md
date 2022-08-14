@@ -17,3 +17,9 @@ git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`" # Updated: 2022-08-28 10:22
 - refactor：重构（即不是新增功能，也不是修改bug的代码变动）
 - test：增加测试
 - chore：构建过程或辅助工具的变动
+
+文件处理：
+
+- add 新增
+- rm 删除
+- mod 修改
