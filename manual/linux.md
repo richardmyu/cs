@@ -81,3 +81,41 @@ ps aux --sort -rss
 ```shell
 vmstat -s
 ```
+
+### 1.2.监控日志文件
+
+一般来说，所有的日志文件都位于 `/var/log`。此目录包含特定应用和服务的拓展名为 `.log` 的日志文件，它还包含了其他含有日志独立目录。
+
+#### 1.2.1.`tail`
+
+`tail` 命令是实时跟踪日志文件的最基本方式。
+
+```shell
+# 使用开关 -f 跟踪实时更新的日志文件
+tail -f /var/log/syslog
+
+# 监控多个
+tail -f /var/log/syslog /var/log/dmesg
+```
+
+> `lnav` 可以使用彩色编码的信息以更条理的方式监控日志文件。
+
+#### 1.2.2.`journalctl`
+
+当今所有现代 linux 发行版都主要使用 `systemd`。`systemd` 提供了运行 linux 操作系统的基本框架和组建。 `systemd` 通过 `journalctl` 提供日志服务，这有助于管理来自所有 `systemd` 服务的日志。
+
+```sh
+journalctl -f
+
+# 紧急系统消息
+journalctl -p 0
+
+# 带有解释的错误
+journalctl -xb -p 0
+
+# 时间过滤
+journalctl --since "2022-12-12 06:00:00"
+journalctl --since "2022-12-12" --until "2022-12-14 06:00:00"
+journalctl --since yesterday
+journalctl --since 09:00 --until "1 hour ago"
+```
