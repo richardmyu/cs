@@ -4,7 +4,7 @@
 
 ### 什么是窗口函数
 
-窗口函数也称为 OLAP 函数。**OLAP** 是 OnLine Analytical Processing 的简称，意思是对数据库数据进行实时分析处理。
+窗口函数也称为 `OLAP` 函数。**OLAP** 是 OnLine Analytical Processing 的简称，意思是对数据库数据进行 【实时分析处理】。
 
 窗口函数就是为了实现 OLAP 而添加的标准 SQL 功能。
 
@@ -26,7 +26,7 @@
 
 > 聚合函数根据使用语法的不同，可以在聚合函数和窗口函数之间进行转换。
 
-### 语法的基本使用方法——使用 RANK 函数
+### 语法的基本使用方法 —— 使用 RANK 函数
 
 ```sql
 SELECT product_name, product_type, sale_price,
@@ -39,9 +39,9 @@ SELECT product_name, product_type, sale_price,
 
 `ORDER BY` 能够指定排序的方式。`ORDER BY` 与 `SELECT` 语句末尾的 `ORDER BY` 一样，可以通过关键字 `ASC/DESC` 来指定升序和降序。省略该关键字时会默认按照 `ASC`，也就是升序进行排序。
 
-窗口函数兼具之前我们学过的 `GROUP BY` 子句的**分组功能**以及 `ORDER BY` 子句的**排序功能**。但是，`PARTITION BY` 子句并不具备 `GROUP BY` 子句的**汇总功能**。因此，使用 RANK 函数并不会减少原表中记录的行数。
+窗口函数兼具之前我们学过的 `GROUP BY` 子句的分组功能 以及 `ORDER BY` 子句的排序功能。但是，`PARTITION BY` 子句并不具备 `GROUP BY` 子句的汇总功能。因此，使用 RANK 函数并不会减少原表中记录的行数。
 
-通过 `PARTITION BY` 分组后的记录集合称为**窗口**。此处的窗口并非“窗户”的意思，而是代表范围。这也是“窗口函数”名称的由来。
+通过 `PARTITION BY` 分组后的记录集合称为 **窗口**。此处的窗口并非“窗户”的意思，而是代表范围。这也是“窗口函数”名称的由来。
 
 > 从词语意思的角度考虑，可能“组”比“窗口”更合适一些，但是在 SQL 中，“组”更多的是用来特指使用 `GROUP BY` 分割后的记录集合，因此，为了避免混淆，使用 `PARTITION BY` 时称为窗口。
 
@@ -62,16 +62,13 @@ SELECT product_name, product_type, sale_price,
 ### 专用窗口函数的种类
 
 - **RANK 函数**
-
-计算排序时，如果存在相同位次的记录，则会跳过之后的位次。
-
+  - 计算排序时，如果存在相同位次的记录，则会跳过之后的位次。
+>
 - **DENSE_RANK 函数**
-
-同样是计算排序，即使存在相同位次的记录，也不会跳过之后的位次。
-
+  - 同样是计算排序，即使存在相同位次的记录，也不会跳过之后的位次。
+>
 - **ROW_NUMBER 函数**
-
-赋予唯一的连续位次。
+  - 赋予唯一的连续位次。
 
 ```sql
 SELECT product_name, product_type, sale_price,
@@ -93,7 +90,7 @@ SELECT product_name, product_type, sale_price,
 */
 ```
 
-由于专用窗口函数无需参数，因此通常括号中都是空的。
+> 由于专用窗口函数无需参数，因此通常括号中都是空的。
 
 ### 窗口函数的适用范围
 
@@ -117,7 +114,7 @@ SELECT product_id, product_name, sale_price,
   FROM Product;
 ```
 
-在按照时间序列的顺序，计算各个时间的销售额总额等的时候，通常都会使用这种称为**累计**的统计方法。
+在按照时间序列的顺序，计算各个时间的销售额总额等的时候，通常都会使用这种称为 **累计** 的统计方法。
 
 ```sql
 SELECT product_id, product_name, sale_price,
@@ -129,7 +126,7 @@ SELECT product_id, product_name, sale_price,
 
 ### 计算移动平均
 
-窗口函数就是将表以窗口为单位进行分割，并在其中进行排序的函数。其实其中还包含在窗口中指定更加详细的汇总范围的备选功能，该备选功能中的汇总范围称为**框架**。
+窗口函数就是将表以窗口为单位进行分割，并在其中进行排序的函数。其实其中还包含在窗口中指定更加详细的汇总范围的备选功能，该备选功能中的汇总范围称为 **框架**。
 
 ```sql
 SELECT product_id, product_name, sale_price,
@@ -139,11 +136,11 @@ SELECT product_id, product_name, sale_price,
   FROM Product;
 ```
 
-这里使用了 `ROWS`（“行”）和 `PRECEDING`（“之前”）两个关键字，将框架指定为“截止到之前 `~` 行”，因此“`ROWS 2 PRECEDING`”就是将框架指定为“截止到之前 2 行”，也就是将作为汇总对象的记录限定为如下的“最靠近的 3 行”。
+这里使用了 `ROWS`（“行”）和 `PRECEDING`（“之前”）两个关键字，将框架指定为 “截止到之前 `~` 行”，因此 “`ROWS 2 PRECEDING`” 就是将框架指定为 “截止到之前 2 行”，也就是将作为汇总对象的记录限定为如下的“最靠近的 3 行”。
 
 也就是说，由于框架是根据当前记录来确定的，因此和固定的窗口不同，其范围会随着当前记录的变化而变化。
 
-如果将条件中的数字变为“ROWS 5 PRECEDING”，就是“截止到之前 5 行”（最靠近的 6 行）的意思。这样的统计方法称为**移动平均**（moving average）。由于这种方法在希望实时把握“最近状态”时非常方便，因此常常会应用在对股市趋势的实时跟踪当中。
+如果将条件中的数字变为“ROWS 5 PRECEDING”，就是“截止到之前 5 行”（最靠近的 6 行）的意思。这样的统计方法称为 **移动平均**（moving average）。由于这种方法在希望实时把握“最近状态”时非常方便，因此常常会应用在对股市趋势的实时跟踪当中。
 
 使用关键字 `FOLLOWING`（“之后”）替换 `PRECEDING`，就可以指定“截止到之后`~` 行”作为框架了。如果希望将当前记录的前后行作为汇总对象时，同时使用 `PRECEDING`（“之前”）和 `FOLLOWING`（“之后”）关键字来实现。
 
@@ -168,8 +165,6 @@ ORDER BY ranking;
 
 > 将聚合函数作为窗口函数使用时，会以当前记录为基准来决定汇总对象的记录。
 
-## GROUPING 运算符
-
 ### 同时计算出合计值
 
 ```sql
@@ -193,17 +188,17 @@ SELECT product_type, SUM(sale_price)
 GROUP BY product_type;
 ```
 
-### ROLLUP
+## GROUPING 运算符
 
 标准 SQL 引入了 `GROUPING` 运算符，使用该运算符就能通过非常简单的 SQL 得到汇总单位不同的汇总结果了。
 
 `GROUPING` 运算符包含以下 3 种：
 
-ROLLUP
-CUBE
-GROUPING SETS
+- `ROLLUP`
+- `CUBE`
+- `GROUPING SETS`
 
-- **ROLLUP**
+### ROLLUP
 
 从语法上来说，就是将 `GROUP BY` 子句中的聚合键清单像 `ROLLUP(< 列 1>,< 列 2>,...)` 这样使用。该运算符的作用，一言以蔽之，就是“一次计算出不同聚合键组合的结果”。
 
