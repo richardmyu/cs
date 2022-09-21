@@ -4,8 +4,8 @@
 
 | A        | B   |
 | -------- | --- |
-| :smile:  |
-| :smiley: |
-| :wink:   |
+| :smile:  | :smile:  |
+| :smiley: | :smiley:  |
+| :wink:   | :wink:  |
 
 [emoji-cheat-sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)
