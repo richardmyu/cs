@@ -11,8 +11,8 @@ ll_env
 #######################
 # https://github.com/github/gitignore/blob/master/Python.gitignore
 __pycache__/
-python/**/*.txt
-python/**/*.json
+# python/**/*.txt
+# python/**/*.json
 
 
 
