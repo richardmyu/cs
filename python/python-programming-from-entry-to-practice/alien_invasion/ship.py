@@ -26,6 +26,9 @@ class Ship():
         self.moving_right = False
         self.moving_left = False
 
+    def center_ship(self):
+        self.center = self.screen_rect.centerx
+
     def update(self):
         '''根据移动标志调整飞船的位置'''
         # 更新飞船的 conter，而不是 rect
