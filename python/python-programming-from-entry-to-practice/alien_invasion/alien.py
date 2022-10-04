@@ -6,10 +6,10 @@ from pygame.sprite import Sprite
 
 class Alien(Sprite):
 
-    def __init__(self, ai_sitteings, screen):
+    def __init__(self, ai_sittings, screen):
         super(Alien, self).__init__()
         self.screen = screen
-        self.ai_settings = ai_sitteings
+        self.ai_settings = ai_sittings
 
         self.image = pygame.image.load('images/alien.bmp')
         self.rect = self.image.get_rect()

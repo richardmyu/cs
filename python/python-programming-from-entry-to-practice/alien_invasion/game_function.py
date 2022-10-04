@@ -119,6 +119,13 @@ def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
     check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets)
 
 
+def get_number_aliens_x(ai_settings, alien_width):
+    """Determine the number of aliens that fit in a row."""
+    available_space_x = ai_settings.screen_width - 2 * alien_width
+    number_aliens_x = int(available_space_x / (2 * alien_width))
+    return number_aliens_x
+
+
 def get_number_rows(ai_settings, ship_height, alien_height):
     available_space_y = (ai_settings.screen_height - (3 * alien_height) -
                          ship_height)
@@ -127,7 +134,7 @@ def get_number_rows(ai_settings, ship_height, alien_height):
 
 
 def create_alien(ai_settings, screen, aliens, alien_number, row_number):
-    alien = Alien(ai_sitteings, screen)
+    alien = Alien(ai_settings, screen)
     alien_width = alien.rect.width
     alien.x = alien_width + 2 * alien_width * alien_number
     alien.rect.x = alien.x
@@ -136,7 +143,7 @@ def create_alien(ai_settings, screen, aliens, alien_number, row_number):
 
 
 def create_fleet(ai_settings, screen, ship, aliens):
-    alien = Alien(ai_sitteings, screen)
+    alien = Alien(ai_settings, screen)
     number_aliens_x = get_number_aliens_x(ai_settings, alien.rect.width)
     number_rows = get_number_rows(ai_settings, ship.rect.height,
                                   alien.rect.height)
