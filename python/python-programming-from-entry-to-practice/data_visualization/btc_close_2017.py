@@ -4,11 +4,10 @@ from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 from urllib.request import urlopen
 import json
-# import requests
+import requests
 import pygal
 
 # json_url = 'https://raw.githubusercontent.com/muxuezi/btc/master/btc_close_2017.json'
-# github 上的 json 请求不到
 
 # response = urlopen(json_url)
 
