@@ -13,6 +13,7 @@ ll_env
 __pycache__/
 # python/**/*.txt
 # python/**/*.json
+# python/**/*.svg
 
 
 
