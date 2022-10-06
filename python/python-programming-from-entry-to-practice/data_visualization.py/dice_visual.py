@@ -5,7 +5,7 @@ import pygal
 from die import Die
 
 die_1 = Die()
-die_2 = Die(10)
+die_2 = Die()
 
 results = []
 for roll_num in range(50000):
@@ -22,13 +22,11 @@ for value in range(2, max_result + 1):
 
 # 结果可视化
 hist = pygal.Bar()
-hist.title = 'Results of rolling two D6 dice 10000 times.'
-hist.x_labels = [
-    '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15',
-    '16'
-]
+hist.title = 'Results of rolling a D6 and a D10 50000 times.'
+# hist.x_labels = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+hist.x_labels = [str(val) for val in range(2, 13)]
 hist.x_title = 'Result'
 hist.y_title = 'Frequency of Result'
 
-hist.add('D6 + D6', frequencies)
-hist.render_to_file(f'different_die_visual_{time.time()}.svg')
+hist.add('D6 + D10', frequencies)
+hist.render_to_file(f'dice_visual_{time.time()}.svg')
