@@ -93,7 +93,7 @@ if __name__ == '__main__':
     close_line_week()
     close_line_weekday()
 
-    with open('收盘价Dashboard.html', 'w', encoding='utf8') as html_file:
+    with open('收盘价 Dashboard.html', 'w', encoding='utf8') as html_file:
         html_file.write(
             '<html><head><title>收盘价 Dashboard</title><meta charset="utf-8"></head><body>\n'
         )
