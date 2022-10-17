@@ -22,13 +22,16 @@ SHOW DATABESES; -- MySQL
 -- MySQL - 1
 SELECT DATABASE();
 
--- MySQL - 2 查看输出第一行：Tables_in_xxx
+-- MySQL - 2
+-- 查看输出第一行：Tables_in_xxx
 SHOW TABLES;
 
--- MySQL - 3 查看：Curren database
+-- MySQL - 3
+-- 查看：Curren database
 STATUS;
 
-SELECT CURRENT_DATABASE();  -- PostgreSQL
+-- PostgreSQL
+SELECT CURRENT_DATABASE();
 
 
 -- 创建
@@ -50,6 +53,7 @@ DROP DATABASE dbname;
 -- 查看
 \dt  -- PostgreSQL
 \dt+  -- PostgreSQL 更多信息
+
 SHOW TABLES;  -- MySQL
 SHOW FULL TABLES;  -- MySQL
 
@@ -64,4 +68,7 @@ CREATE TABLE table_name (
 
 -- 删除
 DROP TABLE table_name;
+
+-- 删除全部表 PostgreSQL
+DROP SCHEMA public CASCADE;
 ```
