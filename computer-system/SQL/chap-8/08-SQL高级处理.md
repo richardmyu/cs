@@ -1,8 +1,10 @@
 # SQL 高级处理
 
-## 窗口函数
+[TOC]
 
-### 什么是窗口函数
+## 1.窗口函数
+
+### 1.1.什么是窗口函数
 
 窗口函数也称为 `OLAP` 函数。**OLAP** 是 OnLine Analytical Processing 的简称，意思是对数据库数据进行 【实时分析处理】。
 
@@ -10,7 +12,7 @@
 
 > 目前 MySQL 还不支持窗口函数。
 
-### 窗口函数的语法
+### 1.2.窗口函数的语法
 
 ```sql
 <窗口函数> OVER ([PARTITION BY <列清单>]
@@ -26,7 +28,7 @@
 
 > 聚合函数根据使用语法的不同，可以在聚合函数和窗口函数之间进行转换。
 
-### 语法的基本使用方法 —— 使用 RANK 函数
+### 1.3.语法的基本使用方法 —— 使用 RANK 函数
 
 ```sql
 SELECT product_name, product_type, sale_price,
@@ -47,7 +49,7 @@ SELECT product_name, product_type, sale_price,
 
 此外，各个窗口在定义上绝对不会包含共通的部分。这与通过 `GROUP BY` 子句分割后的集合具有相同的特征。
 
-### 无需指定 PARTITION BY
+### 1.4.无需指定 PARTITION BY
 
 使用窗口函数时起到关键作用的是 `PARTITION BY` 和 `GROUP BY`。其中，`PARTITION BY` 并不是必需的，即使不指定也可以正常使用窗口函数。
 
@@ -59,7 +61,7 @@ SELECT product_name, product_type, sale_price,
 
 当希望先将表中的数据分为多个部分（窗口），再使用窗口函数时，可以使用 `PARTITION BY` 选项。
 
-### 专用窗口函数的种类
+### 1.5.专用窗口函数的种类
 
 - **RANK 函数**
   - 计算排序时，如果存在相同位次的记录，则会跳过之后的位次。
@@ -92,7 +94,7 @@ SELECT product_name, product_type, sale_price,
 
 > 由于专用窗口函数无需参数，因此通常括号中都是空的。
 
-### 窗口函数的适用范围
+### 1.6.窗口函数的适用范围
 
 函数大部分都没有使用位置的限制，最多也就是在 `WHERE` 子句中使用聚合函数时会有些注意事项。但是，使用窗口函数的位置却有非常大的限制。更确切地说，窗口函数只能书写在一个特定的位置。
 
@@ -104,7 +106,7 @@ SELECT product_name, product_type, sale_price,
 
 正是由于这样的原因，在 `SELECT` 子句之外“使用窗口函数是没有意义的”，所以在语法上才会有这样的限制。
 
-### 作为窗口函数使用的聚合函数
+### 1.7.作为窗口函数使用的聚合函数
 
 所有的聚合函数都能用作窗口函数，其语法和专用窗口函数完全相同。
 
@@ -124,7 +126,7 @@ SELECT product_id, product_name, sale_price,
 
 以“自身记录（当前记录）”作为基准进行统计，就是将聚合函数当作窗口函数使用时的最大特征。
 
-### 计算移动平均
+### 1.8.计算移动平均
 
 窗口函数就是将表以窗口为单位进行分割，并在其中进行排序的函数。其实其中还包含在窗口中指定更加详细的汇总范围的备选功能，该备选功能中的汇总范围称为 **框架**。
 
@@ -151,7 +153,7 @@ SELECT product_id,product_name,sale_price,
   FROM Product;
 ```
 
-### 两个 ORDER BY
+### 1.9.两个 ORDER BY
 
 使用窗口函数时与结果形式相关的一个注意事项，那就是记录的排列顺序。`OVER` 子句中的 `ORDER BY` 只是用来决定窗口函数按照什么样的顺序进行计算的，对结果的排列顺序并没有影响。
 
@@ -165,7 +167,7 @@ ORDER BY ranking;
 
 > 将聚合函数作为窗口函数使用时，会以当前记录为基准来决定汇总对象的记录。
 
-### 同时计算出合计值
+### 1.10.同时计算出合计值
 
 ```sql
 SELECT product_type, SUM(sale_price)
@@ -188,7 +190,7 @@ SELECT product_type, SUM(sale_price)
 GROUP BY product_type;
 ```
 
-## GROUPING 运算符
+## 2.GROUPING 运算符
 
 标准 SQL 引入了 `GROUPING` 运算符，使用该运算符就能通过非常简单的 SQL 得到汇总单位不同的汇总结果了。
 
@@ -198,7 +200,7 @@ GROUP BY product_type;
 - `CUBE`
 - `GROUPING SETS`
 
-### ROLLUP
+### 2.1.ROLLUP
 
 从语法上来说，就是将 `GROUP BY` 子句中的聚合键清单像 `ROLLUP(< 列 1>,< 列 2>,...)` 这样使用。该运算符的作用，一言以蔽之，就是“一次计算出不同聚合键组合的结果”。
 
@@ -217,7 +219,7 @@ GROUP BY ROLLUP(product_type);
 
 `GROUP BY ()` 表示没有聚合键，也就相当于没有 `GROUP BY` 子句（这时会得到全部数据的合计行的记录），该合计行记录称为**超级分组记录**（super group row）。超级分组记录的 `product_type` 列的键值（对 DBMS 来说）并不明确，因此会默认使用 `NULL`。
 
-### GROUPING
+### 2.2.GROUPING
 
 `ROLLUP` 无法区分本身没有数据 `NULL` 和超级分组记录导致的 `NULL` 两种情况，为了避免混淆，SQL 提供了一个用来判断超级分组记录的 `NULL` 的特定函数 —— `GROUPING` 函数。该函数在其参数列的值为超级分组记录所产生的 `NULL` 时返回 1，其他情况返回 0。
 
@@ -240,7 +242,7 @@ SELECT CASE WHEN GROUPING(product_type) = 1
  GROUP BY ROLLUP(product_type, regist_date);
 ```
 
-### CUBE
+### 2.3.CUBE
 
 `CUBE` 的语法和 `ROLLUP` 相同，只需要将 `ROLLUP` 替换为 `CUBE` 就可以了。
 
@@ -267,7 +269,7 @@ GROUP BY (regist_date) -- 添加的组合
 GROUP BY (product_type, regist_date)
 ```
 
-### GROUPING SETS
+### 2.4.GROUPING SETS
 
 与 `ROLLUP` 或者 `CUBE` 能够得到规定的结果相对，`GROUPING SETS` 用于从中取出个别条件对应的不固定的结果。然而，由于期望获得不固定结果的情况少之又少，因此与 `ROLLUP` 或者 `CUBE` 比起来，使用 `GROUPING SETS` 的机会也就很少了。
 
