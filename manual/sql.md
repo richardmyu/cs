@@ -3,61 +3,57 @@
 ## 查看/创建/删除数据库
 
 ```sql
--- 查看
--- PostgreSQL - 1
-\l
+/*****************
+** 查看【数据库】 **
+*****************/
 
--- PostgreSQL - 2 更多信息
-\l+
--- or
-\list+
-
--- PostgreSQL - 3 仅显示数据库的名称
-SELECT datname FROM pg_database;
+\l;  -- PostgreSQL - 1
+\l+;  -- PostgreSQL - 2 更多信息
+\list+;  -- or
+SELECT datname FROM pg_database;  -- PostgreSQL - 3 仅显示数据库的名称
 
 SHOW DATABESES; -- MySQL
 
 
--- 查看当前
--- MySQL - 1
-SELECT DATABASE();
+/********************
+** 查看当前【数据库】 **
+*********************/
+SELECT DATABASE();  -- MySQL - 1
+STATUS;  -- MySQL - 2 查看：Curren database
+SELECT CURRENT_DATABASE();  -- PostgreSQL
 
--- MySQL - 2
--- 查看输出第一行：Tables_in_xxx
-SHOW TABLES;
-
--- MySQL - 3
--- 查看：Curren database
-STATUS;
-
--- PostgreSQL
-SELECT CURRENT_DATABASE();
-
-
--- 创建
+/*****************
+** 创建【数据库】 **
+*****************/
 CREATE DATABASE dbname;
 
-
--- 使用/切换
-\c dbname  -- PostgreSQL
+/*********************
+** 使用/切换【数据库】 **
+*********************/
+\c dbname;  -- PostgreSQL
 use dbname;  -- MySQL
 
-
--- 删除
+/*****************
+** 删除【数据库】 **
+*****************/
 DROP DATABASE dbname;
 ```
 
 ## 查看/创建/删除表
 
 ```sql
--- 查看
-\dt  -- PostgreSQL
-\dt+  -- PostgreSQL 更多信息
+/**************
+** 查看【表】 **
+**************/
+\dt;  -- PostgreSQL
+\dt+;  -- PostgreSQL 更多信息
 
 SHOW TABLES;  -- MySQL
 SHOW FULL TABLES;  -- MySQL
 
--- 创建
+/**************
+** 创建【表】 **
+**************/
 CREATE TABLE table_name (
   -- 非空约束
   column_name date_type [NOT NULL],
@@ -66,9 +62,8 @@ CREATE TABLE table_name (
   PRIMARY KEY (一列或多列)
   );
 
--- 删除
+/**************
+** 删除【表】 **
+**************/
 DROP TABLE table_name;
-
--- 删除全部表 PostgreSQL
-DROP SCHEMA public CASCADE;
 ```
