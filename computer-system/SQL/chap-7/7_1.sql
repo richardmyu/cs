@@ -1,13 +1,20 @@
-SELECT *
-  FROM Product
+SELECT
+  *
+FROM
+  Product
 UNION
-SELECT *
-  FROM Product
+SELECT
+  *
+FROM
+  Product
 INTERSECT
-SELECT *
-  FROM Product
-ORDER BY product_id;
+SELECT
+  *
+FROM
+  Product
+ORDER BY
+  product_id;
 
 /*
-Product
-*/
+ Product
+ */
