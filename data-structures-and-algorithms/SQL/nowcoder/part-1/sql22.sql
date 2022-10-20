@@ -1,5 +1,5 @@
 -- 题目 统计每个学校的答过题的用户的平均答题数
--- 关键字 多表查询 子查询
+-- 关键字 多表查询 链接查询
 SELECT
   university,
   ROUND(AVG(result_cnt), 4) AS avg_answer_cnt
