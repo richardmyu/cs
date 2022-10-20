@@ -1,4 +1,5 @@
 -- 题目 分组计算练习题
+-- 关键字 分组查询
 SELECT
   gender,
   university,

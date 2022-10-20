@@ -1,4 +1,5 @@
 -- 题目 操作符混合运用
+-- 关键字 高级操作符
 SELECT
   device_id,
   gender,

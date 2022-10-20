@@ -1,4 +1,5 @@
 -- 题目 Where  in 和 Not in
+-- 关键字 高级操作符
 SELECT
   device_id,
   gender,

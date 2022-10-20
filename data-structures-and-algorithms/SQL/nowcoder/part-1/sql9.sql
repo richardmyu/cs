@@ -1,4 +1,5 @@
 -- 题目 查找除复旦大学的用户信息
+-- 关键字 基础操作符
 SELECT
   device_id,
   gender,
