@@ -17,6 +17,7 @@
 窗口函数就是为了实现 OLAP 而添加的标准 SQL 功能。
 
 > 目前 MySQL 还不支持窗口函数。
+> 补充：从 8.0 版本，支持窗口函数。
 
 ### 1.2.窗口函数的语法
 
@@ -35,20 +36,31 @@
 
 > 聚合函数根据使用语法的不同，可以在聚合函数和窗口函数之间进行转换。
 
-### 1.3.语法的基本使用方法 —— 使用 RANK 函数
+### 1.3.语法的基本使用方法 —— 使用 `RANK` 函数
+
+正如其名称所示，`RANK` 是用来计算记录排序的函数。
 
 ```sql
-SELECT product_name, product_type, sale_price,
-       RANK () OVER (PARTITION BY product_type
-                     ORDER BY sale_price) AS ranking
-  FROM Product;
+SELECT
+  product_name,
+  product_type,
+  sale_price,
+  RANK () OVER (
+    PARTITION BY product_type
+    ORDER BY
+      sale_price
+  ) AS ranking
+FROM
+  Product;
 ```
 
-`PARTITION BY` 能够设定排序的对象范围。
+`PARTITION BY` 能够设定排序的对象范围。`ORDER BY` 能够指定按照哪一列、何种顺序进行排序。
 
-`ORDER BY` 能够指定排序的方式。`ORDER BY` 与 `SELECT` 语句末尾的 `ORDER BY` 一样，可以通过关键字 `ASC/DESC` 来指定升序和降序。省略该关键字时会默认按照 `ASC`，也就是升序进行排序。
+> `ORDER BY` 与 `SELECT` 语句末尾的 `ORDER BY` 一样，可以通过关键字 `ASC/DESC` 来指定升序和降序。省略该关键字时会默认按照 `ASC`，也就是升序进行排序。
 
-窗口函数兼具之前我们学过的 `GROUP BY` 子句的分组功能 以及 `ORDER BY` 子句的排序功能。但是，`PARTITION BY` 子句并不具备 `GROUP BY` 子句的汇总功能。因此，使用 `RANK` 函数并不会减少原表中记录的行数。
+窗口函数兼具之前我们学过的 `GROUP BY` 子句的分组功能以及 `ORDER BY` 子句的排序功能。但是，`PARTITION BY` 子句并不具备 `GROUP BY` 子句的汇总功能。因此，使用 `RANK` 函数并不会减少原表中记录的行数。
+
+> **重点**：`GROUP BY` 子句有汇总功能（汇总意味着，数据会缩减为一条呈现），`PARTITION BY` 子句并没有。
 
 通过 `PARTITION BY` 分组后的记录集合称为 **窗口**。此处的窗口并非“窗户”的意思，而是代表范围。这也是“窗口函数”名称的由来。
 
@@ -56,14 +68,21 @@ SELECT product_name, product_type, sale_price,
 
 此外，各个窗口在定义上绝对不会包含共通的部分。这与通过 `GROUP BY` 子句分割后的集合具有相同的特征。
 
-### 1.4.无需指定 PARTITION BY
+### 1.4.无需指定 `PARTITION BY`
 
-使用窗口函数时起到关键作用的是 `PARTITION BY` 和 `GROUP BY`。其中，`PARTITION BY` 并不是必需的，即使不指定也可以正常使用窗口函数。
+使用窗口函数时起到关键作用的是 `PARTITION BY` 和 `GROUP BY`。其中，`PARTITION BY` 并不是必需的，这和使用没有 `GROUP BY` 的聚合函数时的效果一样，也就是将整个表作为一个大的窗口来使用。
 
 ```sql
-SELECT product_name, product_type, sale_price,
-       RANK () OVER (ORDER BY sale_price) AS ranking
-  FROM Product;
+SELECT
+  product_name,
+  product_type,
+  sale_price,
+  RANK () OVER (
+    ORDER BY
+      sale_price
+  ) AS ranking
+FROM
+  Product;
 ```
 
 当希望先将表中的数据分为多个部分（窗口），再使用窗口函数时，可以使用 `PARTITION BY` 选项。
@@ -80,26 +99,27 @@ SELECT product_name, product_type, sale_price,
   - 赋予唯一的连续位次。
 
 ```sql
-SELECT product_name, product_type, sale_price,
-       RANK () OVER (ORDER BY sale_price) AS ranking,
-       DENSE_RANK () OVER (ORDER BY sale_price) AS dense_ranking,
-       ROW_NUMBER () OVER (ORDER BY sale_price) AS row_num
-  FROM Product;
-/*
- product_name | product_type | sale_price | ranking | dense_ranking | row_num
---------------+--------------+------------+---------+---------------+---------
- 圆珠笔       | 办公用品     |        100 |       1 |             1 |       1
- 打孔器       | 办公用品     |        500 |       2 |             2 |       2
- 叉子         | 厨房用具     |        500 |       2 |             2 |       3
- 擦菜板       | 厨房用具     |        880 |       4 |             3 |       4
- T 恤衫        | 衣服         |       1000 |       5 |             4 |       5
- 菜刀         | 厨房用具     |       3000 |       6 |             5 |       6
- 运动 T 恤      | 衣服         |       4000 |       7 |             6 |       7
- 高压锅       | 厨房用具     |       6800 |       8 |             7 |       8
-*/
+SELECT
+  product_name,
+  product_type,
+  sale_price,
+  RANK () OVER (
+    ORDER BY
+      sale_price
+  ) AS ranking,
+  DENSE_RANK () OVER (
+    ORDER BY
+      sale_price
+  ) AS dense_ranking,
+  ROW_NUMBER () OVER (
+    ORDER BY
+      sale_price
+  ) AS row_num
+FROM
+  Product;
 ```
 
-> 由于专用窗口函数无需参数，因此通常括号中都是空的。
+> 由于专用窗口函数无需参数，因此通常括号中都是空的。这也是专用窗口函数通常的使用方式，这一点与作为窗口函数使用的聚合函数有很大的不同。
 
 ### 1.6.窗口函数的适用范围
 
@@ -115,20 +135,34 @@ SELECT product_name, product_type, sale_price,
 
 ### 1.7.作为窗口函数使用的聚合函数
 
-所有的聚合函数都能用作窗口函数，其语法和专用窗口函数完全相同。
+所有的聚合函数都能用作窗口函数，其语法和专用窗口函数完全相同，但需要在括号内指定作为汇总对象的列。
 
 ```sql
-SELECT product_id, product_name, sale_price,
-       SUM (sale_price) OVER (ORDER BY product_id) AS current_sum
-  FROM Product;
+SELECT
+  product_id,
+  product_name,
+  sale_price,
+  SUM (sale_price) OVER (
+    ORDER BY
+      product_id
+  ) AS current_sum
+FROM
+  Product;
 ```
 
 在按照时间序列的顺序，计算各个时间的销售额总额等的时候，通常都会使用这种称为 **累计** 的统计方法。
 
 ```sql
-SELECT product_id, product_name, sale_price,
-       AVG (sale_price) OVER (ORDER BY product_id) AS current_avg
-  FROM Product;
+SELECT
+  product_id,
+  product_name,
+  sale_price,
+  AVG (sale_price) OVER (
+    ORDER BY
+      product_id
+  ) AS current_avg
+FROM
+  Product;
 ```
 
 以“自身记录（当前记录）”作为基准进行统计，就是将聚合函数当作窗口函数使用时的最大特征。
@@ -138,11 +172,17 @@ SELECT product_id, product_name, sale_price,
 窗口函数就是将表以窗口为单位进行分割，并在其中进行排序的函数。其实其中还包含在窗口中指定更加详细的汇总范围的备选功能，该备选功能中的汇总范围称为 **框架**。
 
 ```sql
-SELECT product_id, product_name, sale_price,
-       -- 需要在 ORDER BY 子句之后使用指定范围的关键字
-       AVG (sale_price) OVER (ORDER BY product_id
-                              ROWS 2 PRECEDING) AS moving_avg
-  FROM Product;
+SELECT
+  product_id,
+  product_name,
+  sale_price,
+  -- 需要在 ORDER BY 子句之后使用指定范围的关键字
+  AVG (sale_price) OVER (
+    ORDER BY
+      product_id ROWS 2 PRECEDING
+  ) AS moving_avg
+FROM
+  Product;
 ```
 
 这里使用了 `ROWS`（“行”）和 `PRECEDING`（“之前”）两个关键字，将框架指定为 “截止到之前 `~` 行”，因此 “`ROWS 2 PRECEDING`” 就是将框架指定为 “截止到之前 2 行”，也就是将作为汇总对象的记录限定为如下的“最靠近的 3 行”。
