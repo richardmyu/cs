@@ -7,9 +7,9 @@
 ** 查看【数据库】 **
 *****************/
 
-\l;  -- PostgreSQL - 1
-\l+;  -- PostgreSQL - 2 更多信息
-\list+;  -- or
+\l  -- PostgreSQL - 1
+\l+  -- PostgreSQL - 2 更多信息
+\list+  -- or
 SELECT datname FROM pg_database;  -- PostgreSQL - 3 仅显示数据库的名称
 
 SHOW DATABESES; -- MySQL
@@ -45,8 +45,8 @@ DROP DATABASE dbname;
 /**************
 ** 查看【表】 **
 **************/
-\dt;  -- PostgreSQL
-\dt+;  -- PostgreSQL 更多信息
+\dt  -- PostgreSQL
+\dt+  -- PostgreSQL 更多信息
 
 SHOW TABLES;  -- MySQL
 SHOW FULL TABLES;  -- MySQL
