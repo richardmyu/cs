@@ -206,6 +206,8 @@ ALTER TABLE <表名> DROP COLUMN <列名>;
 ```sql
 -- pg
 BEGIN TRANSACTION;
+-- mysql
+START TRANSACTION;
 
 -- mysql
 -- START TRANSACTION;
