@@ -1,5 +1,6 @@
--- 题目 查找除复旦大学的用户信息
+-- 题目 用where过滤空值练习
 -- 关键字 基础操作符
+-- IS NOT NULL
 SELECT
   device_id,
   gender,
@@ -8,4 +9,4 @@ SELECT
 FROM
   user_profile
 WHERE
-  NOT university = "复旦大学";
+  age IS NOT NULL;

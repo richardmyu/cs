@@ -1,5 +1,6 @@
--- 题目 Where  in 和 Not in
+-- 题目 高级操作符练习(2)
 -- 关键字 高级操作符
+-- OR
 SELECT
   device_id,
   gender,
@@ -9,4 +10,5 @@ SELECT
 FROM
   user_profile
 WHERE
-  university IN ("北京大学", "复旦大学", "山东大学");
+  university = "北京大学"
+  OR gpa > 3.7;

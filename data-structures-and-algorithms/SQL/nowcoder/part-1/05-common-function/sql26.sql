@@ -1,7 +1,7 @@
 -- 题目 计算25岁以上和以下的用户数量
 -- 关键字 必会的常用函数 条件函数
 -- 重点：
--- case and bewteen
+-- CASE and BETWEEN
 SELECT
   CASE
     WHEN age BETWEEN 0

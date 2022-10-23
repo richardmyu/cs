@@ -1,7 +1,8 @@
--- 题目 将查询后的列重新命名
+-- 题目 查询结果限制返回行数
 -- 关键字 简单处理查询结果
+-- LIMIT
 SELECT
-  device_id AS user_info_example
+  device_id
 FROM
   user_profile
 LIMIT
