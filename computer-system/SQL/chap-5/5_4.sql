@@ -1,3 +1,4 @@
+-- case 1
 SELECT
   product_id,
   product_name,
@@ -14,6 +15,7 @@ SELECT
 FROM
   Product AS P1;
 
+-- case 2
 CREATE VIEW AvgPriceByType AS
 SELECT
   product_id,
