@@ -27,9 +27,9 @@ CREATE TABLE Product (
   PRIMARY KEY (product_id)
 );
 
--- BEGIN TRANSACTION;
-START TRANSACTION;
+BEGIN TRANSACTION;
 
+-- START TRANSACTION;
 INSERT INTO
   Product
 VALUES
@@ -69,6 +69,48 @@ INSERT INTO
   Product
 VALUES
   ('0008', '圆珠笔', '办公用品', 100, NULL, '2009-11-11');
+
+COMMIT;
+
+/*****************
+ *   Product2
+ ****************/
+CREATE TABLE Product2 (
+  product_id CHAR(4) NOT NULL,
+  product_name VARCHAR(100) NOT NULL,
+  product_type VARCHAR(32) NOT NULL,
+  sale_price INTEGER,
+  purchase_price INTEGER,
+  regist_date DATE,
+  PRIMARY KEY (product_id)
+);
+
+START TRANSACTION;
+
+INSERT INTO
+  Product2
+VALUES
+  ('0001', 'T恤衫', '衣服', 1000, 500, '2008-09-20');
+
+INSERT INTO
+  Product2
+VALUES
+  ('0002', '打孔器', '办公用品', 500, 320, '2009-09-11');
+
+INSERT INTO
+  Product2
+VALUES
+  ('0003', '运动T恤', '衣服', 4000, 2800, NULL);
+
+INSERT INTO
+  Product2
+VALUES
+  ('0009', '手套', '衣服', 800, 500, NULL);
+
+INSERT INTO
+  Product2
+VALUES
+  ('0010', '水壶', '厨房用具', 2000, 1700, '2009-09-20');
 
 COMMIT;
 
@@ -326,5 +368,199 @@ INSERT INTO
   ShopProduct (shop_id, shop_name, product_id, quantity)
 VALUES
   ('000D', '福冈', '0001', 100);
+
+COMMIT;
+
+/*****************
+ *   InventoryProduct
+ ****************/
+CREATE TABLE InventoryProduct (
+  inventory_id CHAR(4) NOT NULL,
+  product_id CHAR(4) NOT NULL,
+  inventory_quantity INTEGER NOT NULL,
+  PRIMARY KEY (inventory_id, product_id)
+);
+
+START TRANSACTION;
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P001', '0001', 0);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P001', '0002', 120);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P001', '0003', 200);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P001', '0004', 3);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P001', '0005', 0);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P001', '0006', 99);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P001', '0007', 999);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P001', '0008', 200);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P002', '0001', 10);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P002', '0002', 25);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P002', '0003', 34);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P002', '0004', 19);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P002', '0005', 99);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P002', '0006', 0);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P002', '0007', 0);
+
+INSERT INTO
+  InventoryProduct (inventory_id, product_id, inventory_quantity)
+VALUES
+  ('P002', '0008', 18);
+
+COMMIT;
+
+/*****************
+ *   Skills  EmpSkills
+ ****************/
+CREATE TABLE Skills (skill VARCHAR(32), PRIMARY KEY(skill));
+
+CREATE TABLE EmpSkills (
+  emp VARCHAR(32),
+  skill VARCHAR(32),
+  PRIMARY KEY(emp, skill)
+);
+
+START TRANSACTION;
+
+INSERT INTO
+  Skills
+VALUES
+  ('Oracle');
+
+INSERT INTO
+  Skills
+VALUES
+  ('UNIX');
+
+INSERT INTO
+  Skills
+VALUES
+  ('Java');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('相田', 'Oracle');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('相田', 'UNIX');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('相田', 'Java');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('相田', 'C#');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('神崎', 'Oracle');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('神崎', 'UNIX');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('神崎', 'Java');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('平井', 'UNIX');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('平井', 'Oracle');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('平井', 'PHP');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('平井', 'Perl');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('平井', 'C++');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('若田部', 'Perl');
+
+INSERT INTO
+  EmpSkills
+VALUES
+  ('渡来', 'Oracle');
 
 COMMIT;
