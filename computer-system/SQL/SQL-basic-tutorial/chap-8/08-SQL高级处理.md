@@ -18,12 +18,10 @@
                          ORDER BY <排序用列清单>)
 ```
 
-其中重要的关键字是 `PARTITION BY` 和 `ORDER BY`，理解这两个关键字的作用是理解窗口函数的关键。
-
-窗口函数大体可以分为以下两种：
+其中重要的关键字是 `PARTITION BY` 和 `ORDER BY`，理解这两个关键字的作用是理解窗口函数的关键。窗口函数大体可以分为以下两种：
 
 1. 能够作为窗口函数的聚合函数（`SUM`、`AVG`、`COUNT`、`MAX`、`MIN`）；
->
+
 2. `RANK`、`DENSE_RANK`、`ROW_NUMBER` 等 OLAP 专用函数；
 
 聚合函数根据使用语法的不同，可以在聚合函数和窗口函数之间进行转换。
@@ -110,14 +108,17 @@ FROM
 
 ### 1.5.专用窗口函数的种类
 
-- **RANK 函数**
-  - 计算排序时，如果存在相同位次的记录，则会跳过之后的位次。
->
-- **DENSE_RANK 函数**
-  - 同样是计算排序，即使存在相同位次的记录，也不会跳过之后的位次。
->
-- **ROW_NUMBER 函数**
-  - 赋予唯一的连续位次。
+1. **RANK 函数**
+
+- 计算排序时，如果存在相同位次的记录，则会跳过之后的位次。
+
+2. **DENSE_RANK 函数**
+
+- 同样是计算排序，即使存在相同位次的记录，也不会跳过之后的位次。
+
+3. **ROW_NUMBER 函数**
+
+- 赋予唯一的连续位次。
 
 ```sql
 SELECT
@@ -370,7 +371,7 @@ ORDER BY
 
 ## 2.`GROUPING` 运算符
 
-> PostgreSQL 支持，但 MySQL  不支持 `GROUPING` 运算符，目前仅仅支持 `ROLLUP`。
+PostgreSQL 支持，但 MySQL  不支持 `GROUPING` 运算符，目前仅仅支持 `ROLLUP`。
 
 ### 2.0.同时计算出合计值
 
@@ -396,7 +397,7 @@ GROUP BY product_type;
 > 虽然也可以使用 `UNION` 来代替 `UNION ALL`，但由于两条 `SELECT` 语句的聚合键不同，一定不会出现重复行，因此可以使用 `UNION ALL`。`UNION ALL` 和 `UNION` 的不同之处在于它不会对结果进行排序，因此比 `UNION` 的性能更好。
 
 ```sql
-SELECT '合计' AS product_type, SUM(sale_price)
+SELECT "合计" AS product_type, SUM(sale_price)
   FROM Product
 UNION ALL
 SELECT product_type, SUM(sale_price)
@@ -494,6 +495,7 @@ FROM
   Product
 GROUP BY
   ROLLUP(product_type, regist_date);
+
 -- MySQL
 SELECT
   product_type,
@@ -545,6 +547,7 @@ FROM
   Product
 GROUP BY
   ROLLUP(product_type, regist_date);
+
 -- MySQL
 SELECT
   GROUPING(product_type) AS product_type,
@@ -603,6 +606,7 @@ GROUP BY
  办公用品      | 登记日期 合计 |       600
  厨房用具      | 登记日期 合计 |     11180
 */
+
 -- MySQL
 SELECT
   CASE

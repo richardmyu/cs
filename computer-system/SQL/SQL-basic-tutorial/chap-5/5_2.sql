@@ -12,7 +12,7 @@ WHERE
 INSERT INTO
   ViewPractice5_1
 VALUES
-  ('刀子', 300, '2009-11-02');
+  ("刀子", 300, '2009-11-02');
 
 /*
  错误:  null value in column "product_id" of relation "product" violates not-null constraint

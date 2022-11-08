@@ -10,26 +10,31 @@
 
 DBMS 主要通过数据的保存格式（数据库的种类）来进行分类。主要有：
 
-- **层次数据库**（Hierarchical Database, **HDB**）
-  - 把数据通过层次结构（树形结构）的方式表现出来。
->
-- **关系数据库**（Relational Database, **RDB**）
-  - 采用由行和列组成的二维表来管理数据，同时，使用 SQL（Structured Query Language，结构化查询语言）对数据进行操作。
-  - 代表性的 RDBMS:
-    - Oracle Database: 甲骨文
-    - SQL Server: 微软
-    - DB2: IBM
-    - PostgreSQL: 开源
-    - MySQL: 开源
->
-- **面向对象数据库**（Object Oriented Database, **OODB**）
-  - 把数据以及对数据的操作集合起来以对象位单位进行管理。
->
-- **XML 数据库**（XML Database, **XMLDB**）
-  - XML 数据库可以对 XML 形式的大量数据进行高速处理。
->
-- **键值存储系统**（Key-Value Store, **KVS**）
-  - 单纯用来保存查询所使用的主键（Key）和值（Value）的组合的数据库。
+1. **层次数据库**（Hierarchical Database, **HDB**）
+
+- 把数据通过层次结构（树形结构）的方式表现出来。
+
+2. **关系数据库**（Relational Database, **RDB**）
+
+- 采用由行和列组成的二维表来管理数据，同时，使用 SQL（Structured Query Language，结构化查询语言）对数据进行操作。
+- 代表性的 RDBMS:
+  - Oracle Database: 甲骨文
+  - SQL Server: 微软
+  - DB2: IBM
+  - PostgreSQL: 开源
+  - MySQL: 开源
+
+3. **面向对象数据库**（Object Oriented Database, **OODB**）
+
+- 把数据以及对数据的操作集合起来以对象位单位进行管理。
+
+4. **XML 数据库**（XML Database, **XMLDB**）
+
+- XML 数据库可以对 XML 形式的大量数据进行高速处理。
+
+5. **键值存储系统**（Key-Value Store, **KVS**）
+
+- 单纯用来保存查询所使用的主键（Key）和值（Value）的组合的数据库。
 
 ## 2.数据库的结构
 
@@ -71,25 +76,28 @@ DBMS 主要通过数据的保存格式（数据库的种类）来进行分类。
 
 SQL 就是访问和处理关系数据库的计算机标准语言。SQL 用关键字、表名、列名等组合而成的一条语句（SQL 语句）来描述操作的内容。根据对 RDBMS 赋予的指令种类的不同，SQL 语句可以分为以下三类。
 
-- **DDL**（Data Definition Language, **数据定义语言**）
-  - 用来创建或者删除存储数据用的数据库以及数据库中的表等对象。DDL 包含以下几种指令：
-    - `CREATE`：创建数据库和表等对象
-    - `DROP`：删除数据库和表等对象
-    - `ALTER`：修改数据库和表等对象的结构
->
-- **DML**（Data Manipulation Language, **数据操纵语言**）
-  - 用来查询或者变更表中的记录。DML 包含以下几种指令：
-    - `SELECT`：查询表中的数据
-    - `INSERT`：向表中插入新数据
-    - `UPDATE`：更新表中的数据
-    - `DELETE`：删除表中的数据
->
-- **DCL**（Data Control Language, **数据控制语言**）
-  - 用来确认或者取消对数据库中的数据进行的变更。除此之外，还可以对 RDBMS 的用户是否有权限操作数据库中的对象（数据库表等）进行设定。DCL 包含以下几种指令：
-    - `COMMIT`：确认对数据库中的数据进行变更
-    - `ROLLBACK`：取消对数据库中的数据进行变更
-    - `GRANT`：赋予用户操作权限
-    - `REVOKE`：取消用户的操作权限
+1. **DDL**（Data Definition Language, **数据定义语言**）
+
+- 用来创建或者删除存储数据用的数据库以及数据库中的表等对象。DDL 包含以下几种指令：
+  - `CREATE`：创建数据库和表等对象
+  - `DROP`：删除数据库和表等对象
+  - `ALTER`：修改数据库和表等对象的结构
+
+2. **DML**（Data Manipulation Language, **数据操纵语言**）
+
+- 用来查询或者变更表中的记录。DML 包含以下几种指令：
+  - `SELECT`：查询表中的数据
+  - `INSERT`：向表中插入新数据
+  - `UPDATE`：更新表中的数据
+  - `DELETE`：删除表中的数据
+
+3. **DCL**（Data Control Language, **数据控制语言**）
+
+- 用来确认或者取消对数据库中的数据进行的变更。除此之外，还可以对 RDBMS 的用户是否有权限操作数据库中的对象（数据库表等）进行设定。DCL 包含以下几种指令：
+  - `COMMIT`：确认对数据库中的数据进行变更
+  - `ROLLBACK`：取消对数据库中的数据进行变更
+  - `GRANT`：赋予用户操作权限
+  - `REVOKE`：取消用户的操作权限
 
 > 实际使用的 SQL 语句当中有 90% 属于 DML。
 
