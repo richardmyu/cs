@@ -239,7 +239,7 @@ COMMIT;
 ALTER TABLE old_name RENAME TO new_name;
 
 -- mysql
-RENAME TABLE old_name to new_name;
+RENAME TABLE old_name TO new_name;
 ```
 
 > 各个数据库的语法都不尽相同，是因为标准 SQL 并没有 `RENAME`。
