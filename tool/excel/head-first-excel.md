@@ -81,7 +81,11 @@ $C1 ----> cost
 
 ## 6.日期和时间：保持准时
 
+### 6.1.`DATEVALUE`
 
+- `DATEVALUE("YEAR/MONTH/DAY")`
+  - `DATEVALUE("yy/mm/dd")`
+  - `DATEVALUE("yyyy/mm/dd")`
 
 ## 7.发掘函数：独立探索 Excel 的特性
 
