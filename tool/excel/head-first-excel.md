@@ -87,6 +87,28 @@ $C1 ----> cost
   - `DATEVALUE("yy/mm/dd")`
   - `DATEVALUE("yyyy/mm/dd")`
 
+### 6.2.`DATEDIF`
+
+计算两个日期的间隔时间；过时的、鲜有人知的、没有经过论证的，但非常使用的函数。
+
+```excel
+=DATEDIF(start date, end date, interval)
+```
+
+- `start date/end date`
+  - 带引号的文本字符串（例如 `"2001/1/30"`）
+  - 序列号（例如 `36921`，在商用 1900 日期系统时表示 2001 年 1 月 30 日）
+  - 其他公式或函数的结果（例如 `DATEVALUE("2001/1/30")`）
+- `interval`
+  - `'y'` 一段时期内的整年数
+  - `'m'` 一段时期内的整月数
+  - `'d'` 一段时期内的天数
+  - `'md'` 天数之差，忽略日期中的月份和年份（重要: 不推荐使用“MD”参数，因为存在相关已知限制。 ）
+  - `'ym'` 月份之差，忽略日期中的天和年份
+  - `'yd'`日期部分之差，忽略日期中的年份
+
+> [DATEDIF 函数](https://support.microsoft.com/zh-cn/office/datedif-%E5%87%BD%E6%95%B0-25dba1a4-2812-480b-84dd-8b32a451b35c)
+
 ## 7.发掘函数：独立探索 Excel 的特性
 
 ## 8.公式审核：让公式运行变得直观
