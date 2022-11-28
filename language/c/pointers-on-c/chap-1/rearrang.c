@@ -5,15 +5,51 @@
 ** 输入的第 1 行是一串列标号，串的最后以一个负数结尾
 ** 这些列标号成对出现，说明需要打印的输入行的列的范围
 ** 例如， 0 3 10 12 -1 表示第 0 列到第 3 列，第 10 列到第 12 列的内容将被打印
+** == 注释不能嵌套
 */
 
-#include <stdio.h>
+/*
+** 在 c 中“注释”代码
+** 注释代码而不删除，在其他语言中或许可行，但在 c 中不是好主意
+** 从逻辑上删除 c 代码，更好的办法是使用 #if 指令
+** 在 #if 和 #endif 之间的程序可以有效的从程序中去除
+*/
+#if 0
+    statements
+#endif
+
+/*
+** 预处理指令（preprocessor directives）
+** 因为它们是由预处理器（preprocessor）解释的
+** 预处理器读取源代码 --> 根据预处理指令对其修改 --> 将修改后的源代码递交编译器
+** 1.#include
+**  预处理器用名叫 stdio.h 的库函数头文件的内容替换 #include 指令语句
+** 2.#define
+**  将 MAX_COLS 定义为 20，这个名字出现在源文件任何地方，都会被替换为定义的值
+**  一般都大写，和其他语言符号常量的作用类似
+*/
+
+#include <stdio.h> /*  */
 #include <stdlib.h>
 #include <string.h>
 #define MAX_COLS 20    /* 所能处理的最大列号 */
 #define MAX_INPUT 1000 /* 每个输入行的最大长度 */
 
-int reda_column_numbers(int columns[], int max);
+/*
+** 函数原型（function prototype）
+** 告诉编译器这些以后将在源文件中定义的函数的特征
+** 当函数被调用时，编译器就能对它们进行准确性检查
+**   返回值类型 函数名 参数
+**   int read_column_numbers(int columns[], int max);
+**
+** 指针（pointer）
+** 在 rearrange 函数中，有四个参数，前两个参数都是指针
+** 指针指定一个存储于计算机内存中的值的地址
+** 第 2 和第 4 个参数被声明为 const，这表示函数将不会修改函数调用者所传递的这两个参数
+** 关键字 void 表示函数不返回任何值
+** 在其他语言中，不返回值的函数被称为 过程（procedure）
+*/
+int read_column_numbers(int columns[], int max);
 void rearrange(char *output, char const *input, int n_columns, int const columns[]);
 
 int main(void)
