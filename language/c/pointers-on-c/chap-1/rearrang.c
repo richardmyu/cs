@@ -52,6 +52,10 @@
 int read_column_numbers(int columns[], int max);
 void rearrange(char *output, char const *input, int n_columns, int const columns[]);
 
+/*
+** main 函数
+** 每个 C 程序都必须有一个 main 函数，因为它是程序执行的起点
+*/
 int main(void)
 {
   int n_columns;          /* 进行处理的列标号 */
@@ -61,6 +65,12 @@ int main(void)
 
   /*
   ** 读取该串列标号
+  ** 调用 reda_column_numbers 函数
+  ** 在 c 中，数组参数是以 引用（reference）形式进行传递的，也就是传址调用
+  ** 而标量和常量则是按 值（value）传递的
+  **
+  ** 所有传递给函数的参数都是按值传递的
+  ** 但是，但数组作为参数时就会产生按引用传递的效果
   */
   n_columns = reda_column_numbers(columns, MAX_COLS);
 
