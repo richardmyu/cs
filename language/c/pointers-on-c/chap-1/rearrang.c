@@ -29,7 +29,7 @@
 **  一般都大写，和其他语言符号常量的作用类似
 */
 
-#include <stdio.h> /*  */
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #define MAX_COLS 20    /* 所能处理的最大列号 */
@@ -65,20 +65,39 @@ int main(void)
 
   /*
   ** 读取该串列标号
-  ** 调用 reda_column_numbers 函数
+  ** 调用 read_column_numbers 函数
   ** 在 c 中，数组参数是以 引用（reference）形式进行传递的，也就是传址调用
   ** 而标量和常量则是按 值（value）传递的
   **
   ** 所有传递给函数的参数都是按值传递的
   ** 但是，但数组作为参数时就会产生按引用传递的效果
   */
-  n_columns = reda_column_numbers(columns, MAX_COLS);
+  n_columns = read_column_numbers(columns, MAX_COLS);
 
   /*
    ** 读取、处理和打印剩余的输入行
+   ** （注释如果不正确，那还不如没有！）
    */
   while (gets(input) != NULL)
   {
+    /*
+    ** c 不存在 string 数据类型
+    ** 字符串就是一串以 NUL 字节结尾的字符
+    ** NUL 是作为字符串终止符，而本身不被视为字符串的一部分
+    ** 字符串常量（string literal）
+    ** 源程序中被双引号括起来的一串字符
+    **
+    ** printf
+    ** %d 以十进制形式打印一个整型值
+    ** %o 以八进制形式打印一个整型值
+    ** %x 以十六进制形式打印一个整型值
+    **
+    ** %g 打印一个浮点值
+    ** %c 打印一个字符
+    ** %s 打印一个字符串
+    ** \n 换行
+    **
+    */
     printf("Original input : %s\n", input);
     rearrange(output, input, n_columns, columns);
     printf("Rearranged line: %s\n", output);
@@ -97,6 +116,8 @@ int read_column_numbers(int columns[], int max)
 
   /*
    ** 取得列标号，如果所读取的数小于 0 则停止
+   ** 特别注意 scanf
+   **
    */
   while (num < max && scanf("%d", &columns[num]) == 1 && columns[num] >= 0)
   {
@@ -114,6 +135,10 @@ int read_column_numbers(int columns[], int max)
 
   /*
    ** 丢弃改行中包含最后一个数字的那部分内容
+   **
+   ** 空语句（empty statement）
+   ** while 语句之后的单独一个分号称为空语句
+   ** 语法要求出现一条语句，但无需执行任何任务
    */
   while ((ch = getchar()) != EOF && ch != '\n')
     ;
