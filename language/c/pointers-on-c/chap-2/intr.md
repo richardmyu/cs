@@ -11,21 +11,19 @@
 
 ### 1.1.翻译
 
-翻译阶段的组成：
-
 ```mermaid
-flowchart TD;
-  SourceCode-1 --> Compiler;
-  Compiler --> ObjectCode-1;
-  ObjectCode-1 --> Linker;
-  SourceCode-2 --> Compiler;
-  Compiler --> ObjectCode-2;
-  ObjectCode-2 --> Linker;
-  SourceCode-3 --> Compiler;
-  Compiler --> ObjectCode-3;
-  ObjectCode-3 --> Linker;
-  Libraries --> Linker;
-  Linker --> Executable;
+flowchart LR
+  SourceCode-1 --> Compiler
+  Compiler --> ObjectCode-1
+  ObjectCode-1 --> Linker
+  SourceCode-2 --> Compiler
+  Compiler --> ObjectCode-2
+  ObjectCode-2 --> Linker
+  SourceCode-3 --> Compiler
+  Compiler --> ObjectCode-3
+  ObjectCode-3 --> Linker
+  Libraries --> Linker
+  Linker --> Executable
 ```
 
 ## 2.词法规则
