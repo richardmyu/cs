@@ -5,6 +5,7 @@ print('Enter "q" to quit.')
 
 first_number = input("\nFirst number: ")
 second_number = input("\nSecond number: ")
+
 try:
     sum = int(first_number) + int(second_number)
 except ValueError:

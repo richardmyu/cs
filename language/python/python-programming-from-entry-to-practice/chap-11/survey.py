@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-class AnonymousSurvey():
-
+class AnonymousSurvey:
     def __init__(self, question):
         self.question = question
         self.responses = []
@@ -15,5 +14,6 @@ class AnonymousSurvey():
 
     def show_results(self):
         print('Survey results: \n')
+
         for response in self.responses:
             print('- ' + response)

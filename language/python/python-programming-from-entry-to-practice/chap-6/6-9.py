@@ -3,7 +3,7 @@
 favorite_place = {
     'bob': ['beijing', 'tainjing', 'daliang'],
     'kevin': ['chongqing'],
-    'stuart': ['shanghai', 'guangzhou', 'hangzhou', 'nanjing']
+    'stuart': ['shanghai', 'guangzhou', 'hangzhou', 'nanjing'],
 }
 
 for name, places in favorite_place.items():

@@ -16,6 +16,7 @@ def run_game():
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 print(event.type)
+
         screen.fill(bg_color)
         pygame.display.flip()
 

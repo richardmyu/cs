@@ -9,6 +9,7 @@ def count_words(filename):
         pass
     else:
         words = len(contents.split())
+
         print(f'The file {filename} has about {str(words)} words.')
 
 

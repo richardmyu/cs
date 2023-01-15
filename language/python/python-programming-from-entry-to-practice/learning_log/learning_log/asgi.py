@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 """
 ASGI config for learning_log project.
 

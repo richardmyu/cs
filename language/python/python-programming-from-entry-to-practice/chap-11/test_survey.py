@@ -5,7 +5,6 @@ from survey import AnonymousSurvey
 
 
 class TestAnonymousSurvey(unittest.TestCase):
-
     def setUp(self):
         question = "What language did you first learn to speak?"
         self.my_survey = AnonymousSurvey(question)

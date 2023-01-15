@@ -5,11 +5,9 @@ import time
 from random import choice
 
 
-class RandomWalk():
-
+class RandomWalk:
     def __init__(self, num_points=50000):
         self.num_points = num_points
-
         self.x_values = [0]
         self.y_values = [0]
 
@@ -18,7 +16,6 @@ class RandomWalk():
             x_direction = choice([1, -1])
             x_distance = choice([0, 1, 2, 3, 4])
             x_step = x_direction * x_distance
-
             y_direction = choice([1, -1])
             y_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
             y_step = y_direction * y_distance
@@ -28,7 +25,6 @@ class RandomWalk():
 
             next_x = self.x_values[-1] + x_step
             next_y = self.y_values[-1] + y_step
-
             self.x_values.append(next_x)
             self.y_values.append(next_y)
 
@@ -39,9 +35,9 @@ rw.fill_walk()
 plt.figure(figsize=(10, 6))
 
 point_numbers = list(range(rw.num_points))
+
 plt.scatter(rw.x_values, rw.y_values, edgecolors='none', s=1)
 # plt.plot(rw.x_values, rw.y_values, linewidth=1)
-
 plt.scatter(0, 0, c='green', edgecolors='none', s=10)
 plt.scatter(rw.x_values[-1], rw.y_values[-1], c='red', edgecolors='none', s=10)
 plt.show()

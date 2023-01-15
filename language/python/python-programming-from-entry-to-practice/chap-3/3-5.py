@@ -3,6 +3,7 @@
 guests = ['jack', 'tom', 'marry', 'sophie']
 
 print(f'{guests[2]} could not to the party!')
+
 guests[2] = 'rose'
 
 print(f'Hi {guests[0]}, welcome to my party!')

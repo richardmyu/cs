@@ -5,7 +5,7 @@ minions = {
     'Kvein': [2, 3],
     'stuart': [3, 6, 9],
     'admin': [4],
-    'superadmin': [0]
+    'superadmin': [0],
 }
 
 for name, nums in minions.items():

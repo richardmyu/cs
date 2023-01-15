@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-class Resturant():
-
+class Resturant:
     def __init__(self, resturant_name, cuisine_type):
         self.name = resturant_name
         self.type = cuisine_type
@@ -27,11 +26,15 @@ class Resturant():
 
 
 class IceCreamStand(Resturant):
-
     def __init__(self, resturant_name, cuisine_type):
         super().__init__(resturant_name, cuisine_type)
         self.flavors = [
-            'vanila', 'chocolate', 'green tea', 'strawberry', 'mongo', 'lemon'
+            'vanila',
+            'chocolate',
+            'green tea',
+            'strawberry',
+            'mongo',
+            'lemon',
         ]
 
     def show_icecream_flavor(self):

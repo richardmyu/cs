@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-class Resturant():
-
+class Resturant:
     def __init__(self, resturant_name, cuisine_type):
         self.name = resturant_name
         self.type = cuisine_type
@@ -28,7 +27,9 @@ class Resturant():
 
 my_res = Resturant('xiangchuanju', 'wooo')
 print(my_res.number_served)
+
 my_res.set_number_served(20)
 print(my_res.number_served)
+
 my_res.increment_number_served(120)
 print(my_res.number_served)

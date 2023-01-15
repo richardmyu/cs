@@ -4,6 +4,7 @@
 def first_test():
     with open('pi_digits.txt') as file_object:
         contents = file_object.read()
+
         print(contents.rstrip())
 
 
@@ -15,6 +16,7 @@ def second_test():
 
 def third_test():
     pi_str = ''
+
     with open('pi_digits.txt') as file_object:
         lines = file_object.readlines()
 

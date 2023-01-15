@@ -16,6 +16,7 @@ with open(filename) as f:
     #     print(index, column_header)
     # highs = []
     dates, highs, lows = [], [], []
+
     for row in reader:
         try:
             current_date = datetime.strptime(row[0], r'%Y-%m-%d')
@@ -42,5 +43,5 @@ plt.xlabel('', fontsize=16)
 fig.autofmt_xdate()
 plt.ylabel('Temperature (F)', fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=16)
-
+plt.savefig('highs_lows.png')
 plt.show()

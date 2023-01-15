@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import time
 import json
 import pygal
 import math
@@ -13,6 +14,7 @@ close = []
 
 with open(filename) as f:
     btc_data = json.load(f)
+
     for item in btc_data:
         dates.append(item['date'])
         months.append(int(item['month']))
@@ -27,4 +29,4 @@ N = 20  # step=20
 line_chart.x_labels_major = dates[::N]
 close_log = [math.log10(_) for _ in close]
 line_chart.add('收盘价（￥）', close_log)
-line_chart.render_to_file('收盘价对数变换折线图.svg')
+line_chart.render_to_file(f'收盘价对数变换折线图.svg')

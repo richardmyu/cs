@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-class User():
-
+class User:
     def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
@@ -21,8 +20,7 @@ class User():
         self.login_attempts = 0
 
 
-class Privileges():
-
+class Privileges:
     def __init__(self):
         self.privileges = ['can add post', 'can delete post', 'can ban user']
 
@@ -32,7 +30,6 @@ class Privileges():
 
 
 class Admin(User):
-
     def __init__(self, first_name, last_name):
         super().__init__(first_name, last_name)
         self.privilege = Privileges()

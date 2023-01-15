@@ -1,11 +1,6 @@
 # -*- coding: utf-8 -*-
 
-favorite_languages = {
-    'jen': 'python',
-    'sarah': 'c',
-    'edward': 'ruby',
-    'phil': 'python'
-}
+favorite_languages = {'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python'}
 
 persons = ['jen', 'bob', 'phil', 'kevin', 'jack']
 

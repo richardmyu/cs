@@ -6,26 +6,25 @@ import pygal
 from pygal.style import LightColorizedStyle as LCS, LightenStyle as LS
 
 url = 'https://hacker-news.firebaseio.com/v0/topstories.json'
-
 r = requests.get(url)
-
 submission_ids = r.json()
 names, submission_dicts = [], []
 
 for submission_id in submission_ids[:20]:
-    url = ('https://hacker-news.firebaseio.com/v0/item/' + str(submission_id) +
-           '.json')
+    url = 'https://hacker-news.firebaseio.com/v0/item/' + str(submission_id) + '.json'
     submission_r = requests.get(url)
-    print(submission_id, submission_r.status_code)
-    response_dict = submission_r.json()
 
+    print(submission_id, submission_r.status_code)
+
+    response_dict = submission_r.json()
     names.append(response_dict['title'])
+
     # 默认识别 value
     # xlink
     submission_dict = {
         'value': response_dict.get('descendants', 0),
         'title': response_dict['title'],
-        'xlink': 'http://news.ycombinator.com/item?id=' + str(submission_id)
+        'xlink': 'http://news.ycombinator.com/item?id=' + str(submission_id),
     }
     submission_dicts.append(submission_dict)
 
@@ -39,9 +38,9 @@ my_config.major_label_font_size = 18
 my_config.truncate_label = 15
 my_config.show_y_guides = False
 my_config.width = 1000
+
 chart = pygal.Bar(my_config, style=my_style)
 chart.title = 'page comments'
 chart.x_labels = names
-
 chart.add('', submission_dicts)
 chart.render_to_file('page_comments.svg')

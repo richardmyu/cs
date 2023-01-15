@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-class Employee():
-
+class Employee:
     def __init__(self, lastname, firstname, annual_salarys):
         self.lastname = lastname
         self.firstname = firstname

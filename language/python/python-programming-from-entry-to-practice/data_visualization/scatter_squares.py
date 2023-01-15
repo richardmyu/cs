@@ -12,12 +12,7 @@ y_values = [x**2 for x in x_values]
 # cmap 颜色映射
 # edgecolors 删除数据点的轮廓
 # s 设置折线的宽度
-plt.scatter(x_values,
-            y_values,
-            c=x_values,
-            cmap=plt.cm.Blues,
-            edgecolors='none',
-            s=1)
+plt.scatter(x_values, y_values, c=x_values, cmap=plt.cm.Blues, edgecolors='none', s=1)
 
 plt.title('Square Numbers', fontsize=24)
 plt.xlabel('Value', fontsize=14)
@@ -30,5 +25,4 @@ plt.axis([0, 1100, 0, 1100000])
 
 # 自动保存
 plt.savefig('square_plot.png', bbox_inches='tight')
-
 plt.show()

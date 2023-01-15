@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-class Resturant():
-
+class Resturant:
     def __init__(self, resturant_name, cuisine_type):
         self.name = resturant_name
         self.type = cuisine_type

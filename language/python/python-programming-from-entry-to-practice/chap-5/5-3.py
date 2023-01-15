@@ -6,6 +6,7 @@ alien_colors = ['green', 'yellow', 'red']
 
 for color in alien_colors:
     alien_color = color
+
     if alien_color == 'green':
         print('You get 5 points')
 

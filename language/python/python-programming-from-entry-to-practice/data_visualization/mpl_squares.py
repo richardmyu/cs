@@ -14,4 +14,5 @@ plt.ylabel('Square of Value', fontsize=14)
 # 设置刻度标记的大小
 plt.tick_params(axis='both', labelsize=14)
 
+plt.savefig('mpl_squares.png')
 plt.show()

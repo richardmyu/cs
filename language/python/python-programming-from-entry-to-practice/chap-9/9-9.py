@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-class Car():
-
+class Car:
     def __init__(self, make, model, year):
         self.make = make
         self.model = model
@@ -11,6 +10,7 @@ class Car():
 
     def get_descriptive_name(self):
         long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+
         return long_name.title()
 
     def read_odometer(self):
@@ -26,8 +26,7 @@ class Car():
         self.odomerter_reading += miles
 
 
-class Battery():
-
+class Battery:
     def __init__(self, battery_size=70):
         self.battery_size = battery_size
 
@@ -39,18 +38,19 @@ class Battery():
             range = 240
         elif self.battery_size == 85:
             range = 270
-        msg = 'This car can go approximately ' + str(
-            range) + ' miles on a full charge.'
+
+        msg = 'This car can go approximately ' + str(range) + ' miles on a full charge.'
+
         print(msg)
 
     def upgrade_battery(self):
         if self.battery_size != 85:
             self.battery_size = 85
+
             print('This car battery size has upgraded.')
 
 
 class ElectricCar(Car):
-
     def __init__(self, make, model, year):
         super().__init__(make, model, year)
         self.battery = Battery()
@@ -62,6 +62,7 @@ class ElectricCar(Car):
 my_tesla = ElectricCar('tesla', 'model s', 2016)
 
 print(my_tesla.get_descriptive_name())
+
 my_tesla.battery.describe_battery()
 my_tesla.battery.get_ranger()
 my_tesla.battery.upgrade_battery()

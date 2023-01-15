@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 """
 WSGI config for learning_log project.
 

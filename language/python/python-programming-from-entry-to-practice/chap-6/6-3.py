@@ -5,7 +5,7 @@ keys_info = {
     'dict': 'a date structure',
     'for': 'looping structure',
     'while': 'looping structure',
-    'if': 'branched structure'
+    'if': 'branched structure',
 }
 
 print(f'list: {keys_info["list"]}')

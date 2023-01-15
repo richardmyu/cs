@@ -4,6 +4,7 @@ guests = ['jack', 'tom', 'marry', 'sophie']
 guests[2] = 'rose'
 
 print('I find a big dining-table. I need to invite more friends.')
+
 guests.insert(0, 'King Bob')
 guests.insert(int(len(guests) / 2), 'Kevin')
 guests.append('Stuart')

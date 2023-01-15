@@ -5,7 +5,6 @@ from employee import Employee
 
 
 class TestEmployee(unittest.TestCase):
-
     def setUp(self):
         self.emp = Employee('bob', 'potter', 100000)
 
