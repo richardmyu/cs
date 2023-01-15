@@ -1,0 +1,40 @@
+
+Title: Ubuntu 22.04 LTS servers and phased apt updates
+Discussion link: http://news.ycombinator.com/item?id=34387409
+Comments: 60
+
+Title: Ask HN: How do you trust that your personal machine is not compromised?
+Discussion link: http://news.ycombinator.com/item?id=34388866
+Comments: 38
+
+Title: I'm Shadow Banned by DuckDuckGo (and Bing)
+Discussion link: http://news.ycombinator.com/item?id=34388962
+Comments: 18
+
+Title: Go FOSS: Information is power
+Discussion link: http://news.ycombinator.com/item?id=34388095
+Comments: 7
+
+Title: SLT – A Common Lisp Language Plugin for Jetbrains IDE Lineup
+Discussion link: http://news.ycombinator.com/item?id=34388369
+Comments: 6
+
+Title: Single-file scripts that download their dependencies
+Discussion link: http://news.ycombinator.com/item?id=34388826
+Comments: 6
+
+Title: Constrain – Interactive figures using declarative constraint solving
+Discussion link: http://news.ycombinator.com/item?id=34388670
+Comments: 5
+
+Title: The Fourier Transform, explained in one sentence
+Discussion link: http://news.ycombinator.com/item?id=34389037
+Comments: 4
+
+Title: Porth, It's Like Forth but in Python
+Discussion link: http://news.ycombinator.com/item?id=34388985
+Comments: 3
+
+Title: Flightcontrol (YC W22) is hiring Developer Advocate (remote/fulltime)
+Discussion link: http://news.ycombinator.com/item?id=34388773
+Comments: 0

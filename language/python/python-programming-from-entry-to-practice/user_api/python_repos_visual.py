@@ -12,8 +12,8 @@ response_dict = r.json()
 print('Total repositories: ', response_dict['total_count'])
 
 repo_dicts = response_dict['items']
-
 names, plot_dicts = [], []
+
 for repo_dict in repo_dicts:
     names.append(repo_dict['name'])
     plot_dict = {
