@@ -12,23 +12,26 @@
 import math
 
 
-def check_prime(num):
+def n_is_prime(n):
     """_素数判定_
 
     Args:
-        num (_int_): _被判定的正整数_
+        n (_int_): _被判定的正整数_
 
     Returns:
         _boolean_: _是否素数_
     """
-    end = int(math.sqrt(num))
+    # 过滤输入参数
+    if n <= 1 or int(n) != n:
+        return False
+
+    # 指定循环截止点
+    end = int(math.sqrt(n))
     is_prime = True
 
     for x in range(2, end + 1):
-        if num % x == 0:
+        if n % x == 0:
             is_prime = False
             break
 
-    is_prime = True if (is_prime and num != 1) else False
-
-    return is_prime
+    return True if (is_prime and n != 1) else False
