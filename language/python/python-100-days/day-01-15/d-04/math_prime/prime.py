@@ -9,9 +9,18 @@
 素数判定
 '''
 
+import math
+
 
 def check_prime(num):
-    """判断是不是素数"""
+    """_素数判定_
+
+    Args:
+        num (_int_): _被判定的正整数_
+
+    Returns:
+        _boolean_: _是否素数_
+    """
     end = int(math.sqrt(num))
     is_prime = True
 
@@ -23,10 +32,3 @@ def check_prime(num):
     is_prime = True if (is_prime and num != 1) else False
 
     return is_prime
-
-
-if __name__ == '__main__':
-    print(check_prime(9))
-    print(check_prime(11))
-    print(check_prime(2))
-    print(check_prime(1))

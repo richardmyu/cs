@@ -42,10 +42,3 @@ def lcm(a, b):
             multiple *= y
 
         return multiple
-
-
-if __name__ == '__main__':
-    print(lcm(9, 21))
-    print(lcm(9, 27))
-    print(lcm(12, 56))
-    print(lcm(21, 56))

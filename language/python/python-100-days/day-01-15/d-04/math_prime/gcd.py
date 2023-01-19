@@ -8,9 +8,9 @@
 
 最大公约数常见集中方法的实现
 --质因数分解法
---短除法
 --辗转相除法
 --更相减损法
+--短除法
 '''
 
 
@@ -44,10 +44,3 @@ def gcd_2(a, b):
                 divisor = x
 
         return divisor
-
-
-if __name__ == '__main__':
-    print(gcd(9, 21))
-    print(gcd(9, 27))
-    print(gcd(12, 56))
-    print(gcd(21, 56))
