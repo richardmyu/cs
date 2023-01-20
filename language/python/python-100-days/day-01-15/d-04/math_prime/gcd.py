@@ -8,19 +8,20 @@
 
 最大公约数常见集中方法的实现
 --质因数分解法
---辗转相除法
+--欧几里得算法（辗转相除法）
 --更相减损法
 --短除法
 '''
 
 import math
-import prime
+from prime import n_is_prime
+from comprime import n_m_is_comprime
 
 ##############
-# 质因数分解法 #
+#  #
 ##############
 def gcd_prime_1(a, b):
-    """_找出两个数的公约数，只取最大的一个公约数_
+    """_质因数分解法 1 —— 找出两个数的公约数，只取最大的一个公约数_
 
     Args:
         a (_int_): _正整数_
@@ -33,21 +34,21 @@ def gcd_prime_1(a, b):
         return b
     elif b % a == 0:
         return a
-    elif prime.n_is_prime(a) and prime.n_is_prime(b):
+    elif n_is_prime(a) and n_is_prime(b):
         return 1
     else:
-        divisor = 2
+        di = 2
         end = int((max(a, b) / 2))
 
-        for x in range(2, end + 1):
-            if a % x == 0 and b % x == 0 and x > divisor:
-                divisor = x
+        for x in range(end + 1, 2, -1):
+            if a % x == 0 and b % x == 0 and x > di:
+                di = x
 
-        return divisor
+        return di
 
 
 def gcd_prime_2(a, b):
-    """_找出两个数的公约数列表，取两个列表的交集子元素自乘_
+    """_质因数分解法 2 —— 找出两个数的公约数列表，取两个列表的交集子元素自乘_
 
     Args:
         a (_int_): _正整数_
@@ -60,45 +61,55 @@ def gcd_prime_2(a, b):
         return b
     elif b % a == 0:
         return a
-    elif prime.n_is_prime(a) and prime.n_is_prime(b):
+    elif n_is_prime(a) and n_is_prime(b):
         return 1
     else:
-        a_list = []
-        b_list = []
+        a_dict = {}
+        b_dict = {}
+        intersect = []
         multiple = 1
 
-        # 分别获取 a b 的约数因子
+        # 分别获取 a b 的质因子，放入字典
         for x in range(2, int(max(a, b) / 2) + 1):
-            if a % x == 0 and prime.n_is_prime(x):
-                a_list.append(x)
+            if a % x == 0 and n_is_prime(x):
+                a_dict[x] = 1
                 di_a = a / x
 
                 while di_a % x == 0:
-                    a_list.append(x)
+                    a_dict[x] += 1
                     di_a /= x
 
-            if b % x == 0 and prime.n_is_prime(x):
-                b_list.append(x)
+            if b % x == 0 and n_is_prime(x):
+                b_dict[x] = 1
                 di_b = b / x
 
                 while di_b % x == 0:
-                    b_list.append(x)
+                    b_dict[x] += 1
                     di_b /= x
-        # TODO set 去重了
-        # 不如换成对象，属性记录值，值记录数量
-        intersect = list(set(a_list) & set(b_list))
 
+        # 计数单个因子出现次数
+        count = 1
+
+        # 遍历字典，获取出现在两个字典中的因子及其个数
+        for key, value in a_dict.items():
+            if key in b_dict.keys():
+                if value >= b_dict[key]:
+                    count = b_dict[key]
+                else:
+                    count = value
+
+                for z in range(1, count + 1):
+                    intersect.append(key)
+
+        # 因子交集
         for y in intersect:
             multiple *= y
 
         return multiple
 
 
-##############
-#  辗转相除法  #
-##############
-def gcd_2(a, b):
-    """_summary_
+def gcd_euclidean(a, b):
+    """_欧几里得法_
 
     Args:
         a (_int_): _正整数_
@@ -111,24 +122,23 @@ def gcd_2(a, b):
         return b
     elif b % a == 0:
         return a
-    elif prime.n_is_prime(a) and prime.n_is_prime(b):
+    elif n_is_prime(a) and n_is_prime(b):
         return 1
     else:
-        divisor = 2
-        end = int(max(a, b) / 2)
+        if a > b:
+            a, b = b, a
 
-        for x in range(2, end + 1):
-            if a % x == 0 and b % x == 0 and x > divisor:
-                divisor = x
+        di = 1
 
-        return divisor
+        while b % a != 0:
+            di = b % a
+            a, b = di, a
+
+        return di
 
 
-##############
-#  更相减损法  #
-##############
-def gcd_3(a, b):
-    """_summary_
+def gcd_reduce(a, b):
+    """_更相减损法_
 
     Args:
         a (_int_): _正整数_
@@ -141,23 +151,37 @@ def gcd_3(a, b):
         return b
     elif b % a == 0:
         return a
-    elif prime.n_is_prime(a) and prime.n_is_prime(b):
+    elif n_is_prime(a) and n_is_prime(b):
         return 1
     else:
-        divisor = 2
-        end = int(max(a, b) / 2)
-        for x in range(2, end + 1):
-            if a % x == 0 and b % x == 0 and x > divisor:
-                divisor = x
+        if a > b:
+            a, b = b, a
 
-        return divisor
+        count = 0
+
+        # 如果都是偶数，先用 2 约简
+        while a % 2 == 0 and b % 2 == 0:
+            a = int(a / 2)
+            b = int(b / 2)
+            count += 1
+
+        # 先计算一次差
+        di = b - a
+
+        while a != di:
+            if a > di:
+                # 减数大于差
+                # == new_di = a - di
+                # == a = di di = new_di = a - di
+                a, di = di, a - di
+            else:
+                a, di = a, di - a
+
+        return di * math.pow(2, count)
 
 
-##############
-#   短除法   #
-##############
-def gcd_4(a, b):
-    """_summary_
+def gcd_division(a, b):
+    """_短除法_
 
     Args:
         a (_int_): _正整数_
@@ -170,23 +194,25 @@ def gcd_4(a, b):
         return b
     elif b % a == 0:
         return a
-    elif prime.n_is_prime(a) and prime.n_is_prime(b):
+    elif n_m_is_comprime(a, b):
+        # 互质
         return 1
     else:
-        divisor = 2
-        end = int(max(a, b) / 2)
-        for x in range(2, end + 1):
-            if a % x == 0 and b % x == 0 and x > divisor:
-                divisor = x
+        # 非互质
+        end = int(max(a, b) / 2) + 1
+        prime_list = []
+        di = 1
+        x = 2
 
-        return divisor
+        while not n_m_is_comprime(a, b) and x < end:
+            if a % x == 0 and b % x == 0:
+                prime_list.append(x)
+                a = int(a / x)
+                b = int(b / x)
+            else:
+                x += 1
 
+        for z in prime_list:
+            di *= z
 
-if __name__ == '__main__':
-    print(gcd_prime_2(2, 3), 1)
-    print(gcd_prime_2(2, 4), 2)
-    print(gcd_prime_2(2, 5), 1)
-    print(gcd_prime_2(12, 3), 3)
-    print(gcd_prime_2(12, 18), 6)
-    print(gcd_prime_2(14, 21), 7)
-    print(gcd_prime_2(144, 180), 36)
+        return di
