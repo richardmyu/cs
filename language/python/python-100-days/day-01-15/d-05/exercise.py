@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from tool import is_perfect_n, is_prime
+
 
 def fn_1():
     """寻找水仙花数"""
@@ -40,7 +42,52 @@ def fn_3():
                 print('公鸡: %d只, 母鸡: %d只, 小鸡: %d只' % (x, y, z))
 
 
+# def fn_4():
+#     """CRAPS赌博游戏"""
+
+
+def exercise_1(n=20):
+    """生成斐波那契数列的前20个数"""
+    if n == 1:
+        return [1]
+    elif n == 2:
+        return [1, 1]
+    elif n > 2:
+        sum = 0
+        last_list = exercise_1(n - 1)
+
+        for x in last_list[-2:]:
+            sum += x
+
+        return last_list + [sum]
+
+
+def exercise_2(n=10000):
+    """找出 10000 以内的完美数"""
+    perfect_n = []
+
+    for x in range(1, n):
+        if is_perfect_n(x):
+            perfect_n.append(x)
+
+    print(perfect_n)
+
+
+def exercise_3(n=100):
+    """输出 100 以内所有的素数"""
+    prime_n = []
+
+    for x in range(1, n):
+        if is_prime(x):
+            prime_n.append(x)
+
+    print(prime_n)
+
+
 if __name__ == '__main__':
-    # fn_1()
-    # fn_2()
+    fn_1()
+    fn_2()
     fn_3()
+    print(exercise_1())
+    exercise_2()
+    exercise_3()

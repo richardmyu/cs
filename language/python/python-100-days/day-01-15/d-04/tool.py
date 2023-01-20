@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 '''
-@Time: 2023/01/20 19:22:16
+@Time: 2023/01/20 23:20:41
 @Author: yum
 @Email: richardminyu@foxmail.com
-@File: comprime.py
+@File: tool.py
 
-判断两个正整数是否互质
+
 '''
 
 

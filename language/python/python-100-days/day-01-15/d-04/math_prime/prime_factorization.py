@@ -9,9 +9,7 @@
 分解质因数
 '''
 
-import math
-
-import prime
+from prime import is_prime
 
 
 def factorise_prime(n):
@@ -28,13 +26,13 @@ def factorise_prime(n):
         return
 
     # 排除本身是素数
-    if prime.n_is_prime(n):
+    if is_prime(n):
         return [1, n]
 
     prime_list = []
 
     for x in range(2, int(n / 2) + 1):
-        if n % x == 0 and prime.n_is_prime(x):
+        if n % x == 0 and is_prime(x):
             prime_list.append(x)
             di = n / x
 

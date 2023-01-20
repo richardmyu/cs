@@ -2,21 +2,21 @@
 
 import unittest
 
-from prime import n_is_prime
+from prime import is_prime
 from prime_factorization import factorise_prime
-from comprime import n_m_is_comprime
+from comprime import is_comprime
 from gcd import gcd_prime_1, gcd_prime_2, gcd_euclidean, gcd_reduce, gcd_division
 from lcm import lcm_prime, lcm_formula, lcm_division
 
 
 class MyTestCasel(unittest.TestCase):
-    def test_n_is_prime(self):
-        self.assertEqual(n_is_prime(1), False)
-        self.assertEqual(n_is_prime(2), True)
-        self.assertEqual(n_is_prime(3), True)
-        self.assertEqual(n_is_prime(4), False)
-        self.assertEqual(n_is_prime(7), True)
-        self.assertEqual(n_is_prime(1234567890), False)
+    def test_is_prime(self):
+        self.assertEqual(is_prime(1), False)
+        self.assertEqual(is_prime(2), True)
+        self.assertEqual(is_prime(3), True)
+        self.assertEqual(is_prime(4), False)
+        self.assertEqual(is_prime(7), True)
+        self.assertEqual(is_prime(1234567890), False)
 
     def test_factorise_prime(self):
         self.assertEqual(factorise_prime(3), [1, 3])
@@ -26,15 +26,15 @@ class MyTestCasel(unittest.TestCase):
         self.assertEqual(factorise_prime(64), [2, 2, 2, 2, 2, 2])
         self.assertEqual(factorise_prime(100), [2, 2, 5, 5])
 
-    def test_n_m_is_comprime(self):
-        self.assertEqual(n_m_is_comprime(1, 1), True)
-        self.assertEqual(n_m_is_comprime(2, 3), True)
-        self.assertEqual(n_m_is_comprime(2, 4), False)
-        self.assertEqual(n_m_is_comprime(2, 5), True)
-        self.assertEqual(n_m_is_comprime(12, 3), False)
-        self.assertEqual(n_m_is_comprime(12, 18), False)
-        self.assertEqual(n_m_is_comprime(14, 25), True)
-        self.assertEqual(n_m_is_comprime(121, 180), True)
+    def test_is_comprime(self):
+        self.assertEqual(is_comprime(1, 1), True)
+        self.assertEqual(is_comprime(2, 3), True)
+        self.assertEqual(is_comprime(2, 4), False)
+        self.assertEqual(is_comprime(2, 5), True)
+        self.assertEqual(is_comprime(12, 3), False)
+        self.assertEqual(is_comprime(12, 18), False)
+        self.assertEqual(is_comprime(14, 25), True)
+        self.assertEqual(is_comprime(121, 180), True)
 
     def test_gcd_prime_1(self):
         self.assertEqual(gcd_prime_1(2, 3), 1)

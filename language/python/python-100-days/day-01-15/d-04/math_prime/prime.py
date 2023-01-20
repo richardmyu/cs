@@ -9,10 +9,8 @@
 素数判定
 '''
 
-import math
 
-
-def n_is_prime(n):
+def is_prime(n):
     """_素数判定_
 
     Args:
@@ -25,11 +23,9 @@ def n_is_prime(n):
     if n <= 1 or int(n) != n:
         return False
 
-    # 指定循环截止点
-    end = int(math.sqrt(n))
     is_prime = True
 
-    for x in range(2, end + 1):
+    for x in range(2, int(n / 2) + 1):
         if n % x == 0:
             is_prime = False
             break

@@ -13,9 +13,8 @@
 --短除法
 '''
 
-import math
-from prime import n_is_prime
-from comprime import n_m_is_comprime
+from prime import is_prime
+from comprime import is_comprime
 
 ##############
 #  #
@@ -34,7 +33,7 @@ def gcd_prime_1(a, b):
         return b
     elif b % a == 0:
         return a
-    elif n_is_prime(a) and n_is_prime(b):
+    elif is_prime(a) and is_prime(b):
         return 1
     else:
         di = 2
@@ -61,7 +60,7 @@ def gcd_prime_2(a, b):
         return b
     elif b % a == 0:
         return a
-    elif n_is_prime(a) and n_is_prime(b):
+    elif is_prime(a) and is_prime(b):
         return 1
     else:
         a_dict = {}
@@ -71,7 +70,7 @@ def gcd_prime_2(a, b):
 
         # 分别获取 a b 的质因子，放入字典
         for x in range(2, int(max(a, b) / 2) + 1):
-            if a % x == 0 and n_is_prime(x):
+            if a % x == 0 and is_prime(x):
                 a_dict[x] = 1
                 di_a = a / x
 
@@ -79,7 +78,7 @@ def gcd_prime_2(a, b):
                     a_dict[x] += 1
                     di_a /= x
 
-            if b % x == 0 and n_is_prime(x):
+            if b % x == 0 and is_prime(x):
                 b_dict[x] = 1
                 di_b = b / x
 
@@ -122,7 +121,7 @@ def gcd_euclidean(a, b):
         return b
     elif b % a == 0:
         return a
-    elif n_is_prime(a) and n_is_prime(b):
+    elif is_prime(a) and is_prime(b):
         return 1
     else:
         if a > b:
@@ -151,7 +150,7 @@ def gcd_reduce(a, b):
         return b
     elif b % a == 0:
         return a
-    elif n_is_prime(a) and n_is_prime(b):
+    elif is_prime(a) and is_prime(b):
         return 1
     else:
         if a > b:
@@ -177,7 +176,7 @@ def gcd_reduce(a, b):
             else:
                 a, di = a, di - a
 
-        return di * math.pow(2, count)
+        return di * (2**count)
 
 
 def gcd_division(a, b):
@@ -194,7 +193,7 @@ def gcd_division(a, b):
         return b
     elif b % a == 0:
         return a
-    elif n_m_is_comprime(a, b):
+    elif is_comprime(a, b):
         # 互质
         return 1
     else:
@@ -204,7 +203,7 @@ def gcd_division(a, b):
         di = 1
         x = 2
 
-        while not n_m_is_comprime(a, b) and x < end:
+        while not is_comprime(a, b) and x < end:
             if a % x == 0 and b % x == 0:
                 prime_list.append(x)
                 a = int(a / x)

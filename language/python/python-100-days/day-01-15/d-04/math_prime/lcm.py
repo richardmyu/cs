@@ -11,9 +11,8 @@
 --公式法
 '''
 
-import math
-from prime import n_is_prime
-from comprime import n_m_is_comprime
+from prime import is_prime
+from comprime import is_comprime
 from gcd import gcd_prime_1
 
 
@@ -31,7 +30,7 @@ def lcm_prime(a, b):
         return a
     elif b % a == 0:
         return b
-    elif n_m_is_comprime(a, b):
+    elif is_comprime(a, b):
         return a * b
     else:
         a_dict = {}
@@ -40,7 +39,7 @@ def lcm_prime(a, b):
 
         # 分别获取 a b 的质因子，放入字典
         for x in range(2, int(max(a, b) / 2) + 1):
-            if a % x == 0 and n_is_prime(x):
+            if a % x == 0 and is_prime(x):
                 a_dict[x] = 1
                 di_a = a / x
 
@@ -48,7 +47,7 @@ def lcm_prime(a, b):
                     a_dict[x] += 1
                     di_a /= x
 
-            if b % x == 0 and n_is_prime(x):
+            if b % x == 0 and is_prime(x):
                 b_dict[x] = 1
                 di_b = b / x
 
@@ -59,9 +58,9 @@ def lcm_prime(a, b):
         # 遍历字典，获取 a 独有的质因子或缺少的公有质因子
         for key, value in a_dict.items():
             if key not in b_dict.keys():
-                multiple *= math.pow(key, value)
+                multiple *= key**value
             elif key in b_dict.keys() and value > b_dict[key]:
-                multiple *= math.pow(key, value - b_dict[key])
+                multiple *= key ** (value - b_dict[key])
 
         # 将 a 独有的质因子或缺少的公有质因子乘 b
         multiple *= b
@@ -83,7 +82,7 @@ def lcm_formula(a, b):
         return a
     elif b % a == 0:
         return b
-    elif n_m_is_comprime(a, b):
+    elif is_comprime(a, b):
         return a * b
     else:
         multiple = 1
@@ -107,7 +106,7 @@ def lcm_division(a, b):
         return a
     elif b % a == 0:
         return b
-    elif n_m_is_comprime(a, b):
+    elif is_comprime(a, b):
         # 互质
         return a * b
     else:
@@ -117,7 +116,7 @@ def lcm_division(a, b):
         di = 1
         x = 2
 
-        while not n_m_is_comprime(a, b) and x < end:
+        while not is_comprime(a, b) and x < end:
             if a % x == 0 and b % x == 0:
                 prime_list.append(x)
                 a = int(a / x)
