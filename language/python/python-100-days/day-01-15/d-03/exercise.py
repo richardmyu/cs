@@ -3,41 +3,6 @@
 import math
 
 
-def fn_1():
-    username = input('请输入用户名: ')
-    password = input('请输入口令: ')
-
-    if username == 'admin' and password == '123456':
-        print('身份验证成功!')
-    else:
-        print('身份验证失败!')
-
-
-def fn_2():
-    x = float(input('x = '))
-
-    if x > 1:
-        y = 3 * x - 5
-    elif x >= -1:
-        y = x + 2
-    else:
-        y = 5 * x + 3
-    print('f(%.2f) = %.2f' % (x, y))
-
-
-def fn_2_2():
-    x = float(input('x = '))
-
-    if x > 1:
-        y = 3 * x - 5
-    else:
-        if x >= -1:
-            y = x + 2
-        else:
-            y = 5 * x + 3
-    print('f(%.2f) = %.2f' % (x, y))
-
-
 def excecise_1():
     """英制单位英寸和公制单位厘米互换"""
     value = float(input('请输入长度(0-100): '))
@@ -85,8 +50,6 @@ def excecise_3():
 
 
 if __name__ == '__main__':
-    fn_1()
-    fn_2()
     excecise_1()
     excecise_2()
     excecise_3()

@@ -4,59 +4,6 @@ import random
 import math
 
 
-def fn_1():
-    a = 321
-    b = 12
-    print(a + b)  # 333
-    print(a - b)  # 309
-    print(a * b)  # 3852
-    print(a / b)  # 26.75
-    print(a // b)  # 26
-    print(a % b)  # 9
-
-
-def fn_2():
-    a = 100
-    b = 12.345
-    c = 1 + 5j
-    d = 'hello, world'
-    e = True
-    print(type(a))  # <class 'int'>
-    print(type(b))  # <class 'float'>
-    print(type(c))  # <class 'complex'>
-    print(type(d))  # <class 'str'>
-    print(type(e))  # <class 'bool'>
-
-
-def fn_3():
-    # int
-    print(int(12.13))  # 12
-    print(int('12'))  # 12
-    # print(int('12.13'))
-    # ValueError: invalid literal
-    # for int() with base 10: '12.13'
-    # print(int('hello'))
-
-    # float
-    print(float('1314'))  # 1314.0
-    print(float('13.14'))  # 13.14
-    # print(float('world'))
-
-    # str
-    print(str(12))  # '12'
-    print(str(1.2))  # '1.2'
-    print(str(True))  # 'True'
-    print(str([1, 2, 3]))  # '[1, 2, 3]'
-
-    # chr
-    print(chr(65))  # A
-    print(chr(66))  # B
-
-    # ord
-    print(ord('c'))  # 99
-    print(ord('d'))  # 100
-
-
 def excecise_1():
     """华氏温度到摄氏温度 公式为：$C=(F - 32) \div 1.8$。"""
     # tem = float(input('请输入华氏温度: '))
@@ -115,9 +62,6 @@ def excecise_3_3():
 
 
 if __name__ == '__main__':
-    fn_1()
-    fn_2()
-    fn_3()
     excecise_1()
     excecise_2()
     excecise_3()

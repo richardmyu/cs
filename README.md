@@ -1,8 +1,6 @@
 # Intr
 
-计算机学习笔记
-
-:smile::smile::smile:
+计算机学习笔记，只作为笔记用途 :warning::warning::warning:。
 
 ## FILE DIRECTORY
 
