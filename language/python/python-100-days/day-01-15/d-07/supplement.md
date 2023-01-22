@@ -61,7 +61,7 @@ graph LR
 # True
 ```
 
-## 可迭代对象
+## 可迭代对象（Iterable）
 
 可以返回一个迭代器的对象都可以称之为 **可迭代对象**。
 
@@ -102,7 +102,7 @@ for ele in x:
 
 在循环遍历自定义容器对象时，会使用 python 内置函数 `iter()` 调用遍历对象的 `__iter__()` 获得一个迭代器，之后再循环对这个迭代器使用 `next()` 调用迭代器对象的 `__next__()`。`__iter__()` 只会被调用一次，而 `__next__()` 会被调用 n 次。
 
-## Iterator（迭代器）
+## 迭代器（Iterator）
 
 迭代器是一个带状态的对象，它能在你调用 `next()` 方法时返回容器中的下一个值，任何实现了 `__iter__()` 和 `__next__()` 方法的对象都是 **迭代器**，`__iter__()` 返回迭代器自身，`__next__()` 返回容器中的下一个值，如果容器中没有更多元素了，则抛出 `StopIteration` 异常。
 
@@ -112,7 +112,7 @@ itertools 模块里的函数返回的都是迭代器对象。为了更直观的�
 
 > 见 [cust_iterator.py](./cust_iterator.py)
 
-## Generator（生成器）
+## 生成器（Generator）
 
 普通函数用 `return` 返回一个值，还有一种函数用 `yield` 返回值，这种函数叫 **生成器函数**。函数被调用时会返回一个 **生成器对象**。*生成器其实是一种特殊的迭代器*，不过这种迭代器更加优雅，它不需要像普通迭代器一样实现 `__iter__()` 和 `__next__()` 方法了，只需要一个 `yield` 关键字。*生成器一定是迭代器（反之不成立）*，因此任何生成器也是一种懒加载的模式生成值。下面来用生成器来实现斐波那契数列的例子：
 
@@ -171,5 +171,4 @@ StopIteration
 ---
 
 [Python 迭代器和生成器详解](https://zhuanlan.zhihu.com/p/341439647)
-[Python 中的列表推导式和生成器表达式](https://zhuanlan.zhihu.com/p/124287514)
-[Python 函数编程——列表生成式和生成器](https://www.cnblogs.com/Kwan-C/p/11529995.html)
+[Iterables vs. Iterators vs. Generators](https://nvie.com/posts/iterators-vs-generators/)
