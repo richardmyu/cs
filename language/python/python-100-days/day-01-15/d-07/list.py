@@ -92,7 +92,33 @@ def fn_3():
     # ['mango', 'pear', 'pitaya', 'waxberry', 'strawberry', 'apple', 'grape']
 
 
+def fn_4():
+    list1 = ['orange', 'apple', 'zoo', 'internationalization', 'blueberry']
+    list2 = sorted(list1)
+
+    # sorted 函数返回列表排序后的拷贝不会修改传入的列表
+    # 函数的设计就应该像 sorted 函数一样尽可能不产生副作用
+    list3 = sorted(list1, reverse=True)
+
+    # 通过 key 关键字参数指定根据字符串长度进行排序而不是默认的字母表顺序
+    list4 = sorted(list1, key=len)
+    print(list1)
+    # ['orange', 'apple', 'zoo', 'internationalization', 'blueberry']
+    print(list2)
+    # ['apple', 'blueberry', 'internationalization', 'orange', 'zoo']
+    print(list3)
+    # ['zoo', 'orange', 'internationalization', 'blueberry', 'apple']
+    print(list4)
+    # ['zoo', 'apple', 'orange', 'blueberry', 'internationalization']
+
+    # 给列表对象发出排序消息直接在列表对象上进行排序
+    list1.sort(reverse=True)
+    print(list1)
+    # ['zoo', 'orange', 'internationalization', 'blueberry', 'apple']
+
+
 if __name__ == '__main__':
     fn_1()
     fn_2()
     fn_3()
+    fn_4()
