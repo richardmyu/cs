@@ -38,6 +38,7 @@ def generator_yield(n):
 
 
 def exercise_1():
+    """在屏幕上显示跑马灯文字"""
     content = "hello world "
 
     while True:
@@ -50,6 +51,7 @@ def exercise_1():
 
 
 def exercise_2(l=8):
+    """产生指定长度的验证码，验证码由大小写字母和数字构成"""
     chars_num = "0123456789"
     chars_str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     code = ""
@@ -71,6 +73,44 @@ def exercise_2(l=8):
     return code
 
 
+def exercise_3(filename):
+    """返回给定文件名的后缀名"""
+    index = filename.rfind('.')
+
+    if index != -1:
+        return filename[(index + 1) :]
+    else:
+        return 'none'
+
+
+def exercise_4(l):
+    """返回传入的列表中最大和第二大的元素的值"""
+    new_l = l[:]
+    max_l = max(new_l)
+
+    count = new_l.count(max_l)
+
+    if count >= 1:
+        # 去重
+        for _ in range(count):
+            new_l.remove(max_l)
+
+    sub_max_l = max(new_l)
+
+    return max_l, sub_max_l
+
+
+def exercise_4_2(l):
+    """返回传入的列表中最大和第二大的元素的值"""
+    new_l = l[:]
+    new_l = list(set(new_l))
+    max_l = max(new_l)
+    new_l.remove(max_l)
+    sub_max_l = max(new_l)
+
+    return max_l, sub_max_l
+
+
 if __name__ == '__main__':
     # generator_expression()
     # generator_function()
@@ -78,4 +118,11 @@ if __name__ == '__main__':
     # for val in generator_yield(20):
     # print(val)
     # exercise_1()
-    print(exercise_2())
+    # print(exercise_2())
+    print(exercise_3('list.py'))
+    print(exercise_3('list.py.'))
+    print(exercise_3('.editorconfig'))
+    print(exercise_4([1, 2, 3, 4]))
+    print(exercise_4([1, 2, 3, 4, 5, 2, 5]))
+    print(exercise_4_2([1, 2, 3, 4]))
+    print(exercise_4_2([1, 2, 3, 4, 5, 2, 5]))
