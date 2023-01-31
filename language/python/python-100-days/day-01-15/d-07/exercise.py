@@ -111,6 +111,41 @@ def exercise_4_2(l):
     return max_l, sub_max_l
 
 
+def is_leap_year(y):
+    """是否是闰年"""
+    return y % 100 != 0 and y % 4 == 0 or y % 400 == 0
+
+
+def exercise_5(y, m, d):
+    """计算指定的年月日是这一年的第几天"""
+    is_leap = is_leap_year(y)
+    total_day = d
+    months_list = [
+        [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+        [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+    ]
+
+    if is_leap:
+        for x in range(m - 1):
+            total_day += months_list[1][x]
+    else:
+        for x in range(m - 1):
+            total_day += months_list[0][x]
+
+    return total_day
+
+
+def exercise_6(n=5):
+    """打印杨辉三角"""
+    if n == 1:
+        return "1"
+    elif n == 2:
+        return " 1\n1 1"
+    for x in range(1, n + 1):
+        for y in range(1, 2 * n):
+            return (x, y)
+
+
 if __name__ == '__main__':
     # generator_expression()
     # generator_function()
@@ -119,10 +154,17 @@ if __name__ == '__main__':
     # print(val)
     # exercise_1()
     # print(exercise_2())
-    print(exercise_3('list.py'))
-    print(exercise_3('list.py.'))
-    print(exercise_3('.editorconfig'))
-    print(exercise_4([1, 2, 3, 4]))
-    print(exercise_4([1, 2, 3, 4, 5, 2, 5]))
-    print(exercise_4_2([1, 2, 3, 4]))
-    print(exercise_4_2([1, 2, 3, 4, 5, 2, 5]))
+    # print(exercise_3('list.py'))
+    # print(exercise_3('list.py.'))
+    # print(exercise_3('.editorconfig'))
+    # print(exercise_4([1, 2, 3, 4]))
+    # print(exercise_4([1, 2, 3, 4, 5, 2, 5]))
+    # print(exercise_4_2([1, 2, 3, 4]))
+    # print(exercise_4_2([1, 2, 3, 4, 5, 2, 5]))
+    # print(exercise_5(1980, 11, 28))  # 333
+    # print(exercise_5(1981, 12, 31))  # 365
+    # print(exercise_5(2018, 1, 1))  # 1
+    # print(exercise_5(2016, 3, 1))  # 61
+    print(exercise_6(1))
+    print(exercise_6(2))
+    print(exercise_6(3))
