@@ -135,36 +135,100 @@ def exercise_5(y, m, d):
     return total_day
 
 
-def exercise_6(n=5):
+def exercise_6_1(n=5):
     """打印杨辉三角"""
-    if n == 1:
-        return "1"
-    elif n == 2:
-        return " 1\n1 1"
-    for x in range(1, n + 1):
-        for y in range(1, 2 * n):
-            return (x, y)
+    L = [1]
+    count = 0
+
+    while count < n:
+        count += 1
+        yield L
+        L = [sum(i) for i in zip([0] + L, L + [0])]
+
+
+def exercise_6_2(n=5):
+    """打印杨辉三角"""
+    ret = [1]
+    count = 0
+    while count < n:
+        count += 1
+        yield ret
+        for i in range(1, len(ret)):
+            ret[i] = pre[i] + pre[i - 1]
+        ret.append(1)
+        pre = ret[:]
+
+
+def exercise_6_3(n=5):
+    """打印杨辉三角"""
+    LL = [[1]]
+    for i in range(1, n):
+        LL.append(
+            [
+                (0 if j == 0 else LL[i - 1][j - 1])
+                + (0 if j == len(LL[i - 1]) else LL[i - 1][j])
+                for j in range(i + 1)
+            ]
+        )
+    return LL
 
 
 if __name__ == '__main__':
-    # generator_expression()
-    # generator_function()
+    generator_expression()
+    generator_function()
 
-    # for val in generator_yield(20):
-    # print(val)
+    for val in generator_yield(20):
+        print(val)
+
     # exercise_1()
-    # print(exercise_2())
-    # print(exercise_3('list.py'))
-    # print(exercise_3('list.py.'))
-    # print(exercise_3('.editorconfig'))
-    # print(exercise_4([1, 2, 3, 4]))
-    # print(exercise_4([1, 2, 3, 4, 5, 2, 5]))
-    # print(exercise_4_2([1, 2, 3, 4]))
-    # print(exercise_4_2([1, 2, 3, 4, 5, 2, 5]))
-    # print(exercise_5(1980, 11, 28))  # 333
-    # print(exercise_5(1981, 12, 31))  # 365
-    # print(exercise_5(2018, 1, 1))  # 1
-    # print(exercise_5(2016, 3, 1))  # 61
-    print(exercise_6(1))
-    print(exercise_6(2))
-    print(exercise_6(3))
+
+    print(exercise_2())
+    print(exercise_3('list.py'))
+    print(exercise_3('list.py.'))
+    print(exercise_3('.editorconfig'))
+    print(exercise_4([1, 2, 3, 4]))
+    print(exercise_4([1, 2, 3, 4, 5, 2, 5]))
+    print(exercise_4_2([1, 2, 3, 4]))
+    print(exercise_4_2([1, 2, 3, 4, 5, 2, 5]))
+    print(exercise_5(1980, 11, 28))  # 333
+    print(exercise_5(1981, 12, 31))  # 365
+    print(exercise_5(2018, 1, 1))  # 1
+    print(exercise_5(2016, 3, 1))  # 61
+
+    for x in exercise_6_1(1):
+        print(x)
+    for x in exercise_6_1(2):
+        print(x)
+    for x in exercise_6_1(3):
+        print(x)
+    for x in exercise_6_1(4):
+        print(x)
+    for x in exercise_6_1(5):
+        print(x)
+    for x in exercise_6_1(6):
+        print(x)
+    for x in exercise_6_1(7):
+        print(x)
+
+    for x in exercise_6_2(1):
+        print(x)
+    for x in exercise_6_2(2):
+        print(x)
+    for x in exercise_6_2(3):
+        print(x)
+    for x in exercise_6_2(4):
+        print(x)
+    for x in exercise_6_2(5):
+        print(x)
+    for x in exercise_6_2(6):
+        print(x)
+    for x in exercise_6_2(7):
+        print(x)
+
+    print(exercise_6_3(1))
+    print(exercise_6_3(2))
+    print(exercise_6_3(3))
+    print(exercise_6_3(4))
+    print(exercise_6_3(5))
+    print(exercise_6_3(6))
+    print(exercise_6_3(7))
