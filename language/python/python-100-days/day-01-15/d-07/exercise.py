@@ -173,6 +173,20 @@ def exercise_6_3(n=5):
     return LL
 
 
+def exercise_6_4(n=5):
+    """打印杨辉三角"""
+    yh = [[]] * n
+    for row in range(len(yh)):
+        yh[row] = [None] * (row + 1)
+        for col in range(len(yh[row])):
+            if col == 0 or col == row:
+                yh[row][col] = 1
+            else:
+                yh[row][col] = yh[row - 1][col] + yh[row - 1][col - 1]
+            print(yh[row][col], end='\t')
+        print()
+
+
 if __name__ == '__main__':
     generator_expression()
     generator_function()
@@ -232,3 +246,11 @@ if __name__ == '__main__':
     print(exercise_6_3(5))
     print(exercise_6_3(6))
     print(exercise_6_3(7))
+
+    print(exercise_6_4(1))
+    print(exercise_6_4(2))
+    print(exercise_6_4(3))
+    print(exercise_6_4(4))
+    print(exercise_6_4(5))
+    print(exercise_6_4(6))
+    print(exercise_6_4(7))
