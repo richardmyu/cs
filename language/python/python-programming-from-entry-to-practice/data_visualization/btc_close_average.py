@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import json
 import pygal
 from itertools import groupby

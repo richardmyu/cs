@@ -1,19 +1,18 @@
-# -*- coding: utf-8 -*-
-"""双色球选号
+'''双色球选号
 红球号码范围为01-33
 蓝球号码范围为01-16
 双色球每期从33个红球中开出6个号码
 从16个蓝球中开出1个号码作为中奖号码
 开奖号码的6个红球号码和1个蓝球号码，顺序不限
-"""
+'''
 
 from random import randint, sample
 
 
 def display(balls):
-    """
+    '''
     输出列表中的双色球号码
-    """
+    '''
     for index, ball in enumerate(balls):
         if index == len(balls) - 1:
             print('|', end=' ')
@@ -22,9 +21,9 @@ def display(balls):
 
 
 def random_select():
-    """
+    '''
     随机选择一组号码
-    """
+    '''
     red_balls = [x for x in range(1, 34)]
     selected_balls = []
     selected_balls = sample(red_balls, 6)

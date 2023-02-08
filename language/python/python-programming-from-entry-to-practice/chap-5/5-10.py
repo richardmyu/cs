@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 current_users = ['bob', 'Kvein', 'stuart', 'admin', 'superadmin']
 new_users = ['jack', 'tom', 'Stuart', 'kvein', 'phil']
 

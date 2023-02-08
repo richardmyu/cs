@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def favorite_book(title):
     print(f'One of my favorite books i {title}.')
 

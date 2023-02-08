@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 print('abc' == 'abc')
 print('abc' == 'abC')
 

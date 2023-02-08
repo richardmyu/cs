@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def fn_1():
     # 创建字典的字面量语法
     scores = {'kevin': 8, 'bob': 2, 'sturat': 5}

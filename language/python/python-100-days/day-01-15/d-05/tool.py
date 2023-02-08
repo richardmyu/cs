@@ -1,17 +1,13 @@
-# -*- coding: utf-8 -*-
-
 '''
 @Time: 2023/01/20 23:15:41
 @Author: yum
 @Email: richardminyu@foxmail.com
 @File: tool.py
-
-
 '''
 
 
 def get_true_factor(n):
-    """获取素数的真因子"""
+    '''获取素数的真因子'''
     if n <= 1 or int(n) != n:
         return []
 
@@ -30,7 +26,7 @@ def get_true_factor(n):
 
 
 def is_perfect_n(n):
-    """判断一个数是否是完全数/完备数"""
+    '''判断一个数是否是完全数/完备数'''
     if n <= 1 or int(n) != n:
         return False
 
@@ -49,14 +45,14 @@ def is_perfect_n(n):
 
 
 def is_prime(n):
-    """_素数判定_
+    '''_素数判定_
 
     Args:
         n (_int_): _被判定的正整数_
 
     Returns:
         _boolean_: _是否素数_
-    """
+    '''
     # 过滤输入参数
     if n <= 1 or int(n) != n:
         return False

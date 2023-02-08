@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 minions = ['bob', 'stuart', 'kevin', 'jorge']
 
 # dave tim mark phil jerry

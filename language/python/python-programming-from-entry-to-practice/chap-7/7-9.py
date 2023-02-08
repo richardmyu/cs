@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 sandwich_orders = ['a', 'pastrami', 'c', 'pastrami', 'pastrami']
 finihed_sandwich = []
 

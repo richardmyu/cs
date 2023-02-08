@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 '''
 @Time: 2023/01/20 19:22:16
 @Author: yum
@@ -11,7 +9,7 @@
 
 
 def is_comprime(a, b):
-    """_判断两个正整数是否互质_
+    '''_判断两个正整数是否互质_
 
     Args:
         a (_int_): _正整数_
@@ -19,7 +17,7 @@ def is_comprime(a, b):
 
     Returns:
         _boolean_: _是否互质_
-    """
+    '''
     # 过滤输入参数
     if a < 1 or int(a) != a or b < 1 or int(b) != b:
         return False

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 keys_info = {
     'list': 'a date structure',
     'dict': 'a date structure',

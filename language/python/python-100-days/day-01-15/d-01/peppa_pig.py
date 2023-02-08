@@ -1,13 +1,11 @@
-# -*- coding: utf-8 -*-
-
-"""
+'''
 绘制小猪佩奇
-"""
+'''
 from turtle import *
 
 
 def nose(x, y):
-    """画鼻子"""
+    '''画鼻子'''
     penup()
 
     # 将海龟移动到指定的坐标
@@ -59,7 +57,7 @@ def nose(x, y):
 
 
 def head(x, y):
-    """画头"""
+    '''画头'''
     color((255, 155, 192), "pink")
     penup()
     goto(x, y)
@@ -95,7 +93,7 @@ def head(x, y):
 
 
 def ears(x, y):
-    """画耳朵"""
+    '''画耳朵'''
     color((255, 155, 192), "pink")
     penup()
     goto(x, y)
@@ -124,7 +122,7 @@ def ears(x, y):
 
 
 def eyes(x, y):
-    """画眼睛"""
+    '''画眼睛'''
     color((255, 155, 192), "white")
     penup()
     setheading(90)
@@ -171,7 +169,7 @@ def eyes(x, y):
 
 
 def cheek(x, y):
-    """画脸颊"""
+    '''画脸颊'''
     color((255, 155, 192))
     penup()
     goto(x, y)
@@ -183,7 +181,7 @@ def cheek(x, y):
 
 
 def mouth(x, y):
-    """画嘴巴"""
+    '''画嘴巴'''
     color(239, 69, 19)
     penup()
     goto(x, y)
@@ -194,7 +192,7 @@ def mouth(x, y):
 
 
 def setting():
-    """设置参数"""
+    '''设置参数'''
     pensize(4)
 
     # 隐藏海龟
@@ -206,7 +204,7 @@ def setting():
 
 
 def main():
-    """主函数"""
+    '''主函数'''
     setting()
     nose(-100, 100)
     head(-69, 167)

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 num = input("Please enter a number ")
 
 if int(num) % 10 == 0:

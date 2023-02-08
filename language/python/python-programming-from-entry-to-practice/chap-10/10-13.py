@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from cgi import print_arguments
 import json
 

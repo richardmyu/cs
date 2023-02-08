@@ -1,10 +1,8 @@
-# -*- coding: utf-8 -*-
-
 from tool import is_comprime, is_prime
 
 
 def exercise_1_gcd(a, b):
-    """_最大公约数_
+    '''_最大公约数_
 
     Args:
         a (_int_): _正整数_
@@ -12,7 +10,7 @@ def exercise_1_gcd(a, b):
 
     Returns:
         _int_: _最大公约数_
-    """
+    '''
     if a % b == 0:
         return b
     elif b % a == 0:
@@ -31,7 +29,7 @@ def exercise_1_gcd(a, b):
 
 
 def exercise_1_lcm(a, b):
-    """_最小公倍数_
+    '''_最小公倍数_
 
     Args:
         a (_int_): _正整数_
@@ -39,7 +37,7 @@ def exercise_1_lcm(a, b):
 
     Returns:
         _int_: _最小公倍数_
-    """
+    '''
     if a % b == 0:
         return a
     elif b % a == 0:
@@ -55,14 +53,14 @@ def exercise_1_lcm(a, b):
 
 
 def exercise_2(n):
-    """_实现判断一个数是不是回文数_
+    '''_实现判断一个数是不是回文数_
 
     Args:
         n (_int_): _正整数_
 
     Returns:
         _boolean_: _是否回文数_
-    """
+    '''
     if n < 1 or int(n) != n:
         return
 
@@ -81,14 +79,14 @@ def exercise_2(n):
 
 
 def exercise_3(n):
-    """_素数判定_
+    '''_素数判定_
 
     Args:
         n (_int_): _正整数_
 
     Returns:
         _boolean_: _是否素数_
-    """
+    '''
     # 过滤输入参数
     if n <= 1 or int(n) != n:
         return False
@@ -104,14 +102,14 @@ def exercise_3(n):
 
 
 def exercise_4(n):
-    """_判断输入的正整数是不是回文素数_
+    '''_判断输入的正整数是不是回文素数_
 
     Args:
         n (_int_): _正整数_
 
     Returns:
         _boolean_: _是回文否素数_
-    """
+    '''
     if exercise_2(n) and exercise_3(n):
         return True
     else:

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 while True:
     reson = input('\nWhy do you like programming(enter q to quit): ')
 

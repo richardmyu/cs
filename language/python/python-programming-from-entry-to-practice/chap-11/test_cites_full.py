@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import unittest
 from city_full_function import get_format_city
 

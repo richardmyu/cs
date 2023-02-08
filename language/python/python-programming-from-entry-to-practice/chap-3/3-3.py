@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 communte_ways = ['car', 'subway', 'bicycle', 'motorcycle']
 
 for way in communte_ways:

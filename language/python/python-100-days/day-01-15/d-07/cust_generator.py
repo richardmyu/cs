@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def fib(max):
     prev, curr = 0, 1
     while max > 0:

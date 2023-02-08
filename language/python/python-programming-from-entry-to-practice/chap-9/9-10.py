@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from resturant import Resturant
 
 my_res = Resturant('chongqinxiaomian', 'wowww')

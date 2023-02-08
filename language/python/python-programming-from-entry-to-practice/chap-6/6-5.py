@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 river_country = {
     'changjiang': 'china',
     'huanghe': 'china',

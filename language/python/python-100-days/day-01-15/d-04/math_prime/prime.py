@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 '''
 @Time: 2023/01/18 23:16:10
 @Author: yum
@@ -11,14 +9,14 @@
 
 
 def is_prime(n):
-    """_素数判定_
+    '''_素数判定_
 
     Args:
         n (_int_): _被判定的正整数_
 
     Returns:
         _boolean_: _是否素数_
-    """
+    '''
     # 过滤输入参数
     if n <= 1 or int(n) != n:
         return False

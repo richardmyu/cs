@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 user_names = ['bob', 'kvein', 'stuart', 'admin', 'superadmin']
 
 for name in user_names:

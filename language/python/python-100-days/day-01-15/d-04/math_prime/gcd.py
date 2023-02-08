@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 '''
 @Time: 2023/01/18 23:11:57
 @Author: yum
@@ -16,11 +14,12 @@
 from prime import is_prime
 from comprime import is_comprime
 
+
 ##############
 #  #
 ##############
 def gcd_prime_1(a, b):
-    """_质因数分解法 1 —— 找出两个数的公约数，只取最大的一个公约数_
+    '''_质因数分解法 1 —— 找出两个数的公约数，只取最大的一个公约数_
 
     Args:
         a (_int_): _正整数_
@@ -28,7 +27,7 @@ def gcd_prime_1(a, b):
 
     Returns:
         _int_: _最大公约数_
-    """
+    '''
     if a % b == 0:
         return b
     elif b % a == 0:
@@ -47,7 +46,7 @@ def gcd_prime_1(a, b):
 
 
 def gcd_prime_2(a, b):
-    """_质因数分解法 2 —— 找出两个数的公约数列表，取两个列表的交集子元素自乘_
+    '''_质因数分解法 2 —— 找出两个数的公约数列表，取两个列表的交集子元素自乘_
 
     Args:
         a (_int_): _正整数_
@@ -55,7 +54,7 @@ def gcd_prime_2(a, b):
 
     Returns:
         _int_: _最大公约数_
-    """
+    '''
     if a % b == 0:
         return b
     elif b % a == 0:
@@ -108,7 +107,7 @@ def gcd_prime_2(a, b):
 
 
 def gcd_euclidean(a, b):
-    """_欧几里得法_
+    '''_欧几里得法_
 
     Args:
         a (_int_): _正整数_
@@ -116,7 +115,7 @@ def gcd_euclidean(a, b):
 
     Returns:
         _int_: _最大公约数_
-    """
+    '''
     if a % b == 0:
         return b
     elif b % a == 0:
@@ -137,7 +136,7 @@ def gcd_euclidean(a, b):
 
 
 def gcd_reduce(a, b):
-    """_更相减损法_
+    '''_更相减损法_
 
     Args:
         a (_int_): _正整数_
@@ -145,7 +144,7 @@ def gcd_reduce(a, b):
 
     Returns:
         _int_: _最大公约数_
-    """
+    '''
     if a % b == 0:
         return b
     elif b % a == 0:
@@ -180,7 +179,7 @@ def gcd_reduce(a, b):
 
 
 def gcd_division(a, b):
-    """_短除法_
+    '''_短除法_
 
     Args:
         a (_int_): _正整数_
@@ -188,7 +187,7 @@ def gcd_division(a, b):
 
     Returns:
         _int_: _最大公约数_
-    """
+    '''
     if a % b == 0:
         return b
     elif b % a == 0:

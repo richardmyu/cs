@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import json
 
 num = int(input("Enter the number your like: "))

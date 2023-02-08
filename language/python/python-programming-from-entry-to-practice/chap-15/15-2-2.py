@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import matplotlib.pyplot as plt
 
 input_values = range(1, 5001)

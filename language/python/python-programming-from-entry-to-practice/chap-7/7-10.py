@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 name = "\nWhat is your name? "
 place = "\nIf you could visit one place in the world, where would you go? "
 

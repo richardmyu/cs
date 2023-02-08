@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 """
 Django settings for learning_log project.
 

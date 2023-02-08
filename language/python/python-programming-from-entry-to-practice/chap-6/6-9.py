@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 favorite_place = {
     'bob': ['beijing', 'tainjing', 'daliang'],
     'kevin': ['chongqing'],

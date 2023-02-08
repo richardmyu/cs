@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-
 import unittest
-
 from prime import is_prime
 from prime_factorization import factorise_prime
 from comprime import is_comprime

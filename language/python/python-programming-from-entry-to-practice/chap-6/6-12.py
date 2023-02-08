@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 cities = {
     'beijing': {'couuntry': 'china', 'population': '2173', 'fact': 'capital'},
     'shanghai': {'couuntry': 'china', 'population': '2420', 'fact': 'economic center'},

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import requests
 from operator import itemgetter
 import time

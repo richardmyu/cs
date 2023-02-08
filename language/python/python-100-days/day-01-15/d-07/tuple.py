@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def fn_1():
     # 定义元组
     t = ('kevin', 'bob', True, 'stuart')

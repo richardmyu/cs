@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 msg = "It is me,yes,just me!"
 print(f'before: {msg}')
 

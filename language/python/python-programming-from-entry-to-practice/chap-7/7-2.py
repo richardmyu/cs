@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 customer_count = input("How many people have dinner? ")
 
 if int(customer_count) >= 8:

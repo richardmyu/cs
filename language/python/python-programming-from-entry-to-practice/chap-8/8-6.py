@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def city_country(city, country):
     return city + ', ' + country
 

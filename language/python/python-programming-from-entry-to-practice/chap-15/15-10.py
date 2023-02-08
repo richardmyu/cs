@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import matplotlib.pyplot as plt
 from random import randint
 from random import choice

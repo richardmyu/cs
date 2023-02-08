@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-
 import random
 import math
 
 
 def excecise_1():
-    """华氏温度到摄氏温度 公式为：$C=(F - 32) \div 1.8$。"""
+    '''华氏温度到摄氏温度 公式为：$C=(F - 32) \div 1.8$。'''
     # tem = float(input('请输入华氏温度: '))
     tem = random.randint(0, 212)
     print(f"华氏温度： { tem }")
@@ -13,7 +11,7 @@ def excecise_1():
 
 
 def excecise_2():
-    """输入半径计算圆的周长和面积"""
+    '''输入半径计算圆的周长和面积'''
     # r = float(input('请输入圆的半径: '))
     r = random.randint(1, 12)
     print(f"半径： { r }")
@@ -22,7 +20,7 @@ def excecise_2():
 
 
 def excecise_3():
-    """输入年份判断是不是闰年"""
+    '''输入年份判断是不是闰年'''
     # y = int(input('请输入年份: '))
     y = random.randint(0, 2050)
     print(f"年份： { y }")

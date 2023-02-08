@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import random
 
 alien_colors = ['green', 'yellow', 'red']

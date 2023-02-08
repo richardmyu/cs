@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import pygame.font
 from pygame.sprite import Group
 from ship import Ship

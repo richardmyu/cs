@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def make_car(brand, model, **topp):
     car_info = {}
     car_info['brand'] = brand

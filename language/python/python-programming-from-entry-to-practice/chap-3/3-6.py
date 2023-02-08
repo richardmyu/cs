@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 guests = ['jack', 'tom', 'marry', 'sophie']
 guests[2] = 'rose'
 

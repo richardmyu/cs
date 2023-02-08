@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 '''
 @Time: 2023/01/19 11:11:52
 @Author: yum
@@ -13,14 +11,14 @@ from prime import is_prime
 
 
 def factorise_prime(n):
-    """_分解质因数_
+    '''_分解质因数_
 
     Args:
         n (_int_): _被分解正整数_
 
     Returns:
         _list_: _因子列表_
-    """
+    '''
     # 过滤输入参数
     if n <= 1 or int(n) != n:
         return

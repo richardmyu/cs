@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 prompt = "\nHow old are you? "
 prompt += "\n(Enter 'quit' when you are finished.) "
 

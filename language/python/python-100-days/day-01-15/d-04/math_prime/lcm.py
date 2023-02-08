@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 '''
 @Time: 2023/01/18 23:14:17
 @Author: yum
@@ -17,7 +15,7 @@ from gcd import gcd_prime_1
 
 
 def lcm_prime(a, b):
-    """_质因数分解法 —— 将两数 a,b 因式分解，获取其中 b 中 a 没有的因子，与 a 相乘，即可得最小公倍数_
+    '''_质因数分解法 —— 将两数 a,b 因式分解，获取其中 b 中 a 没有的因子，与 a 相乘，即可得最小公倍数_
 
     Args:
         a (_int_): _正整数_
@@ -25,7 +23,7 @@ def lcm_prime(a, b):
 
     Returns:
         _int_: _最小公倍数_
-    """
+    '''
     if a % b == 0:
         return a
     elif b % a == 0:
@@ -69,7 +67,7 @@ def lcm_prime(a, b):
 
 
 def lcm_formula(a, b):
-    """_公式法 —— 获取最大公约数，被两数之积除，即为最小公倍数_
+    '''_公式法 —— 获取最大公约数，被两数之积除，即为最小公倍数_
 
     Args:
         a (_int_): _正整数_
@@ -77,7 +75,7 @@ def lcm_formula(a, b):
 
     Returns:
         _int_: _最小公倍数_
-    """
+    '''
     if a % b == 0:
         return a
     elif b % a == 0:
@@ -93,7 +91,7 @@ def lcm_formula(a, b):
 
 
 def lcm_division(a, b):
-    """_短除法_
+    '''_短除法_
 
     Args:
         a (_int_): _正整数_
@@ -101,7 +99,7 @@ def lcm_division(a, b):
 
     Returns:
         _int_: _最小公倍数_
-    """
+    '''
     if a % b == 0:
         return a
     elif b % a == 0:

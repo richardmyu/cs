@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def fn_1():
     s1 = 'hello ' * 3
     print(s1)  # hello hello hello

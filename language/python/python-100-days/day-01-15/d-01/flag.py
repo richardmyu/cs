@@ -1,13 +1,11 @@
-# -*- coding: utf-8 -*-
-
-"""
+'''
 用Python的turtle模块绘制国旗
-"""
+'''
 import turtle
 
 
 def draw_rectangle(x, y, width, height):
-    """绘制矩形"""
+    '''绘制矩形'''
     turtle.goto(x, y)
     turtle.pencolor('red')
     turtle.fillcolor('red')
@@ -23,7 +21,7 @@ def draw_rectangle(x, y, width, height):
 
 
 def draw_star(x, y, radius):
-    """绘制五角星"""
+    '''绘制五角星'''
     turtle.setpos(x, y)
     pos1 = turtle.pos()
     turtle.circle(-radius, 72)
@@ -45,7 +43,7 @@ def draw_star(x, y, radius):
 
 
 def main():
-    """主程序"""
+    '''主程序'''
     turtle.speed(12)
     turtle.penup()
     x, y = -270, -180

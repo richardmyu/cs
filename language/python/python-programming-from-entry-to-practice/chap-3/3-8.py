@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 travel_sites = [
     'Hogwarts',
     'Middle-Earth',

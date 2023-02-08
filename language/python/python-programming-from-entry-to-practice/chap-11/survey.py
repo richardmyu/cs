@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 class AnonymousSurvey:
     def __init__(self, question):
         self.question = question

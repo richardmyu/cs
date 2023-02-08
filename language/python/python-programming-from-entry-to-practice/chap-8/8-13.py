@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def build_profile(first, last, **user_info):
     profile = {}
     profile['fitst_name'] = first

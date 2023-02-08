@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 class Fib(object):
     def __init__(self, max=0):
         super(Fib, self).__init__()

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import printing_functions as pf
 
 unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']

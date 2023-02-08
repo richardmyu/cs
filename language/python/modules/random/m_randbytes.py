@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
-"""randbytes
+'''
+randbytes
 生成 n 个随机字节
 3.9 新版功能
-"""
+'''
 
 import random
 

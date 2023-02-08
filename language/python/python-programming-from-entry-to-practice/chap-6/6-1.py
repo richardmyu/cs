@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 harry_info = {'first_name': 'harry', 'last_name': 'potter', 'age': 18, 'city': 'london'}
 
 print(f'first_name is {harry_info["first_name"]}')

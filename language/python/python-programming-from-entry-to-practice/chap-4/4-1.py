@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 foods = ['kuangfen', 'doupi', 'mantou']
 
 for food in foods:

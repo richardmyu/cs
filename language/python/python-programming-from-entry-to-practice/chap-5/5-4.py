@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 alien_colors = ['green', 'yellow', 'red']
 
 for color in alien_colors:

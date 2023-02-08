@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 harry = {'first_name': 'harry', 'last_name': 'potter', 'age': 18, 'city': 'london'}
 
 hermione = {

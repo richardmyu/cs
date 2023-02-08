@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 favorite_fruits = ['apple', 'banana', 'watermalon', 'strawberry']
 
 if 'apple' in favorite_fruits:

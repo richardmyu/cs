@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import sum_function
 from sum_function import sum
 from sum_function import sum as add

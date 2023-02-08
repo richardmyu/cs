@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def count_words(filename):
     try:
         with open(filename) as f_obj:

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 while True:
     name = input('\nPlease enter your name(enter q to quit): ')
 

@@ -1,11 +1,8 @@
-# -*- coding: utf-8 -*-
-
 import time
 
 
 def func(n):
     for i in range(0, n):
-
         # yield 相当于 return，
         # 下一次循环从 yield 的下一行开始
         arg = yield i

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import csv
 from matplotlib import pyplot as plt
 from datetime import datetime

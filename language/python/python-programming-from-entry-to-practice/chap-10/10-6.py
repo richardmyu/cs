@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 print('Give me tow numbers, and i\'ll add them.')
 print('Enter "q" to quit.')
 

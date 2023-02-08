@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import os
 import sys
 import time
@@ -7,7 +5,7 @@ import random
 
 
 def generator_expression():
-    """生成式"""
+    '''生成式'''
     f = [x for x in range(1, 10)]
     print(f)
 
@@ -20,7 +18,7 @@ def generator_expression():
 
 
 def generator_function():
-    """生成器"""
+    '''生成器'''
     f = (x**2 for x in range(1, 1000))
     print(sys.getsizeof(f))
     # print(f)
@@ -30,7 +28,7 @@ def generator_function():
 
 
 def generator_yield(n):
-    """yield 生成器"""
+    '''yield 生成器'''
     a, b = 0, 1
     for _ in range(n):
         a, b = b, a + b
@@ -38,7 +36,7 @@ def generator_yield(n):
 
 
 def exercise_1():
-    """在屏幕上显示跑马灯文字"""
+    '''在屏幕上显示跑马灯文字'''
     content = "hello world "
 
     while True:
@@ -51,7 +49,7 @@ def exercise_1():
 
 
 def exercise_2(l=8):
-    """产生指定长度的验证码，验证码由大小写字母和数字构成"""
+    '''产生指定长度的验证码，验证码由大小写字母和数字构成'''
     chars_num = "0123456789"
     chars_str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     code = ""
@@ -74,7 +72,7 @@ def exercise_2(l=8):
 
 
 def exercise_3(filename):
-    """返回给定文件名的后缀名"""
+    '''返回给定文件名的后缀名'''
     index = filename.rfind('.')
 
     if index != -1:
@@ -84,7 +82,7 @@ def exercise_3(filename):
 
 
 def exercise_4(l):
-    """返回传入的列表中最大和第二大的元素的值"""
+    '''返回传入的列表中最大和第二大的元素的值'''
     new_l = l[:]
     max_l = max(new_l)
 
@@ -101,7 +99,7 @@ def exercise_4(l):
 
 
 def exercise_4_2(l):
-    """返回传入的列表中最大和第二大的元素的值"""
+    '''返回传入的列表中最大和第二大的元素的值'''
     new_l = l[:]
     new_l = list(set(new_l))
     max_l = max(new_l)
@@ -112,12 +110,12 @@ def exercise_4_2(l):
 
 
 def is_leap_year(y):
-    """是否是闰年"""
+    '''是否是闰年'''
     return y % 100 != 0 and y % 4 == 0 or y % 400 == 0
 
 
 def exercise_5(y, m, d):
-    """计算指定的年月日是这一年的第几天"""
+    '''计算指定的年月日是这一年的第几天'''
     is_leap = is_leap_year(y)
     total_day = d
     months_list = [
@@ -136,7 +134,7 @@ def exercise_5(y, m, d):
 
 
 def exercise_6_1(n=5):
-    """打印杨辉三角"""
+    '''打印杨辉三角'''
     L = [1]
     count = 0
 
@@ -147,7 +145,7 @@ def exercise_6_1(n=5):
 
 
 def exercise_6_2(n=5):
-    """打印杨辉三角"""
+    '''打印杨辉三角'''
     ret = [1]
     count = 0
     while count < n:
@@ -160,7 +158,7 @@ def exercise_6_2(n=5):
 
 
 def exercise_6_3(n=5):
-    """打印杨辉三角"""
+    '''打印杨辉三角'''
     LL = [[1]]
     for i in range(1, n):
         LL.append(
@@ -174,7 +172,7 @@ def exercise_6_3(n=5):
 
 
 def exercise_6_4(n=5):
-    """打印杨辉三角"""
+    '''打印杨辉三角'''
     yh = [[]] * n
     for row in range(len(yh)):
         yh[row] = [None] * (row + 1)

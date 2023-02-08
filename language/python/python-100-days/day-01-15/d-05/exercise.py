@@ -1,10 +1,8 @@
-# -*- coding: utf-8 -*-
-
 from tool import is_perfect_n, is_prime
 
 
 def fn_example():
-    """百钱百鸡"""
+    '''百钱百鸡'''
     # 5*x + 1/3*y = 100
     # x + y = 100
     # ==> x < 15
@@ -20,7 +18,7 @@ def fn_example():
 
 
 def exercise_1(n=20):
-    """生成斐波那契数列的前20个数"""
+    '''生成斐波那契数列的前20个数'''
     if n == 1:
         return [1]
     elif n == 2:
@@ -36,7 +34,7 @@ def exercise_1(n=20):
 
 
 def exercise_2(n=10000):
-    """找出 10000 以内的完美数"""
+    '''找出 10000 以内的完美数'''
     perfect_n = []
 
     for x in range(1, n):
@@ -47,7 +45,7 @@ def exercise_2(n=10000):
 
 
 def exercise_3(n=100):
-    """输出 100 以内所有的素数"""
+    '''输出 100 以内所有的素数'''
     prime_n = []
 
     for x in range(1, n):

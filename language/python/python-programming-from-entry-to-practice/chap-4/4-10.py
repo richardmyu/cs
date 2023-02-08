@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 msg_1 = 'The first three items in the list are:'
 print(msg_1[:3])
 

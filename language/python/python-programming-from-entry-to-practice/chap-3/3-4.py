@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 guests = ['jack', 'tom', 'marry', 'sophie']
 
 print(f'Hi {guests[0]}, welcome to my party!')

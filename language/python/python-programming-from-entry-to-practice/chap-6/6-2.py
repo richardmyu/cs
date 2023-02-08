@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 minions = {'bob': 1, 'Kvein': 2, 'stuart': 3, 'admin': 4, 'superadmin': 5}
 
 print(f'bob number is : {minions["bob"]}')

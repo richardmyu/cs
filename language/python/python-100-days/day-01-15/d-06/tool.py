@@ -1,24 +1,20 @@
-# -*- coding: utf-8 -*-
-
 '''
 @Time: 2023/01/21 21:17:42
 @Author: yum
 @Email: richardminyu@foxmail.com
 @File: tool.py
-
-
 '''
 
 
 def is_prime(n):
-    """_素数判定_
+    '''_素数判定_
 
     Args:
         n (_int_): _被判定的正整数_
 
     Returns:
         _boolean_: _是否素数_
-    """
+    '''
     # 过滤输入参数
     if n <= 1 or int(n) != n:
         return False
@@ -34,7 +30,7 @@ def is_prime(n):
 
 
 def is_comprime(a, b):
-    """_判断两个正整数是否互质_
+    '''_判断两个正整数是否互质_
 
     Args:
         a (_int_): _正整数_
@@ -42,7 +38,7 @@ def is_comprime(a, b):
 
     Returns:
         _boolean_: _是否互质_
-    """
+    '''
     # 过滤输入参数
     if a < 1 or int(a) != a or b < 1 or int(b) != b:
         return False

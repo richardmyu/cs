@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 food_tuple = ('kuangfen', 'doupi', 'mantou', 'shaomai', 'qiancengbing')
 
 for food in food_tuple:

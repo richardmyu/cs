@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def descibe_city(name, country='chine'):
     print(f'{name} is in {country}')
 

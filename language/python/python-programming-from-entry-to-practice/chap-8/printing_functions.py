@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def print_models(unprinted_designs, completed_models):
     """
     模拟打印每个设计，直到没有未打印的设计为止

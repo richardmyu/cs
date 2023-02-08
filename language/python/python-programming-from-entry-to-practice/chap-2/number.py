@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # 2-8
 print(2 + 6)
 print(10 - 2)

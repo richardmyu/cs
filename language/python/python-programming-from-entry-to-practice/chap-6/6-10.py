@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 minions = {
     'bob': [1, 5, 9],
     'Kvein': [2, 3],

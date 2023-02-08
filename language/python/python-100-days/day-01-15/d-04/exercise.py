@@ -1,12 +1,9 @@
-# -*- coding: utf-8 -*-
-
 import random
-
 from tool import is_comprime
 
 
 def exercise_1():
-    """输入一个正整数判断是不是素数"""
+    '''输入一个正整数判断是不是素数'''
     num = int(input('请输入一个正整数: '))
 
     if num <= 0 or int(num) != num:
@@ -24,7 +21,7 @@ def exercise_1():
 
 
 def exercise_2():
-    """输入两个正整数，计算它们的最大公约数和最小公倍数。"""
+    '''输入两个正整数，计算它们的最大公约数和最小公倍数。'''
     a = int(input('请输入一个正整数: '))
     b = int(input('请再输入一个正整数: '))
     gcd = 1
@@ -60,7 +57,7 @@ def exercise_2():
 
 
 def exercise_3():
-    """打印如下所示的三角形图案"""
+    '''打印如下所示的三角形图案'''
     # print()
     row = int(input('请输入行数: '))
 

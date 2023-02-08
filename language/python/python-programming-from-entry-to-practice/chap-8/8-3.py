@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def make_shirt(size, text):
     print(f'T-shirt size is {size}')
     print(f'T-shirt logo is {text}')
