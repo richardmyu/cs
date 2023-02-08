@@ -124,6 +124,7 @@ itertools 模块里的函数返回的都是迭代器对象。为了更直观的�
 x = (x*x for x in range(10))
 type(x)
 # <class 'generator'>
+
 y = [x*x for x in range(10)]
 type(y)
 # <class 'list'>
