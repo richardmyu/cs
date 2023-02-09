@@ -1,4 +1,6 @@
 '''seed
+random.seed(a=None, version=2)
+
 初始化随机数生成器
 可以在调用其他随机模块函数之前调用此函数
 '''

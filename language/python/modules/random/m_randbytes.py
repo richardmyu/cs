@@ -1,5 +1,6 @@
-'''
-randbytes
+'''randbytes
+random.randbytes(n)
+
 生成 n 个随机字节
 3.9 新版功能
 '''
