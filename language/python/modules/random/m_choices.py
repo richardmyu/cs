@@ -11,3 +11,6 @@ import random
 print(random.choices([1, 2, 3, 4], k=2))
 
 print(random.choices([1, 2, 3, 4, 4, 4, 4], k=2))
+
+# 带权重
+print(random.choices(['red', 'black', 'green'], [18, 18, 2], k=6))
