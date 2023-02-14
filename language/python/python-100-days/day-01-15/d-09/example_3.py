@@ -88,11 +88,13 @@ def main():
         Programmer('张辽'),
         Programmer('赵云'),
     ]
+
     for emp in emps:
         if isinstance(emp, Programmer):
             emp.working_hour = int(input('请输入%s本月工作时间: ' % emp.name))
         elif isinstance(emp, Salesman):
             emp.sales = float(input('请输入%s本月销售额: ' % emp.name))
+
         # 同样是接收get_salary这个消息但是不同的员工表现出了不同的行为(多态)
         print('%s本月工资为: ￥%s元' % (emp.name, emp.get_salary()))
 

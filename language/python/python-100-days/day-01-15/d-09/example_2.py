@@ -94,10 +94,13 @@ def get_key(card):
 def main():
     p = Poker()
     p.shuffle()
-    players = [Player('东邪'), Player('西毒'), Player('南帝'), Player('北丐')]
-    for _ in range(13):
+    # players = [Player('东邪'), Player('西毒'), Player('南帝'), Player('北丐')]
+    players = [Player('东邪'), Player('西毒'), Player('南帝')]
+
+    for _ in range(52 // len(players)):
         for player in players:
             player.get(p.next)
+
     for player in players:
         print(player.name + ':', end=' ')
         player.arrange(get_key)
