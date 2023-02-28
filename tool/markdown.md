@@ -3,6 +3,7 @@
 ## 1. 流程图 -- mermaid
 
 > [mermaid-js/mermaid](https://github.com/mermaid-js/mermaid)
+
 > [mermaid (blog)](https://mermaid-js.github.io/mermaid/#/)
 
 ### 1.0.basic
@@ -21,10 +22,10 @@ graph [TB|BT|LR|RL|TD]
 ```mermaid
 graph TD
     id1[带文本的矩形]
-    id2(带文本的圆角矩形)
+    id2（带文本的圆角矩形）
     id3>带文本的不对称的矩形]
     id4{带文本的菱形}
-    id5((带文本的圆形))
+    id5(（带文本的圆形）)
 ```
 
 - **定义连接线和子图**
@@ -198,13 +199,10 @@ Rel(SystemC, customerA, "Sends e-mails to")
 ```mermaid
 gitGraph
       commit
-      commit
       branch develop
       checkout develop
       commit
-      commit
       checkout main
       merge develop
-      commit
       commit
 ```
