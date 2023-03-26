@@ -34,6 +34,7 @@ words = [
     "you're",
     'under',
 ]
+
 counter = Counter(words)
 
 print(counter.most_common(3))
