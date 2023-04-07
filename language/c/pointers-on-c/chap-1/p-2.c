@@ -3,6 +3,7 @@
 int main()
 {
   char flag;
+
   while (flag != 'q')
   {
     printf("enter something: ");

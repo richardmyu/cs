@@ -4,6 +4,7 @@ void go_south_east(int lat, int lon)
 {
   lat -= 1;
   lon += 1;
+
   printf("停！当前位置：[%i,%i]\n", lat, lon);
 }
 
@@ -13,5 +14,6 @@ int main()
   int longitude = -64;
   go_south_east(latitude, longitude);
   printf("停！当前位置：[%i,%i]\n", latitude, longitude);
+
   return 0;
 }

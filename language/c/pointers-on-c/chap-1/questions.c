@@ -11,11 +11,13 @@ int main()
   int quantity;
   int price;
   int department[2];
+
   scanf("%d", &quantity);
   scanf("%d", &price);
   scanf("%d", &department[1]);
   printf("%d\n", quantity);
   printf("%d\n", price);
   printf("%d\n", department[1]);
+
   return 0;
 }

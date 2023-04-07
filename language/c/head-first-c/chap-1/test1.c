@@ -10,6 +10,7 @@ int main()
 
   // p2
   int c = 10;
+
   while (c > 10)
   {
     puts("我决不在课堂上写代码！");
@@ -24,6 +25,7 @@ int main()
 
   // p4
   char suit = 'H';
+
   switch (suit)
   {
   case 'C':

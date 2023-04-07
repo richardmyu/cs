@@ -7,6 +7,7 @@ int main()
   puts("输入牌名：");
   scanf("%2s", card_name);
   int val = 0;
+
   if (card_name[0] == 'K')
   {
     val = 10;
@@ -27,10 +28,10 @@ int main()
   {
     // atoi函数对应的头文件为
     // #include <stdlib.h>
-
     val = atoi(card_name);
   }
 
   printf("这张牌的点数是：%i\n", val);
+
   return 0;
 }
