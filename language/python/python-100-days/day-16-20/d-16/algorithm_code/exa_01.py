@@ -67,16 +67,16 @@ def main():
     for index, y_data in enumerate(y_datas_1):
         pyplot.plot(x_data_1, y_data, styles_1[index])
     pyplot.legend(legends_1)
-    pyplot.xticks(numpy.arange(1, num_1+1, step=1))
-    pyplot.yticks(numpy.arange(0, (num_1+1)*10, step=10))
+    pyplot.xticks(numpy.arange(1, num_1 + 1, step=1))
+    pyplot.yticks(numpy.arange(0, (num_1 + 1) * 10, step=10))
 
     # plot 2
     pyplot.subplot(1, 2, 2)
     for index, y_data in enumerate(y_datas_2):
         pyplot.plot(x_data_2, y_data, styles_2[index])
     pyplot.legend(legends_2)
-    pyplot.xticks(numpy.arange(1, num_2+1, step=1))
-    pyplot.yticks(numpy.arange(0, (num_2+1)*700, step=700))
+    pyplot.xticks(numpy.arange(1, num_2 + 1, step=1))
+    pyplot.yticks(numpy.arange(0, (num_2 + 1) * 700, step=700))
 
     pyplot.show()
 
