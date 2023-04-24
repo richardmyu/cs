@@ -1,15 +1,15 @@
 # ip 类
 
-> ubuntu （提前安装 net-tools)
+> ubuntu (提前安装 net-tools)
 
 ## 查看 ip 地址
 
 ```shell
-# windows
+##### windows
 # cmd
 ipconfig
 
-# ubuntu
+##### ubuntu
 # 1: inet 对应 ipv4；inet6 对应 ipv6；
 ip addr show
 # ip a
@@ -21,7 +21,7 @@ hostname -I
 ## 查看 mac 地址
 
 ```shell
-# windows
+##### windows
 # 1: cmd 物理地址即为 mac 地址
 ipconfig/all
 # or ipconfig -all
@@ -29,7 +29,7 @@ ipconfig/all
 # 2: powershell （查看网卡与其对应的 mac 地址）
 Get-NetAdapter
 
-# ubuntu
+##### ubuntu
 # 1: ether 对应为 mac 地址
 ifconfig
 
