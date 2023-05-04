@@ -41,9 +41,17 @@ import time
 延迟执行
 参数：延迟时间
 """
+"""
 for i in range(10):
     if i % 2 == 0:
         time.sleep(2)
     else:
         time.sleep(1)
     print('-' * i)
+"""
+
+##########################
+#    time.struct_time    #
+##########################
+"""
+"""
