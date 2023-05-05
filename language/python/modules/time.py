@@ -50,8 +50,34 @@ for i in range(10):
     print('-' * i)
 """
 
-##########################
-#    time.struct_time    #
-##########################
-"""
-"""
+########################
+#    time.localtime    #
+########################
+# print(time.localtime())
+# time.struct_time(tm_year=2023, tm_mon=5, tm_mday=5, tm_hour=21, tm_min=40, tm_sec=43, tm_wday=4, tm_yday=125, tm_isdst=0)
+# print(time.localtime(1683204518.954535))
+# time.struct_time(tm_year=2023, tm_mon=5, tm_mday=4, tm_hour=20, tm_min=48, tm_sec=38, tm_wday=3, tm_yday=124, tm_isdst=0)
+
+########################
+#    time.localtime    #
+########################
+# print(time.mktime(time.localtime()))
+# 1683294178.0
+# print(time.mktime(time.localtime(1683204518.954535)))
+# 1683204518.0
+
+
+#######################
+#    time.strftime    #
+#######################
+print(time.strftime("%a, %d, %Y %H:%M:%S",time.gmtime()))
+# Fri, 05, 2023 13:46:36
+
+print(time.strftime("%Y-%m-%d %H:%M:%S",time.gmtime()))
+# 2023-05-05 13:46:36
+
+print(time.strftime("%a, %d, %Y %H:%M:%S",time.gmtime(1683204518.954535)))
+# Thu, 04, 2023 12:48:38
+
+print(time.strftime("%Y/%m/%d %H:%M:%S",time.gmtime(1683204518.954535)))
+# 2023/05/04 12:48:38

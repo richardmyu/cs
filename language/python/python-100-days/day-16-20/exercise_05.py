@@ -37,4 +37,6 @@ words = [
 
 counter = Counter(words)
 
+# print(dir(counter))
+print(counter.items())
 print(counter.most_common(3))

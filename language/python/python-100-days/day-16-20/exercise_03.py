@@ -1,5 +1,5 @@
 """
-从列表中找出最大的或最小的N个元素
+从列表中找出最大的或最小的 N 个元素
 堆结构(大根堆/小根堆)
 """
 import heapq
@@ -16,5 +16,9 @@ list2 = [
 
 print(heapq.nlargest(3, list1))
 print(heapq.nsmallest(3, list1))
+
 print(heapq.nlargest(2, list2, key=lambda x: x['price']))
 print(heapq.nlargest(2, list2, key=lambda x: x['shares']))
+
+# 非数值也可以哟
+print(heapq.nlargest(2, list2, key=lambda x: x['name']))
