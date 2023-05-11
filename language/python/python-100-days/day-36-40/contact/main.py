@@ -56,21 +56,68 @@ def input_contacter_info():
     email = input('邮箱：')
     return name, tel, email
 
+
 def add_new_contacter(con):
-    name,tel,email=input_contacter_info()
+    name, tel, email = input_contacter_info()
     try:
         with con.cursor() as cursor:
-            if cursor.execute(INSERT_CONTACTER,(name,tel,email))==1:
+            if cursor.execute(INSERT_CONTACTER, (name, tel, email)) == 1:
                 print('添加联系人成功！')
     except pymysql.MySQLError as err:
         print(err)
         print('添加联系人失败！')
 
-def delete_contacter(con,contacter):
+
+def delete_contacter(con, contacter):
     try:
         with con.cursor() as cursor:
-            if cursor.execute(DELETE_CONTACTER,(contacter.id,))==1:
+            if cursor.execute(DELETE_CONTACTER, (contacter.id,)) == 1:
                 print('联系人已经删除！')
     except pymysql.MySQLError as err:
         print(err)
         print('删除联系人失败！')
+
+
+def edit_contacter_info(con, contacter):
+    name, tel, email = input_contacter_info()
+    contacter.name = name or contacter.name
+    contacter.tel = tel or contacter.tel
+    contacter.email = email or contacter.email
+
+    try:
+        with con.cursor() as cursor:
+            if cursor.execute(UPDATE_CONTACTER, (contacter.name, contacter.tel, contacter.email, contacter.id)) == 1:
+                print('联系人信息已更新！')
+    except pymysql.MySQLError as err:
+        print(err)
+        print('更新类型信息失败！')
+
+
+def show_contacter_detail(con, contacter):
+    print('姓名：', contacter.name)
+    print('手机号：', contacter.tel)
+    print('邮箱：', contacter.email)
+    choice = input('是否编辑联系人信息？（yes|no）')
+    if choice == 'yes' or choice == 'y':
+        edit_contacter_info(con, contacter)
+    else:
+        choice = input('是否删除联系人信息？（yes|no）')
+        if choice == 'yes' or choice == 'y':
+            delete_contacter(con, contacter)
+
+
+def show_search_result(con, cursor):
+    contacters_list = []
+
+    for index, row in enumerate(cursor.fetchall()):
+        contacter = Contacter(**row)
+        contacters_list.append(contacter)
+        print('[%d]: %s' % (index, contacter.name))
+
+    if len(contacters_list) > 0:
+        choice = input('是否查看联系人详情？（yes|no）')
+
+        if choice == 'yes' or choice == 'y':
+            index = int(input('请输入编号：'))
+            if 0 <= index < cursor.rowcount:
+                show_contacter_detail(con, contacters_list[index])
