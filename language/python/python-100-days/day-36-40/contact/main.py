@@ -19,22 +19,22 @@ primary key (conid)
 import pymysql
 
 INSERT_CONTACTER = """
-insert into tb_contacter (conname, contel, conemail) 
+insert into tb_contacter (conname, contel, conemail)
 values (%s, %s, %s)
 """
 DELETE_CONTACTER = """
 delete from tb_contacter where conid=%s
 """
 UPDATE_CONTACTER = """
-update tb_contacter set conname=%s, contel=%s, conemail=%s 
+update tb_contacter set conname=%s, contel=%s, conemail=%s
 where conid=%s
 """
 SELECT_CONTACTERS = """
-select conid as id, conname as name, contel as tel, conemail as email 
+select conid as id, conname as name, contel as tel, conemail as email
 from tb_contacter limit %s offset %s
 """
 SELECT_CONTACTERS_BY_NAME = """
-select conid as id, conname as name, contel as tel, conemail as email 
+select conid as id, conname as name, contel as tel, conemail as email
 from tb_contacter where conname like %s
 """
 COUNT_CONTACTERS = """
@@ -121,3 +121,24 @@ def show_search_result(con, cursor):
             index = int(input('请输入编号：'))
             if 0 <= index < cursor.rowcount:
                 show_contacter_detail(con, contacters_list[index])
+
+def find_all_contacters(con):
+    page,size=1,5
+    try:
+        with con.cursor() as cursor:
+            cursor.execute(COUNT_CONTACTERS)
+            total=cursor.fetchone()['total']
+            while True:
+                cursor.execute(SELECT_CONTACTERS,(size,(page-1)*size))
+                show_search_result(con,cursor)
+                if page * size<total:
+                    choice=input('继续查看下一页？（yes|no）')
+                    if choice.lower()=='yes' or choice.lower()=='y':
+                        page+=1
+                    else:
+                        break
+                else:
+                    print('没有下一页记录！')
+                    break
+    except pymysql.MySQLError as err:
+        print(err)
