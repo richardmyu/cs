@@ -122,19 +122,20 @@ def show_search_result(con, cursor):
             if 0 <= index < cursor.rowcount:
                 show_contacter_detail(con, contacters_list[index])
 
+
 def find_all_contacters(con):
-    page,size=1,5
+    page, size = 1, 5
     try:
         with con.cursor() as cursor:
             cursor.execute(COUNT_CONTACTERS)
-            total=cursor.fetchone()['total']
+            total = cursor.fetchone()['total']
             while True:
-                cursor.execute(SELECT_CONTACTERS,(size,(page-1)*size))
-                show_search_result(con,cursor)
-                if page * size<total:
-                    choice=input('继续查看下一页？（yes|no）')
-                    if choice.lower()=='yes' or choice.lower()=='y':
-                        page+=1
+                cursor.execute(SELECT_CONTACTERS, (size, (page - 1) * size))
+                show_search_result(con, cursor)
+                if page * size < total:
+                    choice = input('继续查看下一页？（yes|no）')
+                    if choice.lower() == 'yes' or choice.lower() == 'y':
+                        page += 1
                     else:
                         break
                 else:
@@ -142,3 +143,50 @@ def find_all_contacters(con):
                     break
     except pymysql.MySQLError as err:
         print(err)
+
+
+def find_contacters_by_name(con):
+    name = input('联系人姓名：')
+    try:
+        with con.cursor() as cursor:
+            cursor.execute(SELECT_CONTACTERS_BY_NAME, ('%' + name + '%'))
+            show_search_result(con, cursor)
+    except pymysql.MySQLError as err:
+        print(err)
+
+
+def find_contacters(con):
+    while True:
+        print('1. 查看所有联系人')
+        print('2. 搜索联系人')
+        print('3. 推出查找')
+        choie = int(input('请输入；'))
+        if choie == 1:
+            find_all_contacters(con)
+        elif choie == 2:
+            find_contacters_by_name(con)
+        elif choie == 3:
+            break
+
+
+def main():
+    con = pymysql.connect(host='1.2.3.4', port=3306, user='yourname', passwd='yourpassword', db='address',
+                          charset='ytf8', autocommit=True, cursorclass=pymysql.cursors.DictCursor)
+    while True:
+        print('=====通讯录=====')
+        print('1. 新建联系人')
+        print('2. 查找联系人')
+        print('3. 退出系统')
+        print('===============')
+        choice = int(input('请选择: '))
+        if choice == 1:
+            add_new_contacter(con)
+        elif choice == 2:
+            find_contacters(con)
+        elif choice == 3:
+            con.close()
+            print('谢谢使用, 再见！')
+            break
+
+    if __name__ == '__main__':
+        main()
