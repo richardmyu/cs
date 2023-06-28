@@ -5,7 +5,6 @@
 ![python](https://img.shields.io/badge/python-support-brightgreen.svg)
 ![c](https://img.shields.io/badge/c-support-brightgreen.svg)
 ![haskell](https://img.shields.io/badge/haskell-support-brightgreen.svg)
-
 ![SQL](https://img.shields.io/badge/SQL-support-brightgreen.svg)
 
 计算机学习笔记，只作为笔记用途 :warning::warning::warning:。
