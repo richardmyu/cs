@@ -186,29 +186,28 @@ $$f(x_1,x_2,\ldots,x_n) = \left({1 \over x_1}\right)^2+\left({1 \over x_2}\right
 
 ### 10.6.希腊字母
 
-| 代码          | 符号          |
-| ------------- | ------------- |
-| `\alpha`      | $\alpha$      |
-| `\beta`       | $\beta$       |
-| `\gamma`      | $\gamma$      |
-| `\delta`      | $\delta$      |
-| `\epsilon`    | $\epsilon$    |
-| `\varepsilon` | $\varepsilon$ |
-| `\zeta`       | $\zeta$       |
-| `\eta`        | $\eta$        |
-| `\theta`      | $\theta$      |
-| `\Theta`      | $\Theta$      |
-| `\vartheta`   | $\vartheta$   |
-| `\pi`         | $\pi$         |
-| `\phi`        | $\phi$        |
-| `\psi`        | $\psi$        |
-| `\Psi`        | $\Psi$        |
-| `\omega`      | $\omega$      |
-| `\Omega`      | $\Omega$      |
-| `\rho`        | $\rho$        |
-| `\sigma`      | $\sigma$      |
-| `\xi`         | $\xi$         |
-| `\mu`         | $\mu$         |
-| `\partial`    | $\partial$    |
+| 代码                   | 符号                     |
+| ---------------------- | ------------------------ |
+| `\alpha \Alpha`        | $\alpha$ $\Alpha$        |
+| `\beta \Beta`          | $\beta$ $\Beta$          |
+| `\gamma \Gamma`        | $\gamma$ $\Gamma$        |
+| `\delta \Delta`        | $\delta$ $\Delta$        |
+| `\epsilon \varepsilon` | $\epsilon$ $\varepsilon$ |
+| `\zeta`                | $\zeta$                  |
+| `\eta`                 | $\eta$                   |
+| `\theta \Theta`        | $\theta$ $\Theta$        |  |
+| `\vartheta`            | $\vartheta$              |
+| `\pi`                  | $\pi$                    |
+| `\phi`                 | $\phi$                   |
+| `\psi`                 | $\psi$                   |
+| `\Psi`                 | $\Psi$                   |
+| `\omega`               | $\omega$                 |
+| `\Omega`               | $\Omega$                 |
+| `\rho`                 | $\rho$                   |
+| `\sigma`               | $\sigma$                 |
+| `\xi`                  | $\xi$                    |
+| `\mu`                  | $\mu$                    |
+| `\partial`             | $\partial$               |
 
 <!-- https://zhuanlan.zhihu.com/p/357093758 -->
+<!-- https://zhuanlan.zhihu.com/p/464237097 -->
