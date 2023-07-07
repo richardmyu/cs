@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main()
+int main()
 {
   // exec 1
   // printf("hello
