@@ -12,7 +12,16 @@ TODO: 语法未知
 int main()
 {
   long c;
-  c = getchar();
 
-  putchar(c);
+  while ((c = getchar()) != EOF)
+  {
+    if (c == '\t')
+      printf("\\t");
+    if (c == '\b')
+      printf("\\b");
+    if (c != '\b')
+      if (c != '\t')
+        if (c != '\\')
+          putchar(c);
+  }
 }

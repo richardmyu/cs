@@ -2,5 +2,5 @@
 
 int main()
 {
-  putchar(getchar());
+  printf("EOF is %d", EOF);
 }
