@@ -39,13 +39,9 @@ int main()
       if (nc > 0)
       {
         if (nc < MAXWORD)
-        {
           ++wl[nc];
-        }
         else
-        {
           ++ovflow;
-        }
       }
       nc = 0;
     }
@@ -55,35 +51,25 @@ int main()
       nc = 1; /* 开始下一个单词 */
     }
     else
-    {
       ++nc; /* 插入单词 */
-    }
   }
 
   maxvalue = 0;
 
   for (i = 1; i < MAXWORD; ++i)
-  {
     if (wl[i] > maxvalue)
-    {
       maxvalue = wl[i];
-    }
-  }
 
   for (i = 1; i < MAXWORD; ++i)
   {
     printf("%5d - %5d : ", i, wl[i]);
     if (wl[i] > 0)
     {
-      if (len * wl[i] * MAXHIST / maxvalue <= 0)
-      {
+      if ((len = wl[i] * MAXHIST / maxvalue) <= 0)
         len = 1;
-      }
     }
     else
-    {
       len = 0;
-    }
 
     while (len > 0)
     {
@@ -95,7 +81,7 @@ int main()
   }
 
   if (ovflow > 0)
-  {
     printf("There are %d words >= %d\n", ovflow, MAXWORD);
-  }
+
+  return 0;
 }
