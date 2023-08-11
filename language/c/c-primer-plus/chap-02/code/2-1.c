@@ -52,4 +52,9 @@ int main(void) /* 一个简单的 C 程序 */
   printf("My favorite number is %d because it is first.\n", num);
 
   return 0;
+  /*
+  有返回值的 C 函数要有 return 语句
+  若遗漏，程序在运行至最外面的右花括号（`}`）时会返回 0
+  对于某些系统（包括 Linux 和 UNIX），return 语句有实际的用途
+  */
 }
