@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main(void)
-{
+(
   int n, int n2, int n3;
 
   /* 该程序有多处错误
@@ -14,4 +14,4 @@ int main(void)
   printf("n=%d, n sauared = %d, n cubed = %d\n",n,n2,n3)
 
   return 0;
-}
+)
