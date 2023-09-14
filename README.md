@@ -25,5 +25,3 @@
 ├── manual
 └── tool
 ```
-
-test for vim on windows11.
