@@ -2,7 +2,9 @@
 
 int main()
 {
-  int l;
+  int l = 0;
+
+  printf("Please enter a number: ");
 
   while ((l = getchar()) != EOF)
   {
