@@ -1,15 +1,16 @@
+# !/usr/bin/env python
+# coding= utf-8
 '''
-@Time: 2023/01/15 22:15:05
-@Author: yum
-@Email: richardminyu@foxmail.com
-@File: d-01.py
+Author         : yum <richardminyu@foxmail.com>
+Date           : 2023-01-15 22:05:43
+LastEditors    : yum <richardminyu@foxmail.com>
+LastEditTime   : 2023-12-09 21:54:34
+Description    : 练习
 
-test start!
 '''
 
 from turtle import *
 import turtle
-
 
 def print_the_zen_of_python():
     print(

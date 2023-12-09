@@ -1,11 +1,23 @@
+# !/usr/bin/env python
+# coding= utf-8
 '''
-绘制小猪佩奇
+Author         : yum <richardminyu@foxmail.com>
+Date           : 2023-01-15 22:56:42
+LastEditors    : yum <richardminyu@foxmail.com>
+LastEditTime   : 2023-12-09 22:01:32
+Description    : 绘制小猪佩奇
+
 '''
 from turtle import *
 
 
 def nose(x, y):
-    '''画鼻子'''
+    """_绘制小猪佩奇-鼻子_
+
+    Args:
+        x (_int_): _鼻子起始点 x 坐标_
+        y (_int_): _鼻子起始点 y 坐标_
+    """
     penup()
 
     # 将海龟移动到指定的坐标
