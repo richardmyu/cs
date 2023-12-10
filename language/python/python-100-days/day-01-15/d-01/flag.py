@@ -1,12 +1,8 @@
 # !/usr/bin/env python
 # coding= utf-8
 '''
-Author         : yum <richardminyu@foxmail.com>
 Date           : 2023-01-15 22:54:37
-LastEditors    : yum <richardminyu@foxmail.com>
-LastEditTime   : 2023-12-09 21:59:53
 Description    : 用 Python 的 turtle 模块绘制国旗
-
 '''
 import turtle
 
@@ -21,12 +17,17 @@ def draw_rectangle(x, y, width, height):
         width (_int_): _矩形长度_
         height (_int_): _矩形宽度_
     """
+    # 起始点
     turtle.goto(x, y)
+    # 画笔颜色
     turtle.pencolor('red')
+    # 填充色
     turtle.fillcolor('red')
+    # 开始填充
     turtle.begin_fill()
 
     for i in range(2):
+        #
         turtle.forward(width)
         turtle.left(90)
         turtle.forward(height)

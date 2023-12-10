@@ -1,3 +1,9 @@
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Date           : 2023-01-21 19:38:59
+Description    :
+'''
 from tool import is_comprime, is_prime
 
 

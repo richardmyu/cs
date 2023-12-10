@@ -1,12 +1,8 @@
 # !/usr/bin/env python
 # coding= utf-8
 '''
-Author         : yum <richardminyu@foxmail.com>
 Date           : 2023-01-18 21:05:28
-LastEditors    : yum <richardminyu@foxmail.com>
-LastEditTime   : 2023-12-09 22:04:33
-Description    : 练习
-
+Description    :
 '''
 import math
 

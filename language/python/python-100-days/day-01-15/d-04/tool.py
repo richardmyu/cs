@@ -1,8 +1,12 @@
+# !/usr/bin/env python
+# coding= utf-8
 '''
-@Time: 2023/01/20 23:20:41
-@Author: yum
-@Email: richardminyu@foxmail.com
-@File: tool.py
+Author         : yum <richardminyu@foxmail.com>
+Date           : 2023-01-20 23:20:37
+LastEditors    : yum <richardminyu@foxmail.com>
+LastEditTime   : 2023-12-10 19:57:57
+Description    : 判断两个正整数是否互质
+
 '''
 
 

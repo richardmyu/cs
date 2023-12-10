@@ -1,11 +1,13 @@
+# !/usr/bin/env python
+# coding= utf-8
 '''
-@Time: 2023/01/18 23:16:10
-@Author: yum
-@Email: richardminyu@foxmail.com
-@File: prime.py
+Author         : yum <richardminyu@foxmail.com>
+Date           : 2023-01-18 23:16:07
+LastEditors    : yum <richardminyu@foxmail.com>
+LastEditTime   : 2023-12-10 19:56:23
+Description    : 素数判定
+'''
 
-素数判定
-'''
 
 
 def is_prime(n):

@@ -1,3 +1,9 @@
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Date           : 2023-01-18 21:27:27
+Description    :
+'''
 import random
 from tool import is_comprime
 

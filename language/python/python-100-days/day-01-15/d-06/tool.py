@@ -1,8 +1,11 @@
+# !/usr/bin/env python
+# coding= utf-8
 '''
-@Time: 2023/01/21 21:17:42
-@Author: yum
-@Email: richardminyu@foxmail.com
-@File: tool.py
+Author         : yum <richardminyu@foxmail.com>
+Date           : 2023-01-21 21:17:39
+LastEditors    : yum <richardminyu@foxmail.com>
+LastEditTime   : 2023-12-10 20:01:39
+Description    :
 '''
 
 

@@ -1,3 +1,9 @@
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Date           : 2023-01-20 22:00:16
+Description    :
+'''
 from tool import is_perfect_n, is_prime
 
 

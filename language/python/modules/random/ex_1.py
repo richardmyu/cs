@@ -1,10 +1,14 @@
+# !/usr/bin/env python
+# coding= utf-8
 '''
-statistical bootstrapping 的示例
-https://en.wikipedia.org/wiki/Bootstrapping_(statistics)
+Author         : yum <richardminyu@foxmail.com>
+Date           : 2023-02-10 21:54:47
+LastEditors    : yum <richardminyu@foxmail.com>
+LastEditTime   : 2023-12-10 20:03:42
+Description    : 使用重新采样和替换来估计一个样本的均值的置信区间
 
-使用重新采样和替换来估计一个样本的均值的置信区间
+statistical bootstrapping 的示例 https://en.wikipedia.org/wiki/Bootstrapping_(statistics)
 '''
-
 from statistics import fmean as mean
 from random import choices
 

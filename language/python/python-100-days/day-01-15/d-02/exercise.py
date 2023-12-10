@@ -1,12 +1,8 @@
 # !/usr/bin/env python
 # coding= utf-8
 '''
-Author         : yum <richardminyu@foxmail.com>
 Date           : 2023-01-18 19:37:30
-LastEditors    : yum <richardminyu@foxmail.com>
-LastEditTime   : 2023-12-09 22:04:23
-Description    : 练习
-
+Description    :
 '''
 import random
 import math
@@ -14,6 +10,7 @@ import math
 
 def excecise_1():
     """_华氏温度转换摄氏温度_
+
     公式为：$C=(F - 32) \div 1.8$
     """
     # tem = float(input('请输入华氏温度: '))

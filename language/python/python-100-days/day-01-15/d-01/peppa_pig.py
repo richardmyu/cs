@@ -1,12 +1,8 @@
 # !/usr/bin/env python
 # coding= utf-8
 '''
-Author         : yum <richardminyu@foxmail.com>
 Date           : 2023-01-15 22:56:42
-LastEditors    : yum <richardminyu@foxmail.com>
-LastEditTime   : 2023-12-09 22:01:32
 Description    : 绘制小猪佩奇
-
 '''
 from turtle import *
 
@@ -69,7 +65,12 @@ def nose(x, y):
 
 
 def head(x, y):
-    '''画头'''
+    """_画头_
+
+    Args:
+        x (_type_): _description_
+        y (_type_): _description_
+    """
     color((255, 155, 192), "pink")
     penup()
     goto(x, y)
@@ -105,7 +106,12 @@ def head(x, y):
 
 
 def ears(x, y):
-    '''画耳朵'''
+    """_画耳朵_
+
+    Args:
+        x (_type_): _description_
+        y (_type_): _description_
+    """
     color((255, 155, 192), "pink")
     penup()
     goto(x, y)
@@ -134,7 +140,12 @@ def ears(x, y):
 
 
 def eyes(x, y):
-    '''画眼睛'''
+    """_画眼睛_
+
+    Args:
+        x (_type_): _description_
+        y (_type_): _description_
+    """
     color((255, 155, 192), "white")
     penup()
     setheading(90)
@@ -181,7 +192,12 @@ def eyes(x, y):
 
 
 def cheek(x, y):
-    '''画脸颊'''
+    """_画脸颊_
+
+    Args:
+        x (_type_): _description_
+        y (_type_): _description_
+    """
     color((255, 155, 192))
     penup()
     goto(x, y)
@@ -193,7 +209,12 @@ def cheek(x, y):
 
 
 def mouth(x, y):
-    '''画嘴巴'''
+    """_画嘴巴_
+
+    Args:
+        x (_type_): _description_
+        y (_type_): _description_
+    """
     color(239, 69, 19)
     penup()
     goto(x, y)
@@ -204,7 +225,8 @@ def mouth(x, y):
 
 
 def setting():
-    '''设置参数'''
+    """_设置参数_
+    """
     pensize(4)
 
     # 隐藏海龟
@@ -216,7 +238,6 @@ def setting():
 
 
 def main():
-    '''主函数'''
     setting()
     nose(-100, 100)
     head(-69, 167)

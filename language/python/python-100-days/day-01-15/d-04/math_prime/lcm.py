@@ -1,14 +1,15 @@
+# !/usr/bin/env python
+# coding= utf-8
 '''
-@Time: 2023/01/18 23:14:17
-@Author: yum
-@Email: richardminyu@foxmail.com
-@File: lcm.py
+Author         : yum <richardminyu@foxmail.com>
+Date           : 2023-01-18 23:14:14
+LastEditors    : yum <richardminyu@foxmail.com>
+LastEditTime   : 2023-12-10 19:55:28
+Description    : 最小公倍数常见集中方法的实现
+                     --质因数分解法
+                     --公式法
 
-最小公倍数常见集中方法的实现
---质因数分解法
---公式法
 '''
-
 from prime import is_prime
 from comprime import is_comprime
 from gcd import gcd_prime_1
