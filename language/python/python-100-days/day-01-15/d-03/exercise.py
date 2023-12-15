@@ -13,12 +13,16 @@ def excecise_1():
     value = float(input('请输入长度(0-100): '))
     unit = input('请输入单位(in, cm): ')
 
+    if value>100  or value <=0:
+        print('请输入有效的数值')
+        return
+
     if unit == 'in':
         print(f'{ value } 英寸 = { value * 2.54 } 厘米')
     elif unit == 'cm':
         print(f'{ value } 厘米 = { value / 2.54 } 英寸')
     else:
-        print('请输入有效的数值或限定的单位')
+        print('请输入有效的单位')
 
 
 def excecise_2():
@@ -43,10 +47,15 @@ def excecise_2():
 def excecise_3():
     """_输入三条边长，如果能构成三角形，就计算周长和面积_
     """
-    a = float(input('a = '))
-    b = float(input('b = '))
-    c = float(input('c = '))
+    a = float(input('请输入边长 a = '))
+    b = float(input('请输入边长 b = '))
+    c = float(input('请输入边长 c = '))
 
+    if a<=0 or b <=0 or c<=0:
+        print('请输入合理的边长数值')
+        return
+
+    # 如果能构成三角形
     if a + b > c and a + c > b and b + c > a:
         print(f'三角形周长: { a + b + c }')
         p = (a + b + c) / 2

@@ -4,9 +4,8 @@
 Author         : yum <richardminyu@foxmail.com>
 Date           : 2023-01-20 23:20:37
 LastEditors    : yum <richardminyu@foxmail.com>
-LastEditTime   : 2023-12-10 19:57:57
+LastEditTime   : 2023-12-15 23:02:33
 Description    : 判断两个正整数是否互质
-
 '''
 
 
@@ -18,7 +17,7 @@ def is_comprime(a, b):
         b (_int_): _正整数_
 
     Returns:
-        _boolean_: _是否互质_
+        _bool_: _是否互质_
     '''
     # 过滤输入参数
     if a < 1 or int(a) != a or b < 1 or int(b) != b:

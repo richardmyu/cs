@@ -4,248 +4,248 @@
 Date           : 2023-01-15 22:56:42
 Description    : 绘制小猪佩奇
 '''
-from turtle import *
+import turtle as tt
 
 
-def nose(x, y):
+def pig_nose(x, y):
     """_绘制小猪佩奇-鼻子_
 
     Args:
         x (_int_): _鼻子起始点 x 坐标_
         y (_int_): _鼻子起始点 y 坐标_
     """
-    penup()
+    tt.penup()
 
     # 将海龟移动到指定的坐标
-    goto(x, y)
-    pendown()
+    tt.goto(x, y)
+    tt.pendown()
 
     # 设置海龟的方向（0-东、90-北、180-西、270-南）
-    setheading(-30)
-    begin_fill()
+    tt.setheading(-30)
+    tt.begin_fill()
     a = 0.4
 
     for i in range(120):
         if 0 <= i < 30 or 60 <= i < 90:
             a = a + 0.08
             # 向左转3度
-            left(3)
+            tt.left(3)
             # 向前走
-            forward(a)
+            tt.forward(a)
         else:
             a = a - 0.08
-            left(3)
-            forward(a)
+            tt.left(3)
+            tt.forward(a)
 
-    end_fill()
-    penup()
-    setheading(90)
-    forward(25)
-    setheading(0)
-    forward(10)
-    pendown()
+    tt.end_fill()
+    tt.penup()
+    tt.setheading(90)
+    tt.forward(25)
+    tt.setheading(0)
+    tt.forward(10)
+    tt.pendown()
 
     # 设置画笔的颜色(红, 绿, 蓝)
-    pencolor(255, 155, 192)
-    setheading(10)
-    begin_fill()
-    circle(5)
-    color(160, 82, 45)
-    end_fill()
-    penup()
-    setheading(0)
-    forward(20)
-    pendown()
-    pencolor(255, 155, 192)
-    setheading(10)
-    begin_fill()
-    circle(5)
-    color(160, 82, 45)
-    end_fill()
+    tt.pencolor(255, 155, 192)
+    tt.setheading(10)
+    tt.begin_fill()
+    tt.circle(5)
+    tt.color(160, 82, 45)
+    tt.end_fill()
+    tt.penup()
+    tt.setheading(0)
+    tt.forward(20)
+    tt.pendown()
+    tt.pencolor(255, 155, 192)
+    tt.setheading(10)
+    tt.begin_fill()
+    tt.circle(5)
+    tt.color(160, 82, 45)
+    tt.end_fill()
 
 
-def head(x, y):
+def pig_head(x, y):
     """_画头_
 
     Args:
         x (_type_): _description_
         y (_type_): _description_
     """
-    color((255, 155, 192), "pink")
-    penup()
-    goto(x, y)
-    setheading(0)
-    pendown()
+    tt.color((255, 155, 192), "pink")
+    tt.penup()
+    tt.goto(x, y)
+    tt.setheading(0)
+    tt.pendown()
 
-    begin_fill()
-    setheading(180)
-    circle(300, -30)
-    circle(100, -60)
-    circle(80, -100)
-    circle(150, -20)
-    circle(60, -95)
-    setheading(161)
-    circle(-300, 15)
-    penup()
-    goto(-100, 100)
-    pendown()
-    setheading(-30)
+    tt.begin_fill()
+    tt.setheading(180)
+    tt.circle(300, -30)
+    tt.circle(100, -60)
+    tt.circle(80, -100)
+    tt.circle(150, -20)
+    tt.circle(60, -95)
+    tt.setheading(161)
+    tt.circle(-300, 15)
+    tt.penup()
+    tt.goto(-100, 100)
+    tt.pendown()
+    tt.setheading(-30)
     a = 0.4
 
     for i in range(60):
         if 0 <= i < 30 or 60 <= i < 90:
             a = a + 0.08
-            lt(3)  # 向左转3度
-            fd(a)  # 向前走a的步长
+            tt.lt(3)  # 向左转3度
+            tt.fd(a)  # 向前走a的步长
         else:
             a = a - 0.08
-            lt(3)
-            fd(a)
+            tt.lt(3)
+            tt.fd(a)
 
-    end_fill()
+    tt.end_fill()
 
 
-def ears(x, y):
+def pig_ears(x, y):
     """_画耳朵_
 
     Args:
         x (_type_): _description_
         y (_type_): _description_
     """
-    color((255, 155, 192), "pink")
-    penup()
-    goto(x, y)
-    pendown()
+    tt.color((255, 155, 192), "pink")
+    tt.penup()
+    tt.goto(x, y)
+    tt.pendown()
 
-    begin_fill()
-    setheading(100)
-    circle(-50, 50)
-    circle(-10, 120)
-    circle(-50, 54)
-    end_fill()
+    tt.begin_fill()
+    tt.setheading(100)
+    tt.circle(-50, 50)
+    tt.circle(-10, 120)
+    tt.circle(-50, 54)
+    tt.end_fill()
 
-    penup()
-    setheading(90)
-    forward(-12)
-    setheading(0)
-    forward(30)
-    pendown()
+    tt.penup()
+    tt.setheading(90)
+    tt.forward(-12)
+    tt.setheading(0)
+    tt.forward(30)
+    tt.pendown()
 
-    begin_fill()
-    setheading(100)
-    circle(-50, 50)
-    circle(-10, 120)
-    circle(-50, 56)
-    end_fill()
+    tt.begin_fill()
+    tt.setheading(100)
+    tt.circle(-50, 50)
+    tt.circle(-10, 120)
+    tt.circle(-50, 56)
+    tt.end_fill()
 
 
-def eyes(x, y):
+def pig_eyes(x, y):
     """_画眼睛_
 
     Args:
         x (_type_): _description_
         y (_type_): _description_
     """
-    color((255, 155, 192), "white")
-    penup()
-    setheading(90)
-    forward(-20)
-    setheading(0)
-    forward(-95)
-    pendown()
-    begin_fill()
-    circle(15)
-    end_fill()
+    tt.color((255, 155, 192), "white")
+    tt.penup()
+    tt.setheading(90)
+    tt.forward(-20)
+    tt.setheading(0)
+    tt.forward(-95)
+    tt.pendown()
+    tt.begin_fill()
+    tt.circle(15)
+    tt.end_fill()
 
-    color("black")
-    penup()
-    setheading(90)
-    forward(12)
-    setheading(0)
-    forward(-3)
-    pendown()
-    begin_fill()
-    circle(3)
-    end_fill()
+    tt.color("black")
+    tt.penup()
+    tt.setheading(90)
+    tt.forward(12)
+    tt.setheading(0)
+    tt.forward(-3)
+    tt.pendown()
+    tt.begin_fill()
+    tt.circle(3)
+    tt.end_fill()
 
-    color((255, 155, 192), "white")
-    penup()
-    seth(90)
-    forward(-25)
-    seth(0)
-    forward(40)
-    pendown()
-    begin_fill()
-    circle(15)
-    end_fill()
+    tt.color((255, 155, 192), "white")
+    tt.penup()
+    tt.seth(90)
+    tt.forward(-25)
+    tt.seth(0)
+    tt.forward(40)
+    tt.pendown()
+    tt.begin_fill()
+    tt.circle(15)
+    tt.end_fill()
 
-    color("black")
-    penup()
-    setheading(90)
-    forward(12)
-    setheading(0)
-    forward(-3)
-    pendown()
-    begin_fill()
-    circle(3)
-    end_fill()
+    tt.color("black")
+    tt.penup()
+    tt.setheading(90)
+    tt.forward(12)
+    tt.setheading(0)
+    tt.forward(-3)
+    tt.pendown()
+    tt.begin_fill()
+    tt.circle(3)
+    tt.end_fill()
 
 
-def cheek(x, y):
+def pig_cheek(x, y):
     """_画脸颊_
 
     Args:
         x (_type_): _description_
         y (_type_): _description_
     """
-    color((255, 155, 192))
-    penup()
-    goto(x, y)
-    pendown()
-    setheading(0)
-    begin_fill()
-    circle(30)
-    end_fill()
+    tt.color((255, 155, 192))
+    tt.penup()
+    tt.goto(x, y)
+    tt.pendown()
+    tt.setheading(0)
+    tt.begin_fill()
+    tt.circle(30)
+    tt.end_fill()
 
 
-def mouth(x, y):
+def pig_mouth(x, y):
     """_画嘴巴_
 
     Args:
         x (_type_): _description_
         y (_type_): _description_
     """
-    color(239, 69, 19)
-    penup()
-    goto(x, y)
-    pendown()
-    setheading(-80)
-    circle(30, 40)
-    circle(40, 80)
+    tt.color(239, 69, 19)
+    tt.penup()
+    tt.goto(x, y)
+    tt.pendown()
+    tt.setheading(-80)
+    tt.circle(30, 40)
+    tt.circle(40, 80)
 
 
-def setting():
+def pig_setting():
     """_设置参数_
     """
-    pensize(4)
+    tt.pensize(4)
 
     # 隐藏海龟
-    hideturtle()
-    colormode(255)
-    color((255, 155, 192), "pink")
-    setup(840, 500)
-    speed(10)
+    tt.hideturtle()
+    tt.colormode(255)
+    tt.color((255, 155, 192), "pink")
+    tt.setup(840, 500)
+    tt.speed(10)
 
 
 def main():
-    setting()
-    nose(-100, 100)
-    head(-69, 167)
-    ears(0, 160)
-    eyes(0, 140)
-    cheek(80, 10)
-    mouth(-20, 30)
-    done()
+    pig_setting()
+    pig_nose(-100, 100)
+    pig_head(-69, 167)
+    pig_ears(0, 160)
+    pig_eyes(0, 140)
+    pig_cheek(80, 10)
+    pig_mouth(-20, 30)
+    tt.done()
 
 
 if __name__ == '__main__':

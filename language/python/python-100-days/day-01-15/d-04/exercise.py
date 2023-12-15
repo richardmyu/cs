@@ -14,7 +14,7 @@ def exercise_1():
 
     if num <= 0 or int(num) != num:
         print('请输入一个正整数')
-        return void
+        return
 
     is_prime = True
 
