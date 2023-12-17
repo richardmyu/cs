@@ -1,41 +1,52 @@
 # !/usr/bin/env python
 # coding= utf-8
 '''
-Author         : yum <richardminyu@foxmail.com>
 Date           : 2023-12-15 23:08:58
-LastEditors    : yum <richardminyu@foxmail.com>
-LastEditTime   : 2023-12-15 23:37:33
 Description    :
-
 '''
 
 
 import turtle as tt
 
-
-def draw_doraemon_nobita():
-    """_绘制哆啦A梦和大熊_
-    """
-    tt.speed(10)
-
-    # doraemon
+def draw_head_outline():
+    # pen up
     tt.penup()
+
+    # setheading/seth 方向
     tt.seth(180)
+
+    # forward
     tt.fd(200)
     tt.seth(0)
-    tt.penup()  # 外圈头
+
+    # radius, extent=None, steps=None
+    # 圆心在海龟左边 radius 个单位
+    # 如果 radius 为正值则朝逆时针方向绘制圆弧，否则朝顺时针方向
+    # *** seth(0)时，从 -y 轴的方向开始绘制，其他方向类似差 90°
+    # extent 为一个夹角，用来决定绘制圆的一部分
+    # 圆实际是以其内切正多边形来近似表示的
+    # 其边的数量由 steps 指定
+    # 如果未指定边数则会自动确定
+    # 此方法也可用来绘制正多边形
+    # 40 = (360 - 280) / 2
     tt.circle(150, 40)
+
+    # pen down
     tt.pendown()
+
     tt.fillcolor('dodgerblue')
 
     tt.begin_fill()
     tt.circle(150, 280)
-    tt.end_fill()  # 外圈头
+    tt.end_fill()
 
+
+
+def draw_head_necklet():
     tt.fillcolor("red")
 
-    tt.begin_fill()  # 外圈头
-    tt.seth(0)  # 项圈
+    tt.begin_fill()
+    tt.seth(0)
     tt.fd(200)
     tt.circle(-5, 90)
     tt.fd(10)
@@ -44,14 +55,21 @@ def draw_doraemon_nobita():
     tt.circle(-5, 90)
     tt.fd(10)
     tt.circle(-5, 90)
-    tt.end_fill()  # 项圈
+    tt.end_fill()
 
-    tt.fd(183)  # 右脸
+def draw_head_face():
+    # CAD 画图测量
+    tt.fd(192.3657)
     tt.left(45)
     tt.fillcolor("white")
 
     tt.begin_fill()
-    tt.circle(120, 100)
+    # CAD 画图测量
+    tt.circle(120, 270)
+    tt.end_fill()
+
+
+def draw_head_eyes():
     tt.seth(90)  # 眼睛
     a = 2.5
 
@@ -86,49 +104,50 @@ def draw_doraemon_nobita():
     tt.fd(60)
     tt.pendown()
     tt.seth(215)
-    tt.circle(120, 100)
-    tt.end_fill()  # 脸部颜色和眼睛部分
 
-    tt.seth(0)  # 左眼珠部分
+
+    # tt.seth(0)  # 左眼珠部分
+    # tt.penup()
+    # tt.fd(40)
+    # tt.seth(90)
+    # tt.fd(170)
+    # tt.seth(0)
+    # tt.fd(5)
+    # tt.pendown()
+    # tt.fillcolor("black")
+
+    # tt.begin_fill()
+    # tt.circle(15, 360)
+    # tt.end_fill()
+
+    # tt.seth(90)
+    # tt.penup()
+    # tt.fd(5)
+    # tt.pendown()
+    # tt.seth(0)
+    # tt.fillcolor("white")
+
+    # tt.begin_fill()
+    # tt.circle(4, 360)
+    # tt.end_fill()  # 左眼珠部分
+
+    # tt.penup()  # 右眼珠
+    # tt.seth(0)
+    # tt.fd(58)
+    # tt.seth(270)
+    # tt.fd(15)
+    # tt.seth(0)
+    # tt.pensize(5)
+    # tt.circle(18, 90)
+    # tt.pendown()
+    # tt.circle(18, 180)
+    # tt.penup()
+    # tt.circle(18, 90)
+    # tt.pendown()
+    # tt.pensize(1)  # 右眼珠
+
+def draw_head_nose():
     tt.penup()
-    tt.fd(40)
-    tt.seth(90)
-    tt.fd(170)
-    tt.seth(0)
-    tt.fd(5)
-    tt.pendown()
-    tt.fillcolor("black")
-
-    tt.begin_fill()
-    tt.circle(15, 360)
-    tt.end_fill()
-
-    tt.seth(90)
-    tt.penup()
-    tt.fd(5)
-    tt.pendown()
-    tt.seth(0)
-    tt.fillcolor("white")
-
-    tt.begin_fill()
-    tt.circle(4, 360)
-    tt.end_fill()  # 左眼珠部分
-
-    tt.penup()  # 右眼珠
-    tt.seth(0)
-    tt.fd(58)
-    tt.seth(270)
-    tt.fd(15)
-    tt.seth(0)
-    tt.pensize(5)
-    tt.circle(18, 90)
-    tt.pendown()
-    tt.circle(18, 180)
-    tt.penup()
-    tt.circle(18, 90)
-    tt.pendown()
-    tt.pensize(1)  # 右眼珠
-    tt.penup()  # 鼻子
     tt.seth(270)
     tt.fd(7)
     tt.seth(180)
@@ -138,9 +157,10 @@ def draw_doraemon_nobita():
 
     tt.begin_fill()
     tt.circle(20)
-    tt.end_fill()  # 鼻子
+    tt.end_fill()
 
-    tt.seth(270)  # 嘴
+def draw_head_mouth():
+    tt.seth(270)
     tt.penup()
     tt.fd(40)
     tt.pendown()
@@ -152,8 +172,10 @@ def draw_doraemon_nobita():
     tt.penup()
     tt.circle(120, 260)
     tt.pendown()
-    tt.circle(120, 50)  # 嘴
-    tt.penup()  # 胡须
+    tt.circle(120, 50)
+
+def draw_head_mustache():
+    tt.penup()
     tt.seth(90)
     tt.fd(60)
     tt.seth(0)
@@ -194,7 +216,29 @@ def draw_doraemon_nobita():
     tt.fd(20)
     tt.seth(180)
     tt.pendown()
-    tt.fd(60)  # 胡须
+    tt.fd(60)
+
+def draw_head():
+    draw_head_outline()
+    draw_head_necklet()
+    draw_head_face()
+    draw_head_eyes()
+    # draw_head_nose()
+    # draw_head_mouth()
+    # draw_head_mustache()
+
+
+
+
+
+
+
+
+
+def draw_doraemon():
+    """_绘制哆啦A梦_
+    """
+
     tt.penup()  # 下半身
     tt.home()
     tt.penup()
@@ -364,7 +408,7 @@ def draw_doraemon_nobita():
     tt.fd(90)
     tt.pendown()
     tt.seth(0)
-    tt.fillcolor("#ftt.fd200")  # 铃铛
+    tt.fillcolor("#ffd200")  # 铃铛
 
     tt.begin_fill()
     tt.circle(20)
@@ -399,6 +443,10 @@ def draw_doraemon_nobita():
     tt.seth(-10)
     tt.fd(22)
 
+
+def draw_nobita():
+    """_绘制大熊_
+    """
     # nobita
     tt.pensize(1)
     tt.penup()
@@ -776,7 +824,7 @@ def draw_doraemon_nobita():
     tt.fd(16)
     tt.end_fill()
 
-    tt.fillcolor("#Ftt.fd700")
+    tt.fillcolor("#Ffd700")
 
     tt.begin_fill()
     tt.fd(-16)
@@ -1051,11 +1099,20 @@ def draw_doraemon_nobita():
     tt.seth(-190)
     tt.fd(15)
 
+
+
+
+
+
+if __name__ == '__main__':
+    # [0, 10]
+    tt.speed(1)
+
+    # draw_doraemon()
+    draw_head()
+    # draw_nobita()
+
     # save
     # ts = tt.getscreen()
     # ts.getcanvas().postscript(file='doraemon_nobita.eps')
     tt.done()
-
-
-if __name__ == '__main__':
-    draw_doraemon_nobita()
