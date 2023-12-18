@@ -227,18 +227,7 @@ def draw_head():
     # draw_head_mouth()
     # draw_head_mustache()
 
-
-
-
-
-
-
-
-
-def draw_doraemon():
-    """_绘制哆啦A梦_
-    """
-
+def draw_body():
     tt.penup()  # 下半身
     tt.home()
     tt.penup()
@@ -268,6 +257,8 @@ def draw_doraemon():
     tt.seth(-95)
     tt.fd(80)
     tt.seth(180)
+
+def draw_leg_foot():
     tt.fd(80)  # 右腿
     tt.penup()  # 左腿和过渡
     tt.fd(30)
@@ -300,6 +291,10 @@ def draw_doraemon():
     tt.fd(205)
     tt.end_fill()
 
+
+def draw_doraemon():
+    """_绘制哆啦A梦_
+    """
     tt.fillcolor("red")  # 项圈的补充
 
     tt.begin_fill()
@@ -1098,9 +1093,6 @@ def draw_nobita():
     tt.fd(15)
     tt.seth(-190)
     tt.fd(15)
-
-
-
 
 
 
