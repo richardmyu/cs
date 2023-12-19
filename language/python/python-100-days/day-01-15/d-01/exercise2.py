@@ -5,6 +5,10 @@ Date           : 2023-12-15 23:08:58
 Description    :
 '''
 
+"""_summary_
+   TODO: 画着画着，我感觉变成了翻译，就是用 CAD 画一个哆啦出来22，再用 turtle 翻译
+   所以，先去弄一个 CAD 文件吧，不然尺寸不准，画得不好看
+"""
 
 import turtle as tt
 
@@ -58,19 +62,21 @@ def draw_head_necklet():
     tt.end_fill()
 
 def draw_head_face():
-    # CAD 画图测量
+    # CAD 画图测量数据
     tt.fd(192.3657)
     tt.left(45)
     tt.fillcolor("white")
 
     tt.begin_fill()
-    # CAD 画图测量
+    # CAD 画图测量数据
     tt.circle(120, 270)
     tt.end_fill()
 
 
 def draw_head_eyes():
-    tt.seth(90)  # 眼睛
+    tt.seth(0)
+    tt.fd()
+    tt.seth(90)
     a = 2.5
 
     for i in range(120):
