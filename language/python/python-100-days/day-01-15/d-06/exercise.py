@@ -7,7 +7,7 @@ Description    :
 from tool import is_comprime, is_prime
 
 
-def exercise_1_gcd(a, b):
+def cal_gcd(a, b):
     '''_最大公约数_
 
     Args:
@@ -34,7 +34,7 @@ def exercise_1_gcd(a, b):
         return di
 
 
-def exercise_1_lcm(a, b):
+def cal_lcm(a, b):
     '''_最小公倍数_
 
     Args:
@@ -52,13 +52,13 @@ def exercise_1_lcm(a, b):
         return a * b
     else:
         multiple = 1
-        di = exercise_1_gcd(a, b)
+        di = cal_gcd(a, b)
         multiple = int(a * b / di)
 
         return multiple
 
 
-def exercise_2(n):
+def is_palindrome(n):
     '''_实现判断一个数是不是回文数_
 
     Args:
@@ -84,7 +84,7 @@ def exercise_2(n):
         return False
 
 
-def exercise_3(n):
+def is_prime(n):
     '''_素数判定_
 
     Args:
@@ -107,7 +107,7 @@ def exercise_3(n):
     return True if (is_prime and n != 1) else False
 
 
-def exercise_4(n):
+def is_palindrome_prime(n):
     '''_判断输入的正整数是不是回文素数_
 
     Args:
@@ -116,27 +116,27 @@ def exercise_4(n):
     Returns:
         _boolean_: _是回文否素数_
     '''
-    if exercise_2(n) and exercise_3(n):
+    if is_palindrome(n) and is_prime(n):
         return True
     else:
         return False
 
 
 if __name__ == '__main__':
-    print(exercise_1_gcd(12, 18), 6)
-    print(exercise_1_lcm(12, 18), 36)
+    print(cal_gcd(12, 18), 6)
+    print(cal_lcm(12, 18), 36)
 
-    print(exercise_2(124321), False)
-    print(exercise_2(12344321), True)
-    print(exercise_2(123454321), True)
-    print(exercise_2(12321), True)
-    print(exercise_2(1221), True)
+    print(is_palindrome(124321), False)
+    print(is_palindrome(12344321), True)
+    print(is_palindrome(123454321), True)
+    print(is_palindrome(12321), True)
+    print(is_palindrome(1221), True)
 
-    print(exercise_3(2), True)
-    print(exercise_3(6), False)
-    print(exercise_3(9), False)
-    print(exercise_3(12321), False)
-    print(exercise_3(1221), False)
+    print(is_prime(2), True)
+    print(is_prime(6), False)
+    print(is_prime(9), False)
+    print(is_prime(12321), False)
+    print(is_prime(1221), False)
 
-    print(exercise_4(12321), False)
-    print(exercise_4(1221), False)
+    print(is_palindrome_prime(12321), False)
+    print(is_palindrome_prime(1221), False)

@@ -1,3 +1,13 @@
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Author         : yum <richardminyu@foxmail.com>
+Date           : 2023-01-19 11:29:11
+LastEditors    : yum <richardminyu@foxmail.com>
+LastEditTime   : 2023-12-21 21:13:03
+Description    :
+'''
+
 import unittest
 from prime import is_prime
 from prime_factorization import factorise_prime

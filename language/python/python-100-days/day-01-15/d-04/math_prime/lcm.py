@@ -8,7 +8,6 @@ LastEditTime   : 2023-12-10 19:55:28
 Description    : 最小公倍数常见集中方法的实现
                      --质因数分解法
                      --公式法
-
 '''
 from prime import is_prime
 from comprime import is_comprime

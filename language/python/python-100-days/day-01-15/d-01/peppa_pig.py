@@ -229,7 +229,7 @@ def pig_setting():
     """
     tt.pensize(4)
 
-    # 隐藏海龟
+    # 隐藏海
     tt.hideturtle()
     tt.colormode(255)
     tt.color((255, 155, 192), "pink")
@@ -238,14 +238,20 @@ def pig_setting():
 
 
 def main():
-    pig_setting()
-    pig_nose(-100, 100)
-    pig_head(-69, 167)
-    pig_ears(0, 160)
-    pig_eyes(0, 140)
-    pig_cheek(80, 10)
-    pig_mouth(-20, 30)
-    tt.done()
+    try:
+        pig_setting()
+    except KeyError,e:
+        print(KeyError)
+        print(e)
+    else:
+        pig_nose(-100, 100)
+        pig_head(-69, 167)
+        pig_ears(0, 160)
+        pig_eyes(0, 140)
+        pig_cheek(80, 10)
+        pig_mouth(-20, 30)
+    finally:
+        tt.done()
 
 
 if __name__ == '__main__':

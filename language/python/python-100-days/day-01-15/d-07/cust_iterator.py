@@ -1,3 +1,10 @@
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Date           : 2023-01-21 23:09:37
+Description    :
+'''
+
 class Fib(object):
     def __init__(self, max=0):
         super(Fib, self).__init__()

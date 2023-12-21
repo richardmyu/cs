@@ -8,9 +8,8 @@ import random
 import math
 
 
-def excecise_1():
+def fahrenheit_to_celsius():
     """_华氏温度转换摄氏温度_
-
     公式为：$C=(F - 32) \div 1.8$
     """
     # tem = float(input('请输入华氏温度: '))
@@ -19,7 +18,7 @@ def excecise_1():
     print(f"摄氏温度： { (tem - 32) * 5 / 9 }")
 
 
-def excecise_2():
+def calculate_circle_perimeters_areas():
     """_输入半径计算圆的周长和面积_
     """
     # r = float(input('请输入圆的半径: '))
@@ -29,7 +28,7 @@ def excecise_2():
     print(f"面积： { math.pi * math.pow(r,2) }")
 
 
-def excecise_3():
+def is_leap_year():
     """_判断输入年份是不是闰年_
     """
     # y = int(input('请输入年份: '))
@@ -51,7 +50,7 @@ def excecise_3():
     print(f"是否闰年： { '是' if is_leap else '不是' }")
 
 
-def excecise_3_2():
+def is_leap_year_2():
     """_判断输入年份是不是闰年_
     """
     y = random.randint(0, 2050)
@@ -66,7 +65,7 @@ def excecise_3_2():
     print(f"是否闰年： { '是' if is_leap else '不是' }")
 
 
-def excecise_3_3():
+def is_leap_year_3():
     """_判断输入年份是不是闰年_
     """
     y = random.randint(0, 2050)
@@ -75,8 +74,8 @@ def excecise_3_3():
 
 
 if __name__ == '__main__':
-    excecise_1()
-    excecise_2()
-    excecise_3()
-    excecise_3_2()
-    excecise_3_3()
+    fahrenheit_to_celsius()
+    calculate_circle_perimeters_areas()
+    is_leap_year()
+    is_leap_year_2()
+    is_leap_year_3()

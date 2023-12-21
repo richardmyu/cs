@@ -35,7 +35,7 @@ def get_true_factor(n):
         return factor_list
 
 
-def is_perfect_n(n):
+def is_perfect_number(n):
     """_判断一个数是否是完全数/完备数_
 
     Args:

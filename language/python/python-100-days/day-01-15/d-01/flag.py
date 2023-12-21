@@ -56,6 +56,7 @@ def draw_star(x, y, radius):
     pos4 = tt.pos()
     tt.circle(-radius, 72)
     pos5 = tt.pos()
+
     tt.color('yellow', 'yellow')
     tt.begin_fill()
     tt.goto(pos3)

@@ -9,7 +9,6 @@ Description    : 素数判定
 '''
 
 
-
 def is_prime(n):
     '''_素数判定_
 

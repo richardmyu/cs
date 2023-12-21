@@ -7,7 +7,7 @@ Description    :
 import math
 
 
-def excecise_1():
+def switch_inches_centimetres():
     """_英制单位英寸和公制单位厘米互换_
     """
     value = float(input('请输入长度(0-100): '))
@@ -25,7 +25,7 @@ def excecise_1():
         print('请输入有效的单位')
 
 
-def excecise_2():
+def switch_100_hierarchy():
     """_百分制成绩转换为等级制成绩_
     """
     score = float(input('请输入成绩(0-100): '))
@@ -44,7 +44,7 @@ def excecise_2():
     print(f'百分制成绩 {score} 对应的等级是：{ grade }')
 
 
-def excecise_3():
+def calculate_triangle_perimeters_areas():
     """_输入三条边长，如果能构成三角形，就计算周长和面积_
     """
     a = float(input('请输入边长 a = '))
@@ -66,6 +66,6 @@ def excecise_3():
 
 
 if __name__ == '__main__':
-    excecise_1()
-    excecise_2()
-    excecise_3()
+    switch_inches_centimetres()
+    switch_100_hierarchy()
+    calculate_triangle_perimeters_areas()

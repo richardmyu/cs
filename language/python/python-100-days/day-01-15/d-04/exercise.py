@@ -5,10 +5,10 @@ Date           : 2023-01-18 21:27:27
 Description    :
 '''
 import random
-from tool import is_comprime
+from math_prime.comprime import is_comprime
 
 
-def exercise_1():
+def is_prime_number():
     '''输入一个正整数判断是不是素数'''
     num = int(input('请输入一个正整数: '))
 
@@ -26,8 +26,11 @@ def exercise_1():
     print(f'{num} 是素数' if (is_prime and num != 1) else f'{num} 不是素数')
 
 
-def exercise_2():
-    '''输入两个正整数，计算它们的最大公约数和最小公倍数。'''
+def calculate_gcd_lcm():
+    """_输入两个正整数，计算它们的最大公约数和最小公倍数_
+    gcd(greatest common divisor)  最大公约数
+    lcm(lease common multiple)    最小公倍数
+    """
     a = int(input('请输入一个正整数: '))
     b = int(input('请再输入一个正整数: '))
     gcd = 1
@@ -62,7 +65,7 @@ def exercise_2():
     print(f'最小公倍数是：{ lcm }')
 
 
-def exercise_3():
+def print_triangle_pattern():
     '''打印如下所示的三角形图案'''
     # print()
     row = int(input('请输入行数: '))
@@ -89,6 +92,6 @@ def exercise_3():
 
 
 if __name__ == '__main__':
-    exercise_1()
-    exercise_2()
-    exercise_3()
+    is_prime_number()
+    calculate_gcd_lcm()
+    print_triangle_pattern()

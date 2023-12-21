@@ -4,9 +4,8 @@
 Author         : yum <richardminyu@foxmail.com>
 Date           : 2023-01-19 11:11:44
 LastEditors    : yum <richardminyu@foxmail.com>
-LastEditTime   : 2023-12-10 19:56:04
+LastEditTime   : 2023-12-21 21:12:41
 Description    : 分解质因数
-
 '''
 from prime import is_prime
 
