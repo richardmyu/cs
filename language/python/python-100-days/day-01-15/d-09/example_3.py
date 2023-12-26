@@ -1,10 +1,17 @@
-"""
-某公司有三种类型的员工 分别是部门经理、程序员和销售员
-需要设计一个工资结算系统 根据提供的员工信息来计算月薪
-部门经理的月薪是每月固定15000元
-程序员的月薪按本月工作时间计算 每小时150元
-销售员的月薪是1200元的底薪加上销售额5%的提成
-"""
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Author         : yum <richardminyu@foxmail.com>
+Date           : 2023-02-13 23:20:05
+LastEditors    : yum <richardminyu@foxmail.com>
+LastEditTime   : 2023-12-26 21:57:31
+Description    : 某公司有三种类型的员工 分别是部门经理、程序员和销售员
+                需要设计一个工资结算系统 根据提供的员工信息来计算月薪
+                部门经理的月薪是每月固定15000元
+                程序员的月薪按本月工作时间计算 每小时150元
+                销售员的月薪是1200元的底薪加上销售额5%的提成
+
+'''
 from abc import ABCMeta, abstractmethod
 
 
@@ -14,7 +21,6 @@ class Employee(object, metaclass=ABCMeta):
     def __init__(self, name):
         """
         初始化方法
-
         :param name: 姓名
         """
         self._name = name
@@ -27,7 +33,6 @@ class Employee(object, metaclass=ABCMeta):
     def get_salary(self):
         """
         获得月薪
-
         :return: 月薪
         """
         pass

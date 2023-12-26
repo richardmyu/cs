@@ -1,3 +1,10 @@
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Date           : 2023-02-12 20:57:58
+Description    :
+'''
+
 class Person(object):
     # 限定Person对象只能绑定_name, _age和_gender属性
     __slots__ = ('_name', '_age', '_gender')

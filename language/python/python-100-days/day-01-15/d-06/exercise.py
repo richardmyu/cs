@@ -15,7 +15,7 @@ def cal_gcd(a, b):
         b (_int_): _正整数_
 
     Returns:
-        _int_: _最大公约数_
+        _int_: _参数的最大公约数_
     '''
     if a % b == 0:
         return b
@@ -42,7 +42,7 @@ def cal_lcm(a, b):
         b (_int_): _正整数_
 
     Returns:
-        _int_: _最小公倍数_
+        _int_: _参数的最小公倍数_
     '''
     if a % b == 0:
         return a
@@ -65,7 +65,7 @@ def is_palindrome(n):
         n (_int_): _正整数_
 
     Returns:
-        _boolean_: _是否回文数_
+        _boolean_:
     '''
     if n < 1 or int(n) != n:
         return
@@ -91,7 +91,7 @@ def is_prime(n):
         n (_int_): _正整数_
 
     Returns:
-        _boolean_: _是否素数_
+        _boolean_:
     '''
     # 过滤输入参数
     if n <= 1 or int(n) != n:
@@ -114,7 +114,7 @@ def is_palindrome_prime(n):
         n (_int_): _正整数_
 
     Returns:
-        _boolean_: _是回文否素数_
+        _boolean_:
     '''
     if is_palindrome(n) and is_prime(n):
         return True

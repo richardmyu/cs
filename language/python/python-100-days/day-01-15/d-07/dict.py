@@ -5,7 +5,7 @@ Date           : 2023-01-23 15:51:48
 Description    :
 '''
 
-def fn_1():
+def handler_dict():
     # 创建字典的字面量语法
     scores = {'kevin': 8, 'bob': 2, 'sturat': 5}
     print(scores)
@@ -53,4 +53,4 @@ def fn_1():
 
 
 if __name__ == '__main__':
-    fn_1()
+    handler_dict()

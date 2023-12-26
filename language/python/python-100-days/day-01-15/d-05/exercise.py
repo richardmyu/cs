@@ -8,13 +8,15 @@ from tool import is_perfect_number, is_prime
 
 
 def cal_money_chicken():
-    '''百钱百鸡'''
-    # 5*x + 1/3*y = 100
-    # x + y = 100
-    # ==> x < 15
-    # 3*x + 1/3*y = 100
-    # x + y = 100
-    # ==> x < 26
+    """_百钱百鸡_
+
+    5*x + 1/3*y = 100
+    x + y = 100
+    ==> x < 15
+    3*x + 1/3*y = 100
+    x + y = 100
+    ==> x < 26
+    """
     for x in range(0, 15):
         for y in range(0, 26):
             z = 100 - x - y
@@ -24,11 +26,19 @@ def cal_money_chicken():
 
 
 def cal_fibonacci(n=20):
-    '''生成斐波那契数列的前20个数'''
+    """_生成斐波那契数列的前20个数_
+
+    Args:
+        n (int, optional): _列数_. Defaults to 20.
+
+    Returns:
+        _list_:
+    """
+    last_list=[]
     if n == 1:
-        return [1]
+        last_list= [1]
     elif n == 2:
-        return [1, 1]
+        last_list= [1, 1]
     elif n > 2:
         sum = 0
         last_list = cal_fibonacci(n - 1)
@@ -36,11 +46,18 @@ def cal_fibonacci(n=20):
         for x in last_list[-2:]:
             sum += x
 
-        return last_list + [sum]
+        last_list= last_list + [sum]
+
+    print(last_list)
+    return last_list
 
 
 def find_perfect_number(n=10000):
-    '''找出 10000 以内的完美数'''
+    """_找出 10000 以内的完美数_
+
+    Args:
+        n (int, optional): _正整数_. Defaults to 10000.
+    """
     perfect_n = []
 
     for x in range(1, n):
@@ -51,7 +68,11 @@ def find_perfect_number(n=10000):
 
 
 def print_prime(n=100):
-    '''输出 100 以内所有的素数'''
+    """_输出 100 以内所有的素数_
+
+    Args:
+        n (int, optional): _正整数_. Defaults to 100.
+    """
     prime_n = []
 
     for x in range(1, n):
@@ -62,6 +83,7 @@ def print_prime(n=100):
 
 
 if __name__ == '__main__':
-    print(cal_fibonacci())
-    find_perfect_number()
+    # cal_money_chicken()
+    # cal_fibonacci()
+    # find_perfect_number()
     print_prime()

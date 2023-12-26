@@ -11,7 +11,7 @@ import time
 import random
 
 
-def generator_expression():
+def generate_expression():
     '''生成式'''
     f = [x for x in range(1, 10)]
     print(f)
@@ -24,7 +24,7 @@ def generator_expression():
     # print(f)
 
 
-def generator_function():
+def generate_function():
     '''生成器'''
     f = (x**2 for x in range(1, 1000))
     print(sys.getsizeof(f))
@@ -34,7 +34,7 @@ def generator_function():
     #     print(val)
 
 
-def generator_yield(n):
+def generate_yield(n):
     '''yield 生成器'''
     a, b = 0, 1
     for _ in range(n):
@@ -42,7 +42,7 @@ def generator_yield(n):
         yield a
 
 
-def exercise_1():
+def print_marquee_text():
     '''在屏幕上显示跑马灯文字'''
     content = "hello world "
 
@@ -55,8 +55,16 @@ def exercise_1():
         content = content[1:] + content[0]
 
 
-def exercise_2(l=8):
-    '''产生指定长度的验证码，验证码由大小写字母和数字构成'''
+def generate_length_code(l=8):
+    """_产生指定长度的验证码_
+      验证码由大小写字母和数字构成
+
+    Args:
+        l (int, optional): _长度_. Defaults to 8.
+
+    Returns:
+        _string_:
+    """
     chars_num = "0123456789"
     chars_str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     code = ""
@@ -78,7 +86,7 @@ def exercise_2(l=8):
     return code
 
 
-def exercise_3(filename):
+def return_file_suffix(filename):
     '''返回给定文件名的后缀名'''
     index = filename.rfind('.')
 
@@ -88,7 +96,7 @@ def exercise_3(filename):
         return 'none'
 
 
-def exercise_4(l):
+def return_first_second_number(l):
     '''返回传入的列表中最大和第二大的元素的值'''
     new_l = l[:]
     max_l = max(new_l)
@@ -105,7 +113,7 @@ def exercise_4(l):
     return max_l, sub_max_l
 
 
-def exercise_4_2(l):
+def return_first_second_number_2(l):
     '''返回传入的列表中最大和第二大的元素的值'''
     new_l = l[:]
     new_l = list(set(new_l))
@@ -121,7 +129,7 @@ def is_leap_year(y):
     return y % 100 != 0 and y % 4 == 0 or y % 400 == 0
 
 
-def exercise_5(y, m, d):
+def calc_which_day(y, m, d):
     '''计算指定的年月日是这一年的第几天'''
     is_leap = is_leap_year(y)
     total_day = d
@@ -140,7 +148,7 @@ def exercise_5(y, m, d):
     return total_day
 
 
-def exercise_6_1(n=5):
+def print_yanghui_triangle_1(n=5):
     '''打印杨辉三角'''
     L = [1]
     count = 0
@@ -151,7 +159,7 @@ def exercise_6_1(n=5):
         L = [sum(i) for i in zip([0] + L, L + [0])]
 
 
-def exercise_6_2(n=5):
+def print_yanghui_triangle_2(n=5):
     '''打印杨辉三角'''
     ret = [1]
     count = 0
@@ -164,7 +172,7 @@ def exercise_6_2(n=5):
         pre = ret[:]
 
 
-def exercise_6_3(n=5):
+def print_yanghui_triangle_3(n=5):
     '''打印杨辉三角'''
     LL = [[1]]
     for i in range(1, n):
@@ -178,7 +186,7 @@ def exercise_6_3(n=5):
     return LL
 
 
-def exercise_6_4(n=5):
+def print_yanghui_triangle_4(n=5):
     '''打印杨辉三角'''
     yh = [[]] * n
     for row in range(len(yh)):
@@ -193,69 +201,69 @@ def exercise_6_4(n=5):
 
 
 if __name__ == '__main__':
-    generator_expression()
-    generator_function()
+    generate_expression()
+    generate_function()
 
-    for val in generator_yield(20):
+    for val in generate_yield(20):
         print(val)
 
-    # exercise_1()
+    # print_marquee_text()
 
-    print(exercise_2())
-    print(exercise_3('list.py'))
-    print(exercise_3('list.py.'))
-    print(exercise_3('.editorconfig'))
-    print(exercise_4([1, 2, 3, 4]))
-    print(exercise_4([1, 2, 3, 4, 5, 2, 5]))
-    print(exercise_4_2([1, 2, 3, 4]))
-    print(exercise_4_2([1, 2, 3, 4, 5, 2, 5]))
-    print(exercise_5(1980, 11, 28))  # 333
-    print(exercise_5(1981, 12, 31))  # 365
-    print(exercise_5(2018, 1, 1))  # 1
-    print(exercise_5(2016, 3, 1))  # 61
+    print(generate_length_code())
+    print(return_file_suffix('list.py'))
+    print(return_file_suffix('list.py.'))
+    print(return_file_suffix('.editorconfig'))
+    print(return_first_second_number([1, 2, 3, 4]))
+    print(return_first_second_number([1, 2, 3, 4, 5, 2, 5]))
+    print(return_first_second_number_2([1, 2, 3, 4]))
+    print(return_first_second_number_2([1, 2, 3, 4, 5, 2, 5]))
+    print(calc_which_day(1980, 11, 28))  # 333
+    print(calc_which_day(1981, 12, 31))  # 365
+    print(calc_which_day(2018, 1, 1))  # 1
+    print(calc_which_day(2016, 3, 1))  # 61
 
-    for x in exercise_6_1(1):
+    for x in print_yanghui_triangle_1(1):
         print(x)
-    for x in exercise_6_1(2):
+    for x in print_yanghui_triangle_1(2):
         print(x)
-    for x in exercise_6_1(3):
+    for x in print_yanghui_triangle_1(3):
         print(x)
-    for x in exercise_6_1(4):
+    for x in print_yanghui_triangle_1(4):
         print(x)
-    for x in exercise_6_1(5):
+    for x in print_yanghui_triangle_1(5):
         print(x)
-    for x in exercise_6_1(6):
+    for x in print_yanghui_triangle_1(6):
         print(x)
-    for x in exercise_6_1(7):
-        print(x)
-
-    for x in exercise_6_2(1):
-        print(x)
-    for x in exercise_6_2(2):
-        print(x)
-    for x in exercise_6_2(3):
-        print(x)
-    for x in exercise_6_2(4):
-        print(x)
-    for x in exercise_6_2(5):
-        print(x)
-    for x in exercise_6_2(6):
-        print(x)
-    for x in exercise_6_2(7):
+    for x in print_yanghui_triangle_1(7):
         print(x)
 
-    print(exercise_6_3(1))
-    print(exercise_6_3(2))
-    print(exercise_6_3(3))
-    print(exercise_6_3(4))
-    print(exercise_6_3(5))
-    print(exercise_6_3(6))
-    print(exercise_6_3(7))
+    for x in print_yanghui_triangle_2(1):
+        print(x)
+    for x in print_yanghui_triangle_2(2):
+        print(x)
+    for x in print_yanghui_triangle_2(3):
+        print(x)
+    for x in print_yanghui_triangle_2(4):
+        print(x)
+    for x in print_yanghui_triangle_2(5):
+        print(x)
+    for x in print_yanghui_triangle_2(6):
+        print(x)
+    for x in print_yanghui_triangle_2(7):
+        print(x)
 
-    print(exercise_6_4(1))
-    print(exercise_6_4(2))
-    print(exercise_6_4(3))
-    print(exercise_6_4(4))
-    print(exercise_6_4(5))
-    print(exercise_6_4(6))
-    print(exercise_6_4(7))
+    print(print_yanghui_triangle_3(1))
+    print(print_yanghui_triangle_3(2))
+    print(print_yanghui_triangle_3(3))
+    print(print_yanghui_triangle_3(4))
+    print(print_yanghui_triangle_3(5))
+    print(print_yanghui_triangle_3(6))
+    print(print_yanghui_triangle_3(7))
+
+    print(print_yanghui_triangle_4(1))
+    print(print_yanghui_triangle_4(2))
+    print(print_yanghui_triangle_4(3))
+    print(print_yanghui_triangle_4(4))
+    print(print_yanghui_triangle_4(5))
+    print(print_yanghui_triangle_4(6))
+    print(print_yanghui_triangle_4(7))

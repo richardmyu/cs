@@ -1,8 +1,10 @@
+# !/usr/bin/env python
+# coding= utf-8
 '''
-该模块提供了在 Python 中定义 抽象基类 (ABC) 的组件
-https://docs.python.org/zh-cn/3/library/abc.html
+Date           : 2023-02-13 23:12:18
+Description    : 该模块提供了在 Python 中定义 抽象基类 (ABC) 的组件
+                https://docs.python.org/zh-cn/3/library/abc.html
 '''
-
 from abc import ABCMeta, abstractmethod
 
 

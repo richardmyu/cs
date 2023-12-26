@@ -73,6 +73,7 @@ def print_triangle_pattern():
     for i in range(row):
         for _ in range(i + 1):
             print('*', end='')
+
         print()
 
     for i in range(row):
@@ -81,6 +82,7 @@ def print_triangle_pattern():
                 print(' ', end='')
             else:
                 print('*', end='')
+
         print()
 
     for i in range(row):
@@ -88,6 +90,7 @@ def print_triangle_pattern():
             print(' ', end='')
         for _ in range(2 * i + 1):
             print('*', end='')
+
         print()
 
 

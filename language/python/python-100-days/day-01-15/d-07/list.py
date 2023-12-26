@@ -5,7 +5,7 @@ Date           : 2023-01-22 13:46:25
 Description    :
 '''
 
-def fn_1():
+def handler_list():
     list1 = [1, 3, 5, 7, 100]
 
     print(list1)  # [1, 3, 5, 7, 100]
@@ -124,7 +124,7 @@ def fn_4():
 
 
 if __name__ == '__main__':
-    fn_1()
+    handler_list()
     fn_2()
     fn_3()
     fn_4()

@@ -1,4 +1,11 @@
-def fn_1():
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Date           : 2023-01-23 15:36:13
+Description    :
+'''
+
+def handler_set():
     # 创建集合的字面量语法
     set1 = {1, 2, 3, 3, 3, 2}
     print(set1)
@@ -17,7 +24,7 @@ def fn_1():
     print(set5)
 
 
-def fn_2():
+def handler_set_2():
     set1 = {1, 2, 3, 3, 3, 2}
     set2 = set(range(1, 10))
     set3 = set((1, 2, 3, 3, 2, 1))
@@ -42,7 +49,7 @@ def fn_2():
     print('--set3 after--', set3)
 
 
-def fn_3():
+def handler_set_3():
     set1 = {1, 2, 3, 7, 8}
     set2 = {1, 2, 4, 6, 8}
     set3 = {2, 3, 4, 7}
@@ -75,6 +82,6 @@ def fn_3():
 
 
 if __name__ == '__main__':
-    # fn_1()
-    # fn_2()
-    fn_3()
+    # handler_set()
+    # handler_set_2()
+    handler_set_3()

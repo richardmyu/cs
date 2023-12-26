@@ -1,4 +1,11 @@
-def fn_1():
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Date           : 2023-01-23 15:29:22
+Description    :
+'''
+
+def handler_tuple():
     # 定义元组
     t = ('kevin', 'bob', True, 'stuart')
     print(t)
@@ -34,4 +41,4 @@ def fn_1():
 
 
 if __name__ == '__main__':
-    fn_1()
+    handler_tuple()

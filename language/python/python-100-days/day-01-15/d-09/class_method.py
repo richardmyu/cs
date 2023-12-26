@@ -1,3 +1,10 @@
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Date           : 2023-02-13 22:55:15
+Description    :
+'''
+
 from time import time, localtime, sleep
 
 
@@ -17,6 +24,7 @@ class Clock(object):
     def run(self):
         """走字"""
         self._second += 1
+
         if self._second == 60:
             self._second = 0
             self._minute += 1

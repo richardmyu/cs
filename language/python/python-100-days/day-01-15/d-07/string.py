@@ -1,4 +1,11 @@
-def fn_1():
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Date           : 2023-01-22 13:35:31
+Description    :
+'''
+
+def handler_string():
     s1 = 'hello ' * 3
     print(s1)  # hello hello hello
     s2 = 'world'
@@ -8,7 +15,7 @@ def fn_1():
     print('good' in s1)  # False
 
 
-def fn_2():
+def handler_string_2():
     str2 = 'abc123456'
     # 从字符串中取出指定位置的字符(下标运算)
     print(str2[2])  # c
@@ -21,7 +28,7 @@ def fn_2():
     print(str2[-3:-1])  # 45
 
 
-def fn_3():
+def handler_string_3():
     str1 = 'hello, world!'
 
     # 通过内置函数len计算字符串的长度
@@ -61,7 +68,7 @@ def fn_3():
     #                                      hello, world!
 
 
-def fn_4():
+def handler_string_4():
     str2 = 'abc123456'
 
     # 检查字符串是否由数字构成
@@ -74,7 +81,7 @@ def fn_4():
     print(str2.isalnum())  # True
 
 
-def fn_5():
+def handler_string_5():
     str3 = '  jackfrued@126.com '
     print(str3)
 
@@ -82,7 +89,7 @@ def fn_5():
     print(str3.strip())
 
 
-def fn_6():
+def handler_string_6():
     a, b = 5, 10
     print('%d * %d = %d' % (a, b, a * b))
     print('{0} * {1} = {2}'.format(a, b, a * b))
@@ -90,9 +97,9 @@ def fn_6():
 
 
 if __name__ == '__main__':
-    # fn_1()
-    # fn_2()
-    # fn_3()
-    # fn_4()
-    # fn_5()
-    fn_6()
+    # handler_string()
+    # handler_string_2()
+    # handler_string_3()
+    # handler_string_4()
+    # handler_string_5()
+    handler_string_6()

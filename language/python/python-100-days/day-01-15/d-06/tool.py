@@ -16,7 +16,7 @@ def is_prime(n):
         n (_int_): _被判定的正整数_
 
     Returns:
-        _boolean_: _是否素数_
+        _boolean_:
     '''
     # 过滤输入参数
     if n <= 1 or int(n) != n:
@@ -40,7 +40,7 @@ def is_comprime(a, b):
         b (_int_): _正整数_
 
     Returns:
-        _boolean_: _是否互质_
+        _boolean_:
     '''
     # 过滤输入参数
     if a < 1 or int(a) != a or b < 1 or int(b) != b:

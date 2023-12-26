@@ -1,3 +1,10 @@
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Date           : 2023-02-13 23:19:30
+Description    :
+'''
+
 from abc import ABCMeta, abstractmethod
 from random import randint, randrange
 
@@ -10,7 +17,6 @@ class Fighter(object, metaclass=ABCMeta):
 
     def __init__(self, name, hp):
         """初始化方法
-
         :param name: 名字
         :param hp: 生命值
         """
@@ -36,7 +42,6 @@ class Fighter(object, metaclass=ABCMeta):
     @abstractmethod
     def attack(self, other):
         """攻击
-
         :param other: 被攻击的对象
         """
         pass
@@ -61,7 +66,6 @@ class Ultraman(Fighter):
 
     def __init__(self, name, hp, mp):
         """初始化方法
-
         :param name: 名字
         :param hp: 生命值
         :param mp: 魔法值
@@ -82,9 +86,7 @@ class Ultraman(Fighter):
 
     def huge_attack(self, other):
         """究极必杀技(打掉对方至少50点或四分之三的血)
-
         :param other: 被攻击的对象
-
         :return: 使用成功返回 True 否则返回 False
         """
         if self._mp >= 50:
@@ -99,9 +101,7 @@ class Ultraman(Fighter):
 
     def magic_attack(self, others):
         """魔法攻击
-
         :param others: 被攻击的群体
-
         :return: 使用魔法成功返回 True 否则返回 False
         """
         if self._mp >= 20:
@@ -117,6 +117,7 @@ class Ultraman(Fighter):
         """恢复魔法值"""
         incr_point = randint(1, 10)
         self._mp += incr_point
+
         return incr_point
 
     def __str__(self):
@@ -129,7 +130,6 @@ class Ultraman(Fighter):
 
 class Monster(Fighter):
     """小怪兽"""
-
     __slots__ = ('_name', '_hp')
 
     def attack(self, other):
@@ -171,7 +171,6 @@ def display_info(ultraman, monsters):
 def main():
     ultraman_max_hp = 1000
     ultraman_max_mp = 120
-
     m_max_hp_1 = 250
     m_max_hp_2 = 500
     m_max_hp_3 = 750
@@ -192,7 +191,6 @@ def main():
         if skill <= 6:
             # 60%的概率使用普通攻击
             print(f'{u.name}使用普通攻击打了{m.name}({m.hp}/{monster_max_hp[m.name]}).')
-
             print(f'{u.name}的魔法值恢复了{u.resume()}点 ({u.mp}/{ultraman_max_mp}).')
         elif skill <= 9:
             # 30% 的概率使用魔法攻击(可能因魔法值不足而失败)

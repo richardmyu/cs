@@ -8,6 +8,11 @@ import os
 
 
 def print_board(board):
+    """_打印棋盘_
+
+    Args:
+        board (_dict_): _description_
+    """
     print(board['TL'] + '|' + board['TM'] + '|' + board['TR'])
     print('-+-+-')
     print(board['ML'] + '|' + board['MM'] + '|' + board['MR'])
@@ -44,6 +49,7 @@ def main():
             if curr_board[move] == ' ':
                 counter += 1
                 curr_board[move] = turn
+
                 if turn == 'x':
                     turn = 'o'
                 else:

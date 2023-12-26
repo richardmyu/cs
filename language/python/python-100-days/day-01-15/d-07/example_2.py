@@ -18,6 +18,7 @@ Description    : 约瑟夫环问题
     哪些位置是基督徒哪些位置是非基督徒。
 '''
 def main():
+    # 总人数
     persons = [True] * 30
     counter, index, number = 0, 0, 0
 

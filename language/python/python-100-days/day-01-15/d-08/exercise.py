@@ -1,3 +1,10 @@
+# !/usr/bin/env python
+# coding= utf-8
+'''
+Date           : 2023-02-11 21:06:00
+Description    :
+'''
+
 from time import sleep, localtime
 from math import sqrt
 
@@ -81,6 +88,7 @@ class Point(object):
         """
         dx = self.x - other.x
         dy = self.y - other.y
+
         return sqrt(dx**2 + dy**2)
 
     def __str__(self):
@@ -92,6 +100,7 @@ def calculate_distance():
     p2 = Point()
     print(p1)
     print(p2)
+
     p2.move_by(-1, 2)
     print(p2)
     print(p1.distance_to(p2))

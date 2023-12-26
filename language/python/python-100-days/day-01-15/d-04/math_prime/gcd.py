@@ -4,7 +4,7 @@
 Author         : yum <richardminyu@foxmail.com>
 Date           : 2023-01-18 23:10:29
 LastEditors    : yum <richardminyu@foxmail.com>
-LastEditTime   : 2023-12-10 19:55:08
+LastEditTime   : 2023-12-26 22:01:34
 Description    : 最大公约数常见集中方法的实现
                      --质因数分解法
                      --欧几里得算法（辗转相除法）

@@ -4,16 +4,18 @@
 Date           : 2023-01-22 10:42:09
 Description    :
 '''
+
 def fib(max):
-    """_summary_
+    """_斐波那契数列_
 
     Args:
-        max (_type_): _description_
+        max (_int_): _列数_
 
     Yields:
-        _type_: _description_
+        _int_:
     """
     prev, curr = 0, 1
+
     while max > 0:
         max -= 1
         yield curr

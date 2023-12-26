@@ -34,8 +34,8 @@ def is_leap_year():
     # y = int(input('请输入年份: '))
     y = random.randint(0, 2050)
     print(f"年份： { y }")
-
     is_leap = False
+
     if y % 400 == 0:
         if y % 400 == 0:
             is_leap = True

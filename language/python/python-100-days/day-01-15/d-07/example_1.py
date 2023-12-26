@@ -13,9 +13,11 @@ from random import randint, sample
 
 
 def display(balls):
-    '''
-    输出列表中的双色球号码
-    '''
+    """_输出列表中的双色球号码_
+
+    Args:
+        balls (_list_): _一组双色球号码_
+    """
     for index, ball in enumerate(balls):
         if index == len(balls) - 1:
             print('|', end=' ')
@@ -24,9 +26,11 @@ def display(balls):
 
 
 def random_select():
-    '''
-    随机选择一组号码
-    '''
+    """_随机选择一组号码_
+
+    Returns:
+        _list_:
+    """
     red_balls = [x for x in range(1, 34)]
     selected_balls = []
     selected_balls = sample(red_balls, 6)

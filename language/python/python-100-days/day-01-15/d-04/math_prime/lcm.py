@@ -4,7 +4,7 @@
 Author         : yum <richardminyu@foxmail.com>
 Date           : 2023-01-18 23:14:14
 LastEditors    : yum <richardminyu@foxmail.com>
-LastEditTime   : 2023-12-10 19:55:28
+LastEditTime   : 2023-12-26 22:02:18
 Description    : 最小公倍数常见集中方法的实现
                      --质因数分解法
                      --公式法
@@ -62,7 +62,6 @@ def lcm_prime(a, b):
 
         # 将 a 独有的质因子或缺少的公有质因子乘 b
         multiple *= b
-
         return int(multiple)
 
 
@@ -86,7 +85,6 @@ def lcm_formula(a, b):
         multiple = 1
         di = gcd_prime_1(a, b)
         multiple = int(a * b / di)
-
         return multiple
 
 
@@ -126,5 +124,4 @@ def lcm_division(a, b):
             di *= z
 
         di = di * a * b
-
         return di
