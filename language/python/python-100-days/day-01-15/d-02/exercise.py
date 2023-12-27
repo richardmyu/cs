@@ -10,7 +10,7 @@ import math
 
 def fahrenheit_to_celsius():
     """_华氏温度转换摄氏温度_
-    公式为：$C=(F - 32) \div 1.8$
+    公式为：C = (F - 32) / 1.8
     """
     # tem = float(input('请输入华氏温度: '))
     tem = random.randint(0, 212)
