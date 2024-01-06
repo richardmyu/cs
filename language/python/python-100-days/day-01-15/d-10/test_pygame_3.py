@@ -1,5 +1,9 @@
+# !/usr/bin/env python
+# coding= utf-8
 '''
-test_pygame_2 的改进版
+Author         : yum <richardminyu@foxmail.com>
+Date           : 2023-02-14 23:06:52
+Description    : test_pygame_2 的改进版
 
 大球吃小球，大球越来越大，就会很无聊
 
@@ -113,6 +117,7 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 # 获得点击鼠标的位置
                 x, y = event.pos
+
                 # radius = randint(10, 100)
                 radius = randint(10, 60)
                 sx, sy = randint(-10, 10), randint(-10, 10)

@@ -59,9 +59,7 @@ class Ultraman(Fighter):
         -20 mp （不够自动切换成普通攻击）
         攻击力 randint(10, 15)
         群伤
-
     """
-
     __slots__ = ('_name', '_hp', '_mp')
 
     def __init__(self, name, hp, mp):

@@ -1,7 +1,6 @@
 from enum import Enum, unique
 from math import sqrt
 from random import randint
-
 import pygame
 
 
@@ -29,7 +28,16 @@ class Ball(object):
     """球"""
 
     def __init__(self, x, y, radius, sx, sy, color=Color.RED):
-        """初始化方法"""
+        """_初始化方法_
+
+        Args:
+            x (_float_): _description_
+            y (_float_): _description_
+            radius (_float_): _description_
+            sx (_float_): _description_
+            sy (_float_): _description_
+            color (_turple_, optional): _description_. Defaults to Color.RED.
+        """
         self.x = x
         self.y = y
         self.radius = radius
