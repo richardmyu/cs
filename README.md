@@ -7,11 +7,16 @@
 ![haskell](https://img.shields.io/badge/haskell-support-brightgreen.svg)
 ![SQL](https://img.shields.io/badge/SQL-support-brightgreen.svg)
 
-计算机学习笔记，只作为笔记用途 :warning::warning::warning:。
+计算机课程学习以及计算机相关知识学习笔记，只作为笔记用途 :warning::warning::warning:。
+
+---
+
+[CS 自学指南](https://csdiy.wiki/)
 
 ## FILE DIRECTORY
 
 ```mk
+|
 ├── computer-system
 │  ├── Linux
 │  ├── network
