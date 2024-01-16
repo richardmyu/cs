@@ -31,7 +31,6 @@ Calculus is a foundational course at MIT; it plays an important role in the unde
 > Improper Integrals 广义积分
 > L’Hôspital’s Rule 罗必达法则
 
-
 ## Course Goals
 
 After completing this course, students should have developed a clear understanding of the fundamental concepts of single variable calculus and a range of skills allowing them to work effectively with the concepts.
