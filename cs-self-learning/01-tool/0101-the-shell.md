@@ -176,7 +176,3 @@ cat last-modified.txt
 ```
 
 11.
-
-```sh
-
-```
