@@ -8,14 +8,14 @@
 
 ## Exercises
 
-1.
+Q1.
 
 ```sh
 $ echo $SHELL
 # /bin/zsh
 ```
 
-2.
+Q2.
 
 ```sh
 cd ../../tmp/
@@ -27,7 +27,7 @@ ll
 # drwx------  3 root root 4.0K Jan 17 13:42 systemd-private-4b8346d81de84738be2ed5b6fc7968da-systemd-resolved.service-Dbj3vc
 ```
 
-3.
+Q3.
 
 ```sh
 $ man touch
@@ -65,7 +65,7 @@ $ man touch
 #  Manual page touch(1) line 1 (press h for help or q to quit)
 ```
 
-4.
+Q4.
 
 ```sh
 cd missing
@@ -74,13 +74,13 @@ ll
 # -rw-r--r-- 1 yum yum  0 Jan 17 13:46 semester.sh
 ```
 
-5.
+Q5.
 
 ```sh
 vim semester.sh
 ```
 
-6.
+Q6.
 
 ```sh
 ./semester
@@ -90,7 +90,7 @@ ll
 # 只有读写权限，没有执行权限
 ```
 
-7.
+Q7.
 
 ```sh
 $ sh semester.sh
@@ -119,7 +119,7 @@ $ sh semester.sh
 # content-length: 8213
 ```
 
-8.
+Q8.
 
 ```sh
 man chmod
@@ -156,7 +156,7 @@ man chmod
 #  Manual page chmod(1) line 1 (press h for help or q to quit)
 ```
 
-9.
+Q9.
 
 ```sh
 chmod +x semester.sh
@@ -164,15 +164,36 @@ ll
 # -rwxr-xr-x 1 yum yum 63 Jan 17 13:49 semester.sh
 ```
 
-10.
+Q10.
 
 ```sh
-$ stat -c %y semester.sh | > last-modified.txt
+stat -c %y semester.sh | > last-modified.txt
 ll
 # -rw-r--r-- 1 yum yum 36 Jan 17 14:23 last-modified.txt
 # -rwxr-xr-x 1 yum yum 63 Jan 17 13:49 semester.sh
+
 cat last-modified.txt
 # 2024-01-17 13:49:56.660115012 +0800
 ```
 
-11.
+Q11.
+
+```sh
+# PS
+powercfg /batteryreport
+# or
+powercfg /batteryreport /output "xx/xx"
+
+#                      BATTERY 1
+# NAME	               DELL P8P1P95
+# MANUFACTURER	       SMP
+# SERIAL NUMBER	3174
+# CHEMISTRY	LiP
+# DESIGN CAPACITY	54,891 mWh
+# FULL CHARGE CAPACITY	41,895 mWh
+# CYCLE COUNT	-
+
+# CMD
+:wmic
+cpu get *
+```
