@@ -23,7 +23,7 @@ mk missing
 ll
 # drwxr-xr-x  2 yum  yum  4.0K Jan 17 13:44 missing
 # drwx------  2 root root 4.0K Jan 17 13:42 snap-private-tmp
-# drwx------  3 root root 4.0K Jan 17 13:42 systemd-private-4b8346d81de84738be2ed5b6fc7968da-systemd-logind.service-Nts4Aw
+# drwx------  3 root root 4.0K Jan 17 13:42 systemd-private-xx-systemd-logind.service-Nts4Aw
 # drwx------  3 root root 4.0K Jan 17 13:42 systemd-private-4b8346d81de84738be2ed5b6fc7968da-systemd-resolved.service-Dbj3vc
 ```
 
@@ -194,6 +194,8 @@ powercfg /batteryreport /output "xx/xx"
 # CYCLE COUNT	-
 
 # CMD
-:wmic
+wmic # not `:wmic`
 cpu get *
+#AddressWidth  Architecture  AssetTag  Availability  Caption
+#64            9                       3             Intel64 Family 6 Model 141 Steppin
 ```
