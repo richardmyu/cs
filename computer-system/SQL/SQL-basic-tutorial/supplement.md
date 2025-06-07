@@ -18,3 +18,22 @@
 #### 唯一索引
 
 在设计关系数据表的时候，看上去唯一的列，例如身份证号、邮箱地址等，因为他们具有业务含义，因此不宜作为主键。但是，这些列根据业务要求，又具有唯一性约束：即不能出现两条记录存储了同一个身份证号。这个时候，就可以给该列添加一个 **唯一索引**。
+
+### 导入/导出 EXCEL/CSV
+
+```sql
+-- 导入
+-- TODO: 先创建表，再导入数据
+-- TODO: 建议所有字段都设为接纳 NULL 值，也暂时不要设置主键。
+-- 因为我们并不知道即将导入的 CSV 文件中的数据是否完整和规范，即便是数字，也先使用 VARCHAR 字段，以防止文件中的数据格式不正确导致的奇怪错误。
+-- 我们可以在数据导入后，在对数据库进行验证、清理和修正。
+
+LOAD DATA infile '**/*.xlsx' INTO TABLE table-name;
+LOAD DATA infile '**/*.csv' INTO TABLE table-name FIELDS TERMINATED BY ',' ENCLOSED BY '"';
+
+-- 导出
+SELECT * FROM table-name INTO OUTFILE '**/*.xlsx';
+SELECT * FROM table-name INTO OUTFILE '**/*.csv' FIELDS TERMINATED BY ',';
+```
+
+> [如何在 MySQL 中导入和导出 CSV / Excel 文件](https://zhuanlan.zhihu.com/p/444937414)
