@@ -32,6 +32,7 @@ LOAD DATA infile '**/*.xlsx' INTO TABLE table-name;
 LOAD DATA infile '**/*.csv' INTO TABLE table-name FIELDS TERMINATED BY ',' ENCLOSED BY '"';
 
 -- 导出
+-- 查询结果导出
 SELECT * FROM table-name INTO OUTFILE '**/*.xlsx';
 SELECT * FROM table-name INTO OUTFILE '**/*.csv' FIELDS TERMINATED BY ',';
 ```

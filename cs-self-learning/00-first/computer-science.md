@@ -1,8 +1,27 @@
 # Computer Science
 
+Electronic age
+
 ## 1.history
 
-算盘 -> 步进计算器 -> 差分机 -> 分析机 -> 打孔卡片制表机
+1.步进计算器-加减乘除运算
+
+```
+除: 17/5
+1  17-5=12
+2  12-5=7
+3  7-5=2
+
+   17=5*3+2
+```
+
+2.差分机
+
+查尔斯·巴贝奇（Charles Babbage）的论文《机械在天文与计算表中的应用》这篇论文的完整英文标题是： "On the Application of Machinery to the Computation of Astronomical and Mathematical Tables"。
+
+3.分析机
+
+4.打孔卡片制表机
 
 ## 2.electronic computer
 

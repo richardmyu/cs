@@ -23,3 +23,5 @@ INSERT INTO Product VALUES ('0007', '擦菜板', '厨房用具', 880, 790, '2008
 INSERT INTO Product VALUES ('0008', '圆珠笔', '办公用品', 100, NULL,'2009-11-11');
 
 COMMIT;
+
+-- 
