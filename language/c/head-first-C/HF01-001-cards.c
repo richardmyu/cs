@@ -1,3 +1,6 @@
+/*
+ * 计算牌面点数的程序
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
