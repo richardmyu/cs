@@ -12,4 +12,6 @@ int main()
     putchar(l);
     printf("%.2d\n", l * 2.54);
   }
+
+  return 0;
 }
